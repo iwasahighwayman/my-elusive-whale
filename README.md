@@ -1,4 +1,4 @@
-# my-white-whale
+# my-elusive-whale
 A journey to build more environmentally-friendly LED lighting ... which turned into an obsession
 
 THE INFORMATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE INFORMATION OR THE USE OR OTHER DEALINGS IN THE INFORMATION.
@@ -492,7 +492,7 @@ Here is a picture of my XIAO breadboarded.  The black wire when pulled down to g
 
 The source code for as much of the basic functionality as I currently have running is available in the "source" subdirectory.  It currently toggles the LED illumination on for one second then off for two seconds.  The code started with a combination of the serial USB sample SDK code, plus the blink sample SDK code, plus my own logic additions.
 
-# Time to go learn things ... and continue to search for my white whale
+# Time to go learn things ... and continue to search for my elusive whale
 
 And this is where this odyssey, in fact obsession, currently stands.
 
