@@ -712,3 +712,85 @@ Now let's construct a complete over-voltage protection circuit:
 
 ![Over-voltage protection circuit - circuit board view 2](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0255-circuit-02-20221127.JPG)
 
+
+# "Spring 2024 Has Arrived!" Updates
+
+
+
+![Updated over-voltage protection circuit - with hysteresis feedback](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-schematic-tjbatterydiodeovervoltageprotect4-20240320_174500.png)
+
+![1.2V Solar Battery Lights - Solar cell terminals - No battery installed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--solar-cell-terminals-voltage-no-battery-IMG_0133-20240322.JPG)
+
+![1.2V Solar Battery Lights - Battery terminals - No battery installed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--battery-terminals-voltage-no-battery-IMG_0134-20240322.JPG)
+
+![1.2V Solar Battery Lights - Battery terminals - Yes battery installed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--battery-terminals-voltage-yes-battery-IMG_0135-20240322.JPG)
+
+![1.2V Solar Battery Lights - LED string cut off](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-01-led-string-cut-off-IMG_0137-20240322.JPG)
+
+![1.2V Solar Battery Lights - LED leads removed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-02-led-string-leads-removed-IMG_0138-20240322.JPG)
+
+![1.2V Solar Battery Lights - Scrape off battery positive solder mask](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-03-battery-positive-solder-mask-scraped-off-IMG_0140-20240322.JPG)
+
+![1.2V Solar Battery Lights - Add solder ball to battery positive](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-04-battery-positive-solder-ball-added-IMG_0141-20240322.JPG)
+
+![1.2V Solar Battery Lights - Battery positive and negative wire attached](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-05-battery-positive-negative-wire-attached-IMG_0142-20240322.JPG)
+
+![1.2V Solar Battery Lights - Battery wire out enclosure](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-06-battery-wire-out-enclosure-IMG_0143-20240322.JPG)
+
+![1.2V Solar Battery Lights - Battery wire knot out enclosure](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-07-battery-wire-knot-out-enclosure-IMG_0144-20240322.JPG)
+
+![1.2V Solar Battery Lights - Oscilloscope no LEDs 8 Vpkpk](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-08-oscilloscope-leds-disconnected-8-volts-peak-to-peak-IMG_0145-20240323.JPG)
+
+![1.2V Solar Battery Lights - Oscilloscope yes LEDs 5 Vpkpk](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-09-oscilloscope-leds-connected-5-volts-peak-to-peak-IMG_0147-20240322.JPG)
+
+![1.2V Solar Battery Lights - 2-Pin bidirectional red green LED 1](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2-pin-polar-bidirectional-red-green-led-amazon-02-20240323.png)
+
+![1.2V Solar Battery Lights - 2-Pin bidirectional red green LED 2](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2-pin-polar-bidirectional-red-green-led-amazon-01-20240323.png)
+
+![1.2V Solar Battery Lights - O-Ring for bidirectional red green LED - Did not actually work](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2.5-mm-inside-diameter-o-ring-for-3-mm-led-amazon-01-20240323.png)
+
+![Over-voltage protection circuit - Repurposed 1](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-10-over-voltage-protection-circuit-repurposed-01-IMG_0148-20240325.JPG)
+
+![Over-voltage protection circuit - Repurposed 2](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-11-over-voltage-protection-circuit-repurposed-02-IMG_0151-20240325.JPG)
+
+![Over-voltage protection circuit - Repurposed 3](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-12-over-voltage-protection-circuit-repurposed-03-IMG_0155-20240325.JPG)
+
+![Over-voltage protection circuit - Repurposed 4](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-13-over-voltage-protection-circuit-repurposed-04-IMG_0149-20240325.JPG)
+
+![Over-voltage protection circuit - Repurposed 5](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-14-over-voltage-protection-circuit-repurposed-05-IMG_0152-20240325.JPG)
+
+![Over-voltage protection circuit - Repurposed 6](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-15-over-voltage-protection-circuit-repurposed-06-IMG_0154-20240325.JPG)
+
+![Over-voltage protection circuit - Repurposed 7](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-16-over-voltage-protection-circuit-repurposed-07-IMG_0156-20240325.JPG)
+
+![Over-voltage protection circuit - Repurposed 8](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-25-over-voltage-protection-circuit-repurposed-08-IMG_0175-20240326.JPG)
+
+![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-18-power-on-off-polar-bidirectional-led-plus-1k-resistor-IMG_0160-20240325.JPG)
+
+![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor wire lengths](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-21-power-on-off-polar-bidirectional-led-plus-1k-resistor-wire-lengths-IMG_0165-20240325.JPG)
+
+![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor wire assembly with lengths](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-22-power-on-off-polar-bidirectional-led-plus-1k-resistor-wire-assembly-with-lengths-IMG_0166-20240325.JPG)
+
+![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor wire assembly attached to PCB](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-19-power-on-off-polar-bidirectional-led-plus-1k-resistor-attached-to-pcb-IMG_0163-20240325.JPG)
+
+![1.2V Solar Battery Lights - Electronic modifications completed - single device](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-23-completed-electronic-modifications-single-device-IMG_0168-20240325.JPG)
+
+![1.2V Solar Battery Lights - Electronic modifications completed - all four devices](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-24-completed-electronic-modifications-all-four-devices-IMG_0169-20240325.JPG)
+
+![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor wire assembly fitted to case hole](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-20-power-on-off-polar-bidirectional-led-plus-1k-resistor-fitted-to-case-hole-IMG_0164-20240325.JPG)
+
+![Over-voltage protection circuit - 4.2V Li-Ion hookup refactored 1](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0170-20240326.JPG)
+
+![Over-voltage protection circuit - 4.2V Li-Ion hookup refactored 2](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0172-20240326.JPG)
+
+![Over-voltage protection circuit - 4.2V Li-Ion hookup refactored 3](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0173-20240326.JPG)
+
+![Over-voltage protection circuit - 4.2V Li-Ion hookup refactored 4](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0174-20240326.JPG)
+
+![1.2V Solar Battery Lights - Case hole for power on-off bidirectional LED](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-17-case-hole-for-power-on-off-polar-bidirectional-led-IMG_0158-20240325.JPG)
+
+![1.2V Solar Battery Lights - Solar cell updates completed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-26-solar-cell-updates-completed-IMG_0176-20240326.JPG)
+
+
+
+
