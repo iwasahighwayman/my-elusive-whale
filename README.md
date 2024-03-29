@@ -740,11 +740,48 @@ Here is the most current over-voltage protection circuit:
 
 ![Updated over-voltage protection circuit - with hysteresis feedback](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-schematic-tjbatterydiodeovervoltageprotect4-20240320_174500.png)
 
+I recently had to replace a couple of the un-modified solar cell / battery enclosures in the front yard.  Though I seasonally display then take-in the multi-color lights around the year-end holidays, the white "peace" lights on the front shrubs stay lit year round.  Many families in the neighborhood do similarly, I believe helping all of us remember what's important to us ... for me, how precious life is and how thankful i am for just being.
+
+During Covid, I had stocked-up with a few spares, but now that supply was down to just one or two.
+
+Upon attempting to refill prior purchases at Amazon, I received the dreaded "Currently Unavailable" message.
+
+Upon widening the search, some similar solar lights with clearly the same solar cell / battery enclosure were available, but their cost was double or triple my original lights.
+
+Clearly market forces have shifted!
+
+Now, it was apparent that there was a "new kid on the block" ... instead of the previously-popular "4.2V Li-Ion" enclosure, the new (and far less expensive and far more common) kid is now a "1.2V Ni-MH" enclosure.
+
+At first I felt defeated.
+
+But then I realized, that with 1.2V batteries, I could now wire 4 of them in series to achieve an average 4.8V supply to the back yard LEDs.  Remember, it is much easier and more efficient to wire power supplies in series instead of parallel, since parallel requires the (Schottky) diodes.  Although the power loss / waste is minimized due to Schottky diodes, it's still a loss in a battery powered system with limited recharging capabilities.
+
+The new 1.2V Ni-MH devices also had other advantages:  
+- A 1800 mAH battery (vs the previous 1200 mAH battery ... a 50% increase of battery storage capacity)
+- The solar cell / battery enclosures were approximately half the physical size and weight of the prior enclosures
+- They were actually slightly less expensive than the prior units
+
+Rather than "jump all-in" and purchase four of the new 1.2V Ni-MH devices, I decided to just order a pair of two, and looked forward to performing the electronic autopsy to begin to understand how the devices worked upon arrival.
+
+The first procedure was to open up one of the devices, and do some basic voltage readings under various conditions in bright sunlight.
+
+Voltage across the solar cell terminals with no battery installed:
+
 ![1.2V Solar Battery Lights - Solar cell terminals - No battery installed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--solar-cell-terminals-voltage-no-battery-IMG_0133-20240322.JPG)
+
+Voltage across the battery terminals with no battery installed:
 
 ![1.2V Solar Battery Lights - Battery terminals - No battery installed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--battery-terminals-voltage-no-battery-IMG_0134-20240322.JPG)
 
+Voltage across the battery terminals with yes battery installed:
+
 ![1.2V Solar Battery Lights - Battery terminals - Yes battery installed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--battery-terminals-voltage-yes-battery-IMG_0135-20240322.JPG)
+
+Ok, so this means under bright sunlight, the battery voltage actually slightly exceeds the specified 1.2V and is actually almost 1.5V.
+
+This suggests that an over-voltage protection circuit will probably still be required, if four of the units are wired in series.
+
+It should be noted that some quick math suggests that the back yard lights should actually work fine for 6 hours using only three units wired in series, and this would avoid the need for the over-voltage protection circuit, but that will be a confirmation test for a future date.
 
 ![1.2V Solar Battery Lights - LED string cut off](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-01-led-string-cut-off-IMG_0137-20240322.JPG)
 
