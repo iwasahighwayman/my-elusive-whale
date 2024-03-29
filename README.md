@@ -716,7 +716,7 @@ Now let's construct a complete over-voltage protection circuit:
 
 It's been a few months since my last update.
 
-Overall the performance of the lighting system has worked flawlessly.
+Overall the performance of the back yard lighting system has worked flawlessly.
 
 One thing discovered, as always, somewhat by accident: under just the right (or wrong) sunlight levels, the TL431 would "partially" turn on the 2N2907 PNP transistor, resulting in a small but measurable steady-state current to continuously flow through the transistor and the relay coil, until the sunlight intensity either increased (turning the transistor and relay full-on) or decreased (turning the transistor and relay full-off).  I only noticed this due to coincidentally checking the system and hearing the relay coil "chattering" open and closed.  This will most-likely eventually lead to failure of the PNP transistor, relay or both.
 
@@ -735,6 +735,8 @@ The hysteresis resistor values are very much determined by trial and error, and 
 For example, a 1M Ohm hysteresis resistor was working well for months, when for unknown reasons, one day the installed TL431 failed.  After replacing the failed TL431 with a working device, the hysteresis resistor of 1M Ohm no longer provided much hysteresis, as during testing, there was a small sunlight intensity window with relay coil "chatter".  Replacing the hysteresis resistor with a 100K Ohm value resulted in the desired hysteresis.
 
 It is therefore best to not directly solder the hysteresis resistor into the circuit, but rather install socket pins, so the hysteresis resistor may be easily changed with different values, should components fail and need to be replaced again in the future, or other conditions such as temperature change the results.
+
+The prior schematic and implementation also erroneously ommitted the reverse voltage protection diode in parallel with the PNP transistor, so that has been corrected.
 
 Here is the most current over-voltage protection circuit:
 
