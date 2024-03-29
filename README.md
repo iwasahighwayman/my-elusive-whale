@@ -16,7 +16,7 @@ Oh, and the product needed to be modestly priced, as I would need multiple stran
 
 # Iteration #1: Purchase batteries in bulk
 
-In the end, most of the requirements could be met, but not all of them.  I found an LED lighting unit which does not have the darkness-on, but it does have a 6-hour on / 18-hour off timer.  It is designed for outdoor use and is reasonably sturdy and waterproof.
+In the end, most of the requirements could be met, but not all of them.  I found an LED lighting unit which does not have the darkness-on, but it does have a 6-hour on -and- 18-hour off timer.  It is designed for outdoor use and is reasonably sturdy and waterproof.
 
 There are multiple lighting modes, such as alternating blinking, fade in and out, flashing which was just annoying and steady-on.
 
@@ -256,7 +256,7 @@ First I installed the buck voltage converter into a relatively waterproof enclos
 
 I placed the converter enclosure in the front yard, elevated by a couple bricks to try to keep it out of the snow, and connected the solar cells.
 
-I then ran my 22 AWG wire up to a waterproof termination / distribution box in the back yard, on the ground on the north side of the west column, which would take in the power wire from the front yard voltage converter enclosure and connect that to three smaller, more discreet wires that would be fed to each of the three LED lighting units mounted on the columns of the covered patio area.
+I then ran my 22 AWG wire up to a waterproof termination/distribution box in the back yard, on the ground on the north side of the west column, which would take in the power wire from the front yard voltage converter enclosure and connect that to three smaller, more discreet wires that would be fed to each of the three LED lighting units mounted on the columns of the covered patio area.
 
 When I originally attached the LED lighting controllers to the columns, I had a "50-50 shot" as to which column the unit with the LEDs spanning the crossbeam should be mounted.  This was all done back when I was using the "AA" batteries, so the choice did not seem too relevant.
 
@@ -380,7 +380,7 @@ After a day or so at the hobby bench with a piece of pre-drilled and tinned prin
 
 Four terminal blocks are integrated with the three controller boards.  The red terminal block is to receive the 4.5 Volt power supply from the solar cell batteries and buck voltage converter, with the "+" and "-" supplies connected to all three LED controllers.  The remaining three black, green and blue terminal blocks are each connected to a single LED controller's output LED driving connectors.
 
-This enclosure will be placed on the ground on the north side of the west column, replacing the prior power junction / distribution enclosure.
+This enclosure will be placed on the ground on the north side of the west column, replacing the prior power junction/distribution enclosure.
 
 The last step was to once again collect Ladder-Zilla, and completely redo the telephone extension cable wiring.  In this new architecture, it is no longer power to the LED lighting controller boxes distributed around the sitting area.  Instead, the four conductor telephone wire is used only to carry the LED illumination signals.  One discreet length of the four conductor telephone wire was laid across the crossbeam, to feed the LED signals for the east column lighting.  Next the crossbeam lighting string was taken down and flipped, so that the LED signal leads were closest to the west column, drastically reducing the length (and parasitic resistance) of the four conductor telephone wire.  Also, the four conductor telephone wires were no longer carrying 2 x 100 mA for both the east and crossbeam light strings - each telephone wire only carried the 95 mA or so used to illuminate a single string of LED lights.  So even though there was a relatively long length of telephone wire from the west column "_Unified Multi-Zoned LED Lighting Controller Apparatus_" to the east column string of LEDs, that undesired voltage drop due to the telephone wire resistance split in half again, yielding nearly the same peak-to-peak voltage across each of the strings of LEDs.
 
@@ -400,7 +400,7 @@ OK, let's get to work reverse-engineering the LED controller, beginning with try
 
 Unlike the the front yard solar cell lights, which use a three-wire LED configuration and relatively high voltage (+/- 60 Volts peak-to-peak ... I nearly fried my low-cost digital oscilloscope which has a 40 Volt max input range), the back yard LED lights use a two-wire LED configuration with a +/- 5.8 Volts peak-to-peak range (approximately 2.85 Volts in each alternating direction of LED drive.)
 
-Given that there is only a single 4.5 Volt power supply, the LED signals are created using a "push-pull" or "H-Bridge" circuit.  For the first half of the square wave period, one of the LED driver connectors is positive 2.85 Volts relative to the other connector.  Then when the second half of the square wave period begins, the polarity flips and now what was positive 2.85 Volts is now negative by the same amount.  When the LED signals are in a positive-negative polarity, half of the LEDs illuminate and the other half are off.  Then when the LED signal polarity flips, the illuminated / off LEDs are reversed.  I believe this is achieved by single LEDs of anode / cathode direction alternating with single LEDs of cathode / anode direction LEDs.  The directional single LEDs are then wired in parallel to create the full length of the LED lighting string.  The string of LEDs are hermetically sealed with shrink wrap tubing, and to truly dissect the LED string and confirm this assumption will render that string unusable.  So for now I just accept that this assumption is how the LEDs are actually wired.  Single LEDs in each direction makes sense, since 2.85 Volts is approximately what would be needed to illuminate a single white LED.
+Given that there is only a single 4.5 Volt power supply, the LED signals are created using a "push-pull" or "H-Bridge" circuit.  For the first half of the square wave period, one of the LED driver connectors is positive 2.85 Volts relative to the other connector.  Then when the second half of the square wave period begins, the polarity flips and now what was positive 2.85 Volts is now negative by the same amount.  When the LED signals are in a positive-negative polarity, half of the LEDs illuminate and the other half are off.  Then when the LED signal polarity flips, the illuminated/off LEDs are reversed.  I believe this is achieved by single LEDs of anode/cathode direction alternating with single LEDs of cathode/anode direction LEDs.  The directional single LEDs are then wired in parallel to create the full length of the LED lighting string.  The string of LEDs are hermetically sealed with shrink wrap tubing, and to truly dissect the LED string and confirm this assumption will render that string unusable.  So for now I just accept that this assumption is how the LEDs are actually wired.  Single LEDs in each direction makes sense, since 2.85 Volts is approximately what would be needed to illuminate a single white LED.
 
 Also, at first glance, the square wave appears to be approximately 110 Hz, but on more careful inspection, there is actually a 1.65 KHz sub-harmonic "inner" square wave within the 110 Hz "outer" square wave.  Though I am focusing on "steady-on" of the LEDs, this is how the LED controller creates the other lighting patterns such as chasing and fading, by adjusting (pulse width modulating) the "outer" square wave to be other than a steady 110 Hz.
 
@@ -414,7 +414,7 @@ One possible circuit is using a TL431 precision voltage reference for the signal
 
 As indicated in the schematic, unfortunately this circuit's square wave is produced with a 2 Volt bias (offset).
 
-The bias / offset can be easily removed with a de-biasing circuit:
+The bias/offset can be easily removed with a de-biasing circuit:
 
 ![De-Biasing circuit schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-debias-schematic-20220827.png)
 
@@ -436,15 +436,15 @@ Or created using only MOSFETs:
 
 ![NMOS PMOS Push-Pull H-Bridge schematic](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-nmos-pmos-push-pull-h-bridge-schematic-20220827.png)
 
-It is also possible to create the push-pull / H-Bridge with BJTs, but no example is provided here.
+It is also possible to create the push-pull/H-Bridge with BJTs, but no example is provided here.
 
 This is a breadboard of these circuits chained together:
 
 ![Breadboard circuit of essential sub-circuits to produce steady-on LED illumination breadboard](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0195-multivibrator-debias-inverter-push-pull-h-bridge-20220827.jpeg)
 
-One word of caution: due to the use of discrete, relatively higher power transistors in the push-pull / H-Bridge circuit, the voltage produced is nearly double the voltage produced by the factory LED controller integrated circuit.  In testing momentarily, the higher voltage did not seem to damage the string of LEDs, but that may not be true if operated at this higher voltage over an extended window of time.  
+One word of caution: due to the use of discrete, relatively higher power transistors in the push-pull/H-Bridge circuit, the voltage produced is nearly double the voltage produced by the factory LED controller integrated circuit.  In testing momentarily, the higher voltage did not seem to damage the string of LEDs, but that may not be true if operated at this higher voltage over an extended window of time.  
 
-Given that the current through each of the three LED lighting strings is approximately 100 mA, so 300 mA total, we could possibly use one 3 Ohm resistor between each of the push-pull / H-Bridge driver contacts and the actual string of LEDs, for a total of 6 Ohms total inline with the LED strings.  With 300 mA flowing thru the resistors, this would reduce the 4.5 Volt peaks by 1.8 Volts, resulting in 2.7 Volt peaks, or 5.4 Volts peak-to-peak.  Some experimentation with resistor values is probably required.  This would be slightly wasteful use of limited solar cell battery power capacity, though any other option will probably waste even more power.
+Given that the current through each of the three LED lighting strings is approximately 100 mA, so 300 mA total, we could possibly use one 3 Ohm resistor between each of the push-pull/H-Bridge driver contacts and the actual string of LEDs, for a total of 6 Ohms total inline with the LED strings.  With 300 mA flowing thru the resistors, this would reduce the 4.5 Volt peaks by 1.8 Volts, resulting in 2.7 Volt peaks, or 5.4 Volts peak-to-peak.  Some experimentation with resistor values is probably required.  This would be slightly wasteful use of limited solar cell battery power capacity, though any other option will probably waste even more power.
 
 Next, it would be nice if a darkness detector could be used to turn on the LED lights.
 
@@ -484,7 +484,7 @@ Looking at the specifications, the RP2040 SOC contains thousands (tens of thousa
 
 I should be able to use this to make back yard lighting illuminate, with all the requirements met.
 
-I'm currently using a late 2018 Intel i9 16 GB RAM Macbook Pro, to develop, compile and debug the RP2040 microcode / firmware which runs on either the Pico or XIAO.  I needed to install a small number of ARM development toolchains, but the steps are well-documented by Raspberry PI, and the resultant binary can run on either device (just be sure to only target input / output (IO) available on the much smaller and pin-reduced XIAO device.)
+I'm currently using a late 2018 Intel i9 16 GB RAM Macbook Pro, to develop, compile and debug the RP2040 microcode/firmware which runs on either the Pico or XIAO.  I needed to install a small number of ARM development toolchains, but the steps are well-documented by Raspberry PI, and the resultant binary can run on either device (just be sure to only target input/output (IO) available on the much smaller and pin-reduced XIAO device.)
 
 Here is a picture of my XIAO breadboarded.  The black wire when pulled down to ground represents my darkness detector detecting darkness.  The green wire when pulled down to ground represents a momentary push button which after three seconds toggles the power-on state from off to on, or vice-versa.  The orange is the output pin which indicates whether the LEDs should be illuminated or not.
 
@@ -572,13 +572,13 @@ Below are some pictures of these details.
 
 ![Buck converters power conversion efficiency comparison](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0236-buck-converter-efficiency-comparison-20221117.JPG)
 
-I cannot currently explain why the buck-converter architecture worked through most of last winter; it's possible that colder / freezing weather is a variable or influencer here, and perhaps that architecture was always "just barely on the edge of working" ... honestly not certain at this time.
+I cannot currently explain why the buck-converter architecture worked through most of last winter; it's possible that colder/freezing weather is a variable or influencer here, and perhaps that architecture was always "just barely on the edge of working" ... honestly not certain at this time.
 
 Back to the drawing board ... yet again.
 
 # "Simplicity is often best" Updates
 
-To improve the "power efficiency" story, I wanted to find a way to power the LEDs without a buck (or boost) voltage / power converter.
+To improve the "power efficiency" story, I wanted to find a way to power the LEDs without a buck (or boost) voltage/power converter.
 
 The vendor-specified voltage is 3 "AA" 1.5 volt batteries in series, or 4.5 volts.
 
@@ -608,17 +608,17 @@ My morning-discovered scribble said "Schottky".  Of course, unlike the normal si
 
 Updating the math above, the 4.1 volt solar batteries should then provide 3.9 volts after the Schottky diodes, minus the 2.5 volts due to the 22 AWS wire from front to back yard, yielding approximately 3.6 volts a the LED controllers.  This would provide over 1 volt of window between first-illuminated voltage to the LED controllers, and the measured 2.5 volt drop-out voltage, which is a much more acceptable solution.
 
-Schematic for Schottky diode protected parallel solar cells / batteries:
+Schematic for Schottky diode protected parallel solar cells/batteries:
 
 ![Schottky diode parallel power](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-schottky-diode-power-20221120.png)
 
-The one (1) ohm resistors provide a test point for amount of current each solar cell / battery is providing.
+The one (1) ohm resistors provide a test point for amount of current each solar cell/battery is providing.
 
-Schottky diode protected parallel solar cells / batteries circuit:
+Schottky diode protected parallel solar cells/batteries circuit:
 
 ![Schottky diode parallel power circuit](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0238-schottky-diode-power-circuit-20221124.JPG)
 
-Schottky diode protected parallel solar cells / batteries voltage testing after a single overnight cycle:
+Schottky diode protected parallel solar cells/batteries voltage testing after a single overnight cycle:
 
 ![Schottky diode parallel voltage testing](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0240-schottky-diode-power-voltage-20221124.JPG)
 
@@ -666,7 +666,7 @@ In my new "Over-voltage protection circuit", there will be two output voltages p
 - The direct solar cell and battery output which may rise to nearly 7 volts but operates in darkness off the batteries at 4.1 volts  
 - The 5 volt regulated output from the 7805  
 
-I'll then use a voltage comparator circuit to control the relay.  When the solar cell and battery voltage is below 5 volts, this direct output passes through the relay's normally-closed terminals to the LED controllers ... this is safe / fine because the LED controllers, though designed to run at 4.5 volts, most-likely can handle 5.0 volts without damage.  However when the solar cell and battery voltage is above 5 volts, the 5 volt regulated 7805 output will be fed to the LED controllers through the normally-open terminals.
+I'll then use a voltage comparator circuit to control the relay.  When the solar cell and battery voltage is below 5 volts, this direct output passes through the relay's normally-closed terminals to the LED controllers ... this is safe/fine because the LED controllers, though designed to run at 4.5 volts, most-likely can handle 5.0 volts without damage.  However when the solar cell and battery voltage is above 5 volts, the 5 volt regulated 7805 output will be fed to the LED controllers through the normally-open terminals.
 
 Because the 7805 requires approximately 1.5 volts of "overhead input voltage" beyond it's output voltage (thus 6.5 volts at the input of the 7805 regulator), at solar cell and battery voltage of 5 volts, the 7805's output is only around 3.5 volts.  But 3.5 volts is well-above the 2.5 volt drop-out voltage of the LED controllers, so as the source voltage flips between direct solar cell and battery output when below 5 volts, and the 7805's 3.5 volts when solar cell output exceeds 5 volts, the LED controllers should always have power and retain their timer and settings memory.
 
@@ -742,13 +742,13 @@ Here is the most current over-voltage protection circuit:
 
 ![Updated over-voltage protection circuit - with hysteresis feedback](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-schematic-tjbatterydiodeovervoltageprotect4-20240320_174500.png)
 
-I recently had to replace a couple of the un-modified solar cell / battery enclosures in the front yard.  Though I seasonally display then take-in the multi-color lights around the year-end holidays, the white "peace" lights on the front shrubs stay lit year round.  Many families in the neighborhood do similarly, I believe helping all of us remember what's important to us ... for me, how precious life is and how thankful i am for just being.
+I recently had to replace a couple of the un-modified solar cell/battery enclosures in the front yard.  Though I seasonally display then take-in the multi-color lights around the year-end holidays, the white "peace" lights on the front shrubs stay lit year round.  Many families in the neighborhood do similarly, I believe helping all of us remember what's important to us ... for me, how precious life is and how thankful i am for just being.
 
 During Covid, I had stocked-up with a few spares, but now that supply was down to just one or two.
 
 Upon attempting to refill prior purchases at Amazon, I received the dreaded "Currently Unavailable" message.
 
-Upon widening the search, some similar solar lights with clearly the same solar cell / battery enclosure were available, but their cost was double or triple my original lights.
+Upon widening the search, some similar solar lights with clearly the same solar cell/battery enclosure were available, but their cost was double or triple my original lights.
 
 Clearly market forces have shifted!
 
@@ -756,12 +756,18 @@ Now, it was apparent that there was a "new kid on the block" ... instead of the 
 
 At first I felt defeated.
 
-But then I realized, that with 1.2V batteries, I could now wire 4 of them in series to achieve an average 4.8V supply to the back yard LEDs.  Remember, it is much easier and more efficient to wire power supplies in series instead of parallel, since parallel requires the (Schottky) diodes.  Although the power loss / waste is minimized due to Schottky diodes, it's still a loss in a battery powered system with limited recharging capabilities.
+But then I realized, that with 1.2V batteries, I could now wire 4 of them in series to achieve an average 4.8V supply to the back yard LEDs.  Remember, it is much easier and more efficient to wire power supplies in series instead of parallel, since parallel requires the (Schottky) diodes.  Although the power loss/waste is minimized due to Schottky diodes, it's still a loss in a battery powered system with limited recharging capabilities.
 
 The new 1.2V Ni-MH devices also had other advantages:  
 - A 1800 mAH battery (vs the previous 1200 mAH battery ... a 50% increase of battery storage capacity)
-- The solar cell / battery enclosures were approximately half the physical size and weight of the prior enclosures
+- The solar cell/battery enclosures were approximately half the physical size and weight of the prior enclosures
 - They were actually slightly less expensive than the prior units
+
+The circuitry and PCB of the new 1.2V Ni-MH solar battery was far simpler than the 4.2V Li-Ion solar battery.  I could not find an explicit solar-to-battery charging regulator, nor was there an apparent way to "disconnect" the LED string driving terminals and circuitry from the solar cell and battery.
+
+However after a little thought, because the new circuitry was so much simpler (far fewer exteral active and passive components outside the integrated circuit controller vs the 4.2V Li-Ion solar battery), there is most-likely no "waste" of energy as whatever is converting the 1.2 (battery) and 1.4 (solar cell) volts to the 5 volts needed by the new IC, that is what is required to drive the LED string.  The PCB contains a "5.1V" label along with an inductor marked "330" which I assume to mean 330 mH, along with what appears to be a surface-mount IC, most-likely a transistor (the markings are just too faint and small to discern) a couple diodes and a capacitor, suggesting some form of rudimentary boost voltage converter.  The surface mount IC may be an explicit solar-to-battery charging regulator, but the connection pads on the PCB appear to be a different configuration from the "Shikues Foshan Blue Rocket Electric BRCL3130ME" 4.2V Li-Ion charging regulator, which makes sense as the two devices have completely different battery technologies and voltage/power characteristics.  I may try to search some more, and find a higher power lamp and magnifying glass, to see if i can identify the IC.
+
+N.B.: Though my curiosity to identify the IC will be pursued, in some ways the outcome is moot.  As will be shared shortly, I actually will need the LED string output drivers, as a Power On/Off button indicator.  So any attempt to "strip" the PCB of unneeded components in the pursuit of improved power efficiency, is no longer an optional.  All the components and all the functionality is required.  But more on that in a bit.
 
 Rather than "jump all-in" and purchase four of the new 1.2V Ni-MH devices, I decided to just order a pair of two, and looked forward to performing the electronic autopsy to begin to understand how the devices worked upon arrival.
 
@@ -781,33 +787,112 @@ Voltage across the battery terminals with yes battery installed:
 
 Ok, so this means under bright sunlight, the battery voltage actually slightly exceeds the specified 1.2V and is actually almost 1.5V.
 
-This suggests that an over-voltage protection circuit will probably still be required, if four of the units are wired in series.
+This suggests that an over-voltage protection circuit will probably still be required, if four of the units are wired in series, as the total voltage in series could approach nealy 6.0 volts.
 
 It should be noted that some quick math suggests that the back yard lights should actually work fine for 6 hours using only three units wired in series, and this would avoid the need for the over-voltage protection circuit, but that will be a confirmation test for a future date.
 
+Opening the new enclosure, removing the battery then cutting the LED string leads, this is what we have:
+
 ![1.2V Solar Battery Lights - LED string cut off](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-01-led-string-cut-off-IMG_0137-20240322.JPG)
+
+With the LED string leads tails removed:
 
 ![1.2V Solar Battery Lights - LED leads removed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-02-led-string-leads-removed-IMG_0138-20240322.JPG)
 
+We will want to attach battery "+" and "-" leads to supply the back yard lighting.
+
+As we see in the picture below, there is already a spare "B-" solder pad which we can use.
+
+In order to attach the "B+" wire lead, we need to scrape-off some of the solder mask, exposing the copper beneath:
+
 ![1.2V Solar Battery Lights - Scrape off battery positive solder mask](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-03-battery-positive-solder-mask-scraped-off-IMG_0140-20240322.JPG)
+
+Once the "B+" copper is exposed, we "pre-tin" by adding a generous solder ball to the copper, to make connecting the positive wire quick and easy:
 
 ![1.2V Solar Battery Lights - Add solder ball to battery positive](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-04-battery-positive-solder-ball-added-IMG_0141-20240322.JPG)
 
+We "pre-tin" the battery wires and easily attach them to the "B+" and "B-" solder pads.
+
+N.B.: we will follow the same standard as the prior solar battery enclosure, where the wire with the white ink dots is the positive lead.
+
 ![1.2V Solar Battery Lights - Battery positive and negative wire attached](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-05-battery-positive-negative-wire-attached-IMG_0142-20240322.JPG)
+
+This shows where the battery wires will exit the enclosure - out the same path which would have been the string of LED lights:
 
 ![1.2V Solar Battery Lights - Battery wire out enclosure](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-06-battery-wire-out-enclosure-IMG_0143-20240322.JPG)
 
+We can include a knot in the battery wire as a strain relief, so during mounting and assembly the wire does not pull from the solder pads if the wire is temporarily under strain.
+
+N.B.: After trial and error, the enclosure closes better by tying the knot in the reverse direction from the picture below ... it just fits better.  Instead of the battery wire extending over itself in a clockwise direction (from a reference point of outside the enclosure looking in), it fits better by extending under itself in a counter-clockwise direction.  This seems to place more of the mass of the wire knot deeper into the bottom of the enclosure case where there is room ... the top of the enclosure case has an extending flange which will press against the top of the wire, and the wire needs to be quite flush to the top of the strain relief cavity.  Future pictures will depict the preferred battery wire knot direction.
+
 ![1.2V Solar Battery Lights - Battery wire knot out enclosure](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-07-battery-wire-knot-out-enclosure-IMG_0144-20240322.JPG)
+
+Now that all the soldering should be completed, before closing the solar battery enclosure, let's perform some checkout of the electrical signals.
+
+Here is the oscilloscope output with no LED string connected to the "L1" and "L2" solder pads, with output waveform providing a little over 8 volts peak-to-peak signal.
+
+N.B.: I cycled through the flashing patterns to select the "full-on" pattern vs. one of the fade/flash/flicker patterns.
 
 ![1.2V Solar Battery Lights - Oscilloscope no LEDs 8 Vpkpk](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-08-oscilloscope-leds-disconnected-8-volts-peak-to-peak-IMG_0145-20240323.JPG)
 
+Here is the oscilloscope output with yes the LED string connected to the "L1" and "L2" solder pads, with output waveform providing a little over 5 volts peak-to-peak signal.
+
 ![1.2V Solar Battery Lights - Oscilloscope yes LEDs 5 Vpkpk](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-09-oscilloscope-leds-connected-5-volts-peak-to-peak-IMG_0147-20240322.JPG)
+
+
+And now we re-enter the realm of "angels in the details" ...
+
+In the new solar battery lights instructions, it says that the Power On/Off button must be "on" in order for the solar cells to actually charge the battery.
+
+The instruction say to completely cover the solar cell, so no light can hit it, and then press the Power On/Off button until the LED string turns on.  This confirms now that the solar cell will charge the battery.
+
+Now we have a conundrum: we've removed the LED string, as it's not needed in this "solar charging battery power supply" configuration, so now we have no way to ensure the Power On/Off button is "on".
+
+We can initially turn the button "on" but how do we know in the course of installation, we did not accidentally hit the Power On/Off button and accidentally turn it "off"?
+
+And we'll have at least three, most-likely four, solar battery units in series, so now we have four times the chances of accidental reset of the button to "off".
+
+The answer is semi-obvious: we need a way to add a power "on" indicator to the architecture, attached to the "L1" and "L2" solder pads (plus a series current limiting resistor ... for 5 - 8 volts, a 1K Ohm resistor should suffice.)
+
+The power "on" indicator (LED) would penetrate the enclosure and give us the same visual confirm
+
+An important detail, looking at the oscilloscope waveforms above, is that it is a "push-pull" signal, resulting in a square wave of equal voltage of 5 to 8 volts above and below common-ground.
+
+Because of this, we cannot use just a single LED (and current-limiting resistor) ... it will work/survive the positive voltage but when the square wave reverses, the negative voltage will damage/destroy the LED ... perhaps not instantly, but most-likely over time.
+
+We could attach an inverted bypass diode parallel to the LED, anodes to cathodes, and that would protect the LED from the reverse voltage polarity.  
+
+That would also result in 50% power loss/waste when positive current is flowing through the bypass diode ... and 50% power loss/waste is always an anti-pattern in battery powered solutions.
+
+Instead of an inverted bypass parallel diode, we could instead use a second LED, but then do we just expose one of the two LEDs by penetrating only one of them through the enclosure, which is essentially back to 50% loss/waste since the second LED will not be exposed but rather remain internal to the enclosure.  Or do we drill two holes in the enclosure, and double the likelihood of mosture and water entering the enclosure?
+
+Though not the easiest to find, there are specialized 2-pin LEDs which, as a single encapsulated unit, are configured as inverted parallel LEDs with anodes to cathodes.  If power is applied in one direction we get red illumination, and with power applied in the reverse direction we get green illumination.  Specialized electronics dealers offer a range of color options, but on Amazon I was (thankfully) able to find one device in the red-green color combination:
 
 ![1.2V Solar Battery Lights - 2-Pin bidirectional red green LED 1](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2-pin-polar-bidirectional-red-green-led-amazon-01-20240323.png)
 
 ![1.2V Solar Battery Lights - 2-Pin bidirectional red green LED 2](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2-pin-polar-bidirectional-red-green-led-amazon-02-20240323.png)
 
+To try to address the concern of mosture and water entering the enclosure, I also purchased small o-rings, to add around the LED once penetrating the enclosure.  As the LEDs are 3.0 mm in diameter, I purchased 1.5 mm inside diameter o-rings, so there would be some stretch/tension on the LED to keep the o-ring in place.
+
+N.B.: Unfortunately, it turned out that there was very little of the body of the LED extending through the enclosure hole, not enough to properly "seat" the o-ring around the LED and not fall off.  For now we will rely on a close-tolerance fit of the enclosure 3 mm hole and the 3 mm LED.  When the enclosure is mounted on it's bracket and solar cell directed towards the sun, the hole is on the underside of the enclosure, limiting the likelihood of water/rain flowing directly into the enclosure through the hole.  But if this becomes a problem, a small dab of clear silicon caulk may be placed around the LED to close any gap between the hole and LED, and seal the enclosure.
+
 ![1.2V Solar Battery Lights - O-Ring for bidirectional red green LED - Did not actually work](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2.5-mm-inside-diameter-o-ring-for-3-mm-led-amazon-01-20240323.png)
+
+As mentioned above, if we use only three solar battery units in series, even with a highest-voltage case of 1.5 volts, that would still only be 4.5 volts total, which equals the 4.5 volts for the back yard lighting using three "AA" 1.5 volt disposable batteries.  So in this case there is no need for an over-voltage protection circuit.
+
+However, using three solar battery units in series at 1.2 volts nominal will be 3.6 volts, which is rather low.  And as the batteries deplete during the 6-hour LED "on" timer cycle, the total voltage will further drop, potentially to below the drop-out voltage of the back yard lighting controllers, resulting in having to restart and reset the lighting each evening.
+
+Therefore we will accept the fact that we need four solar battery units in series and incorporate a refactor of the over-voltage protection circuit as exists today for the 4.2 volt Li-Ion solar battery units.
+
+To refactor the existing over-voltage protection circuit, we will remove all active and passive components installed via socket pins.
+
+We will then de-solder the terminal blocks used to connect the three 4.2 volt Li-Ion solar batteries.
+
+Going forward, input power will be via separate "sub-assembly boards" sized to not exceed the open space on the main board, and consist of either:
+- The original three terminal blocks plus Schottky diodes and (optionally but selected) 1 Ohm resistors, wired in parallel
+- New four terminal blocks wired in series - due to real estate limitations using an available PCB, fitting a 1 Ohm resistor to the board was problematic, and is less valuable in a series configuration vs. a parallel configuration (where there is value in understanding how much power each of the parallel power supplies is contributing)
+
+Finally we will add a terminal block to receive the input power from the output of the sub-assembly board.
 
 ![Over-voltage protection circuit - Repurposed 1](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-10-over-voltage-protection-circuit-repurposed-01-IMG_0148-20240325.JPG)
 
