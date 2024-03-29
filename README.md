@@ -896,9 +896,15 @@ Finally we will add a terminal block to receive the input power from the output 
 
 N.B.: Though originally an oversight, there is no significant need for capacitor(s) across the new terminal block to receive the input power from the output of the sub-assembly board.  Battery power sources tend to be very "quiet" from an electrical "noise" perspective, and the wire leads from sub-assembly board to terminal block are quite short and 22 AWG (silicon) stranded wire, which is significantly over-sized for the amount of current which will be carried over these wires.
 
+Here is the over-voltage protection circuit refactored, with all socketed active and passive components removed:
+
 ![Over-voltage protection circuit - Repurposed 1](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-10-over-voltage-protection-circuit-repurposed-01-IMG_0148-20240325.JPG)
 
+Here is the over-voltage protection circuit refactored, with all socketed active and passive components reinstalled:
+
 ![Over-voltage protection circuit - Repurposed 2](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-11-over-voltage-protection-circuit-repurposed-02-IMG_0151-20240325.JPG)
+
+Here is the over-voltage protection circuit refactored, with all socketed active and passive components reinstalled, plus the four-in-series terminal blocks sub-assembly board for the new 1.2 volt Ni-MH solar batteries, prior to adding the insulating electrical tape to the bottom of the sub-assembly board:
 
 ![Over-voltage protection circuit - Repurposed 3](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-12-over-voltage-protection-circuit-repurposed-03-IMG_0155-20240325.JPG)
 
