@@ -803,9 +803,9 @@ It should be noted that some quick math suggests that the back yard lights shoul
 
 ![1.2V Solar Battery Lights - Oscilloscope yes LEDs 5 Vpkpk](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-09-oscilloscope-leds-connected-5-volts-peak-to-peak-IMG_0147-20240322.JPG)
 
-![1.2V Solar Battery Lights - 2-Pin bidirectional red green LED 1](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2-pin-polar-bidirectional-red-green-led-amazon-02-20240323.png)
+![1.2V Solar Battery Lights - 2-Pin bidirectional red green LED 1](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2-pin-polar-bidirectional-red-green-led-amazon-01-20240323.png)
 
-![1.2V Solar Battery Lights - 2-Pin bidirectional red green LED 2](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2-pin-polar-bidirectional-red-green-led-amazon-01-20240323.png)
+![1.2V Solar Battery Lights - 2-Pin bidirectional red green LED 2](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2-pin-polar-bidirectional-red-green-led-amazon-02-20240323.png)
 
 ![1.2V Solar Battery Lights - O-Ring for bidirectional red green LED - Did not actually work](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--2.5-mm-inside-diameter-o-ring-for-3-mm-led-amazon-01-20240323.png)
 
