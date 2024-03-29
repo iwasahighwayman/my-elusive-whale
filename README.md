@@ -712,10 +712,31 @@ Now let's construct a complete over-voltage protection circuit:
 
 ![Over-voltage protection circuit - circuit board view 2](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0255-circuit-02-20221127.JPG)
 
-
 # "Spring 2024 Has Arrived!" Updates
 
+It's been a few months since my last update.
 
+Overall the performance of the lighting system has worked flawlessly.
+
+One thing discovered, as always, somewhat by accident: under just the right (or wrong) sunlight levels, the TL431 would "partially" turn on the 2N2907 PNP transistor, resulting in a small but measurable steady-state current to continuously flow through the transistor and the relay coil, until the sunlight intensity either increased (turning the transistor and relay full-on) or decreased (turning the transistor and relay full-off).  I only noticed this due to coincidentally checking the system and hearing the relay coil "chattering" open and closed.  This will most-likely eventually lead to failure of the PNP transistor, relay or both.
+
+In electrical engineering terms, the circuit needed _hysteresis_ added to it.
+
+Meaning, once the threshold to transition state from either off to on, or on to off, it will take a larger corresponding swing of input to reverse the state.
+
+As shown in the schematic next, by adding a large resistor from the output (collector) of the PNP transistor feeding voltage back to the TL431 reference input, we achieve hysteresis.
+
+When the Vps voltage crosses the threshold for the measured TL431 reference voltage to turn "on" the PNP transistor (by the TL431's cathode becoming a logical current "sink" or "short" to ground), the feedback resistor attached to the PNP collector "lifts" the measured TL431 input reference voltage even higher.  This means that, for the TL431 to reverse state back to "off", the actual value of Vps needs to fall even lower below the level which would normally turn the TL431 "off" absent the hysteresis resistor.
+
+Correspondingly, once the TL431 turns "off" the PNP transistor (by the TL431's cathode becoming a logical current "open circuit"), now there is a "pull down" resistive effect composed of the hysteresis resistor in series with the combination of the LED and resistor parallel to the relay coil, in parallel with the relay coil itself.  The relay coil resistance (hundreds of Ohms) will logically dominate to appear to be a logical zero ohm "short" to ground, when compared to the other resistor values in play here.  This means that, for the TL431 to reverse state back to "on", the actual value of Vps needs to rise even higher above the level above which would normally turn the TL431 "on" absent the hysteresis resistor.
+
+The hysteresis resistor values are very much determined by trial and error, and each circuit with it's many tolerances will set the resistance need to achieve the desired Vps hysteresis.
+
+For example, a 1M Ohm hysteresis resistor was working well for months, when for unknown reasons, one day the installed TL431 failed.  After replacing the failed TL431 with a working device, the hysteresis resistor of 1M Ohm no longer provided much hysteresis, as during testing, there was a small sunlight intensity window with relay coil "chatter".  Replacing the hysteresis resistor with a 100K Ohm value resulted in the desired hysteresis.
+
+It is therefore best to not directly solder the hysteresis resistor into the circuit, but rather install socket pins, so the hysteresis resistor may be easily changed with different values, should components fail and need to be replaced again in the future, or other conditions such as temperature change the results.
+
+Here is the most current over-voltage protection circuit:
 
 ![Updated over-voltage protection circuit - with hysteresis feedback](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-schematic-tjbatterydiodeovervoltageprotect4-20240320_174500.png)
 
