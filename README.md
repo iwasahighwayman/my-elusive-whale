@@ -736,7 +736,7 @@ For example, a 1M Ohm hysteresis resistor was working well for months, when for 
 
 It is therefore best to not directly solder the hysteresis resistor into the circuit, but rather install socket pins, so the hysteresis resistor may be easily changed with different values, should components fail and need to be replaced again in the future, or other conditions such as temperature change the results.
 
-The prior schematic and implementation also erroneously ommitted the reverse voltage protection diode in parallel with the PNP transistor, so that has been corrected.
+The prior schematic and implementation also erroneously omitted the reverse voltage protection diode in parallel with the PNP transistor, so that has been corrected.
 
 Here is the most current over-voltage protection circuit:
 
