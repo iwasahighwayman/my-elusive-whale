@@ -908,42 +908,76 @@ Here is the over-voltage protection circuit refactored, with all socketed active
 
 ![Over-voltage protection circuit - Repurposed 3](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-12-over-voltage-protection-circuit-repurposed-03-IMG_0155-20240325.JPG)
 
+Here is a view of the bottom of the main over-voltage protection board:
+
 ![Over-voltage protection circuit - Repurposed 4](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-13-over-voltage-protection-circuit-repurposed-04-IMG_0149-20240325.JPG)
+
+Here is a couple more images of the populated over-voltage protection board, with the second image having the LED temporarily removed from the socket so the label on the PNP transistor is legible:
 
 ![Over-voltage protection circuit - Repurposed 5](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-14-over-voltage-protection-circuit-repurposed-05-IMG_0152-20240325.JPG)
 
 ![Over-voltage protection circuit - Repurposed 6](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-15-over-voltage-protection-circuit-repurposed-06-IMG_0154-20240325.JPG)
 
+The completed over-voltage protection device, including the four in-series solar-battery input terminal blocks sub-assembly installed:
+
 ![Over-voltage protection circuit - Repurposed 7](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-16-over-voltage-protection-circuit-repurposed-07-IMG_0156-20240325.JPG)
+
+The bottom of the four in-series solar-battery input terminal blocks sub-assembly, showing the electrical tape insulation to ensure the solder pads of the main over-voltage protection board does not cause a short circuit for any of the solar-battery units:
 
 ![Over-voltage protection circuit - Repurposed 8](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-25-over-voltage-protection-circuit-repurposed-08-IMG_0175-20240326.JPG)
 
+Next, it's time to create our power-on bidirectional LED indicator.
+
+First, solder a bidirectional LED and 1K Ohm resistor in series, and then bend the LED leads just below the solder-mounting bulges in the leads at 90 degrees, which is approximately the correct height for the LED to protrude throught the solar-battery enclosure hole which will be drilled shortly:
+
 ![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-18-power-on-off-polar-bidirectional-led-plus-1k-resistor-IMG_0160-20240325.JPG)
+
+Here are the lengths of the silicon 22 AWG wires which will result in a comforable fit within the solar-battery enclosure when assembled:
 
 ![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor wire lengths](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-21-power-on-off-polar-bidirectional-led-plus-1k-resistor-wire-lengths-IMG_0165-20240325.JPG)
 
+Here is the power-on bidirectional LED indicator fully-assembled with the wires:
+
 ![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor wire assembly with lengths](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-22-power-on-off-polar-bidirectional-led-plus-1k-resistor-wire-assembly-with-lengths-IMG_0166-20240325.JPG)
+
+Here is the power-on bidirectional LED indicator with wires attached to the "L1" and "L2" solder pads:
+
+N.B.: This is actually an older picture, prior to determining that the blue wire needs to be approximately an inch longer than the yellow wire to provide a comfortable fit in the completed solar-battery enclosure - the subsequent picture shows the current wire lengths and locations.
 
 ![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor wire assembly attached to PCB](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-19-power-on-off-polar-bidirectional-led-plus-1k-resistor-attached-to-pcb-IMG_0163-20240325.JPG)
 
+Here is the power-on bidirectional LED indicator fully-installed.  The bidirectional LED will actually reside in the middle of the three "AA" battery locations, inserted through the 3 MM hole will in the enclosre which will be added momentarily:
+
 ![1.2V Solar Battery Lights - Electronic modifications completed - single device](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-23-completed-electronic-modifications-single-device-IMG_0168-20240325.JPG)
+
+Here are all four of the modified solar-battery devices, awaiting to be wired in-series to the over-voltage protection circuit and associated waterproof enclosure:
 
 ![1.2V Solar Battery Lights - Electronic modifications completed - all four devices](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-24-completed-electronic-modifications-all-four-devices-IMG_0169-20240325.JPG)
 
+Here is the power-on bidirectional LED indicator fully-installed, with a small piece of clear tape holding the bidirectional LED where it will actually reside in the middle of the three "AA" battery locations, inserted through the 3 MM hole will in the enclosre which will be added momentarily.  We can see now why the wires are measured to the lengths identified above - they fit comfortably in the enclosure with the necessary wire bends:
+
 ![1.2V Solar Battery Lights - Power on-off bidirectional LED plus 1K resistor wire assembly fitted to case hole](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-20-power-on-off-polar-bidirectional-led-plus-1k-resistor-fitted-to-case-hole-IMG_0164-20240325.JPG)
+
+For completeness: here is the in-parallel 4.2 volt Li-Ion sub-assembly board, including the Schottky diodes and 1 Ohm resistors:
 
 ![Over-voltage protection circuit - 4.2V Li-Ion hookup refactored 1](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0170-20240326.JPG)
 
+Here is the bottom-side of the in-parallel 4.2 volt Li-Ion sub-assembly board, insulated using a couple layers of electrical tape:
+
 ![Over-voltage protection circuit - 4.2V Li-Ion hookup refactored 2](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0172-20240326.JPG)
+
+Here are a couple images of the in-parallel 4.2 volt Li-Ion sub-assembly board installed with the over-voltage protection circuit assembly:
 
 ![Over-voltage protection circuit - 4.2V Li-Ion hookup refactored 3](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0173-20240326.JPG)
 
 ![Over-voltage protection circuit - 4.2V Li-Ion hookup refactored 4](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0174-20240326.JPG)
 
+Here are the measurements for drilling the 3 MM hole for the power-on bi-direction LED to be exposed through the bottom of the solar-battery enclosure.  As always: measure twice (or even thrice!) before drill/cut:
+
 ![1.2V Solar Battery Lights - Case hole for power on-off bidirectional LED](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-17-case-hole-for-power-on-off-polar-bidirectional-led-IMG_0158-20240325.JPG)
+
+Here is the completed solar-battery assembly, with the power-on bidirectional LED illuminated due to a fully-charged battery and solar cells face-down so device appears to be "in the darkness" thus unit turns "on":
 
 ![1.2V Solar Battery Lights - Solar cell updates completed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-26-solar-cell-updates-completed-IMG_0176-20240326.JPG)
 
-
-
-
+THE END.
