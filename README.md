@@ -980,4 +980,47 @@ Here is the completed solar-battery assembly, with the power-on bidirectional LE
 
 ![1.2V Solar Battery Lights - Solar cell updates completed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-26-solar-cell-updates-completed-IMG_0176-20240326.JPG)
 
+# "New and improved overvoltage protection" Updates
+
+The new 1.2 volt Ni-MH solar batteries do not appear to hold their voltage as long as the 4.2 volt Li-Ion devices did.  It could be the electronics are not as power-efficient.
+
+As a result, using the relay-based over-voltage protection circuit, the Ni-MH batteries were depleted by morning, and that afternoon the back yard LEDs had to be re-started ... this will grow old if necessary every day we want backyard LED lighting.
+
+Under completely clear, blue skies and bright sun mid-afternoon, the highest voltage observed at the backyard LED controllers was approximately 6.2 volts.
+
+![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 ti tl431 series regulator schematic](/images/analog-TL431-Precision-High-Current-Series-Regulator-01-TI-datasheet-20240414.png)
+
+![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 bristolwatch youtube series regulator schematic](/images/analog-TL431-Precision-High-Current-Series-Regulator-02-Explained-www.youtube.com--watch--v_R6tbsSQ7J8Q-20240414.png)
+
+![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 schematic](/images/tjbatterydiodeovervoltageprotect5-schematic-20240415_180800.png)
+
+![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 pcb top view](/images/tjbatterydiodeovervoltageprotect5-pcb-top-view-20240415_182100.png)
+
+![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 pcb bottom view mirrored](/images/tjbatterydiodeovervoltageprotect5-pcb-bottom-view-mirrored-20240415_181600.png)
+
+Here is the resultant output darlington emitter voltage for a given input battery voltage - the potentiometer has been adjusted to clamp the output voltage to 4.5 volts maximum:
+
+![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 breadboard](/images/tjbatterydiodeovervoltageprotect5-breadboard-IMG_0177-20240429.jpeg)
+
+# "Damn the torpedos ... FULL SPEED AHEAD !!!" Updates
+
+![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0179-20240429.jpeg)
+
+![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0180-20240429.jpeg)
+
+![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0181-20240429.jpeg)
+
+![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0182-20240429.jpeg)
+
+![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0184-20240429.jpeg)
+
+![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0185-20240429.jpeg)
+
+![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0186-20240429.jpeg)
+
+
+
+
+
+
 THE END.
