@@ -206,9 +206,9 @@ So now if instead I configure the solar cell batteries to be in series, I can el
 
 The resultant 4.1 x 2 or 8.2 Volt power supply was then bucked down to 4.5 Volts, and the experiments were repeated.
 
-After a few rounds of "charge all day" then "drain all night" over the course of a week or so, the single spare backyard LED lighting unit consuming 100 mA would operate at 4.5 Volts for 21 or 22 hours.
+After a few rounds of "charge all day" then "drain all night" over the course of a week or so, the single spare back yard LED lighting unit consuming 100 mA would operate at 4.5 Volts for 21 or 22 hours.
 
-So when dividing that time window by three, for the three actual backyard LED lighting units running for six hours, the solar cell batteries should still have some charge remaining the next morning.
+So when dividing that time window by three, for the three actual back yard LED lighting units running for six hours, the solar cell batteries should still have some charge remaining the next morning.
 
 # Iteration #2C: Electrical transmission lines
 
@@ -972,7 +972,7 @@ Here are a couple images of the in-parallel 4.2 volt Li-Ion sub-assembly board i
 
 ![Over-voltage protection circuit - 4.2V Li-Ion hookup refactored 4](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-IMG_0174-20240326.JPG)
 
-Here are the measurements for drilling the 3 MM hole for the power-on bi-direction LED to be exposed through the bottom of the solar-battery enclosure.  As always: measure twice (or even thrice!) before drill/cut:
+Here are the measurements for drilling the 3 MM hole for the power-on bidirectional LED to be exposed through the bottom of the solar-battery enclosure.  As always: measure twice (or even thrice!) before drill/cut:
 
 ![1.2V Solar Battery Lights - Case hole for power on-off bidirectional LED](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-17-case-hole-for-power-on-off-polar-bidirectional-led-IMG_0158-20240325.JPG)
 
@@ -980,13 +980,17 @@ Here is the completed solar-battery assembly, with the power-on bidirectional LE
 
 ![1.2V Solar Battery Lights - Solar cell updates completed](/images/analog-solar-lights-1.2V-1800mAH-ni-mh-aa--hacking-26-solar-cell-updates-completed-IMG_0176-20240326.JPG)
 
+N.B.: After installing the solar-battery assemblies outside, in the bright sun, placing my hand, or even my hand plus a thick, heavy rag, over the solar cells did not result in the red-green bidirectional power-on LED indicator to turn on.  It is almost as if the solar cells were receiving energy, perhaps in the infra-red or ultra-violet spectrum, through my hand.  I did however discover that if i covered the solar cells with a 4x thick sheet of aluminum foil, that would block energy to the solar cells and the red-green bidirectional power-on LED indicators would illuminate, allowing me to confirm that the power-on button was engaged and the sun and solar cells were indeed charging the Ni-MH batteries.
+
 # "New and improved overvoltage protection" Updates
 
-The new 1.2 volt Ni-MH solar batteries do not appear to hold their voltage as long as the 4.2 volt Li-Ion devices did.  It could be the electronics are not as power-efficient.
+The new 1.2 volt Ni-MH solar batteries do not appear to hold their voltage as long as the 4.2 volt Li-Ion devices did.
 
-As a result, using the relay-based over-voltage protection circuit, the Ni-MH batteries were depleted by morning, and that afternoon the back yard LEDs had to be re-started ... this will grow old if necessary every day we want backyard LED lighting.
+It could be the electronics in the Ni-MH devices are not as power-efficient as the Li-Ion devices, given that the Ni-HM devices actually have a higher Amp-Hour power rating of 1800 mAH vs Li-Ion devices power rating of 1200 mAH.
 
-Under completely clear, blue skies and bright sun mid-afternoon, the highest voltage observed at the backyard LED controllers was approximately 6.2 volts.
+As a result, using the relay-based over-voltage protection circuit, the Ni-MH batteries were depleted by morning, and that afternoon the back yard LEDs had to be re-started ... this will grow old if necessary every day we want back yard LED lighting.
+
+Under completely clear, blue skies and bright sun mid-afternoon, the highest voltage observed at the back yard LED controllers was approximately 6.2 volts.
 
 ![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 ti tl431 series regulator schematic](/images/analog-TL431-Precision-High-Current-Series-Regulator-01-TI-datasheet-20240414.png)
 
@@ -1002,7 +1006,30 @@ Here is the resultant output darlington emitter voltage for a given input batter
 
 ![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 breadboard](/images/tjbatterydiodeovervoltageprotect5-breadboard-IMG_0177-20240429.jpeg)
 
-# "Damn the torpedos ... FULL SPEED AHEAD !!!" Updates
+# "Damn the Torpedoes ... FULL SPEED AHEAD !!!" Updates
+
+As shared above: under completely clear, blue skies and bright sun mid-afternoon, the highest voltage observed at the back yard LED controllers was approximately 6.2 volts.
+
+This begs the question: how high can the voltage to the back yard LED controllers go until they fail or otherwise cease working?
+
+In anticipation of turning at least a couple of the spare back yard LED controllers into "smoking holes in the ground", i purchased a few spares from Amazon.
+
+I experienced a few unexpecte surprises during this experimentation:  
+- The back yard LED controllers can sustain a much higher voltage than anticipated  
+- There appears to potentially be a built-in over-voltage protection in the back yard LED controllers, whereby they recover by removing the voltage supply momentarily  
+
+As depicted below:
+- A 4.5 volt supply was applied to a step-up / boost voltage converter, which can increase output voltage to the back yard LED controller from 2 to 24 volts  
+- The back yard LED controller could sustain 8.11 volts - the LEDs glowed remarkably bright!  
+- At approximately 8.58 volts, the back yard LED controller turned off the LEDs  
+  - I did not attempt to probe the controller to see if other components were continuing to operate, or if the entire controller board shut-off / shut-down
+- The voltage to the back yard LED controller was lowered to 7.05 volts but the LEDs remained shut-off / shut-down  
+- I momentarily removed then re-attached power to the back yard LED controller, which now again operational, slightly pulled-down the voltage to 7.02 volts due to current running through the controller and now also the string of LEDs  
+- The over-voltage process was repeated more slowly  
+  - The voltage to the back yard LED controller was increased to 8.58 volts and the LEDs remained illuminated  
+  - At 8.63 volts, the LEDs again turned off  
+
+Here are some images of this experimentation:
 
 ![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0179-20240429.jpeg)
 
@@ -1016,11 +1043,21 @@ Here is the resultant output darlington emitter voltage for a given input batter
 
 ![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0185-20240429.jpeg)
 
+I neglected to test if, rather than temporarily removing then re-attaching power to the back yard LED controllers, if significantly lowering the voltage would result in the controller and LEDs to recover, or if power truly had to be momentarily removed (e.g.: due to some sort of latching flip-flop over-voltage protection mechanism.)
+
+Another experiment at a future date ...
+
+Here is an image of the notes captured during the various recent experiments:
+- Top-Left: Experiments from testing the non-relay, new and improved over-voltage protection circuit.  We can see that the back yard LED controller ceases to operate when the input voltage is 2.5 volts or lower, and with the potentiometer set to approximately 50%, the TL-431 IC plus BC-517 NPN Darlington transistor would begin clamping the output voltage to 4.5 volts at approximately 6.0 volts input, with nominal 4.8 input volts producing 3.7 volts of output at the Darlington emitter.  
+- Top-Center: Experiments from over-voltage testing the back yard LED controller with no over-voltage protections.  
+- Lower-Left: I learned the value of keeping a "Maintenance Record" in the waterproof enclosures outside, so notes can be captured when components fail and must be replaced, or unexpected situations occur.  
+- Lower-Center and Lower-Right: Notes captured while experimenting with initial installation, monitoring:  
+  - The red-green bidirectional power-on LED indicators come morning, after the back yard controller and LEDs ran for their cycle and the solar-battery circuit continued to run through the night
+  - Whether or not the back yard LED controller and LEDs would successfully illuminate that evening  
+
+Here is the image of the experimental notes:
+
 ![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0186-20240429.jpeg)
-
-
-
-
 
 
 THE END.
