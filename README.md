@@ -1014,7 +1014,7 @@ This begs the question: how high can the voltage to the back yard LED controller
 
 In anticipation of turning at least a couple of the spare back yard LED controllers into "smoking holes in the ground", i purchased a few spares from Amazon.
 
-I experienced a few unexpecte surprises during this experimentation:  
+I experienced a few unexpected surprises during this experimentation:  
 - The back yard LED controllers can sustain a much higher voltage than anticipated  
 - There appears to potentially be a built-in over-voltage protection in the back yard LED controllers, whereby they recover by removing the voltage supply momentarily  
 
@@ -1058,6 +1058,26 @@ Here is an image of the notes captured during the various recent experiments:
 Here is the image of the experimental notes:
 
 ![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0186-20240429.jpeg)
+
+# "Memorial Day Holiday 2024" Updates
+
+One concern which has been nagging at me since researching the signal inverter and "push-pull" or "H-Bridge" LED driver circuit during the "Iteration #4: Just can't leave it alone ..." section above: component tolerances may result in the inverter's two output signals both being on/high for a nano-second, resulting in both sides of the "push-pull" or "H-Bridge" LED driver circuit being on momentarily.
+
+The result here would be essentially short-circuiting the battery power supply.
+
+To be honest, the following circuit which eliminates this momentary short-circuit situation is probably consuming slightly more current than just allowing the short-circuit to occur.  However, under low battery situations, the short-circuit may be enought to zero the voltage and cause the LED controller to restart.
+
+Here are some images of this experimentation:
+
+![Delayed Inverter Schematic](/images/tjinverterdelayed1-schematic-20240527_102700.png)
+
+![Delayed Inverter Breadboard and Oscilloscope 01](/images/tjinverterdelayed1-01-IMG_0509-20240527.jpeg)
+
+![Delayed Inverter Breadboard and Oscilloscope 02](/images/tjinverterdelayed1-02-IMG_0510-20240527.jpeg)
+
+![Delayed Inverter Breadboard and Oscilloscope 03](/images/tjinverterdelayed1-03-IMG_0511-20240527.jpeg)
+
+![Delayed Inverter Breadboard and Oscilloscope 04](/images/tjinverterdelayed1-04-IMG_0512-20240527.jpeg)
 
 
 THE END.
