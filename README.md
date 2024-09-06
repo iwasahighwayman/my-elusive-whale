@@ -1079,5 +1079,24 @@ Here are some images of this experimentation:
 
 ![Delayed Inverter Breadboard and Oscilloscope 04](/images/tjinverterdelayed1-04-IMG_0512-20240527.jpeg)
 
+# "Why didn't I try this sooner - September 2024" Updates
+
+Not really certain of what made me think of trying this, but glad I did.
+
+Out of the blue, I wondered: How many LED strings could one LED controller drive?
+
+The problem was that occassionally, one of the three LED controllers would glitch, most-likely due to a too-low-voltage situation, resulting in that one associated string of LEDs would either not be illuminated, or may be illuminated with one of the "flickering" sequence, versus desired steady-on.
+
+I would have to go outside, open up the waterproof case, try to remember which of the three LED controllers was associated with the misbehaving LED string, invariably choose the wrong LED controller, and end up just resetting all three LED controllers/strings.
+
+If a single LED controller could drive all three LED strings, then there may still be glitches, but there would be only a single LED controller to reset.
+
+This would also have the positive effect of one-third of the quiescent current used since two of the three LED controllers are no longer in the architecture, potentially (slightly) reducing the likelihood of glitches due to too-low-voltage situations.
+
+Turns out, a single LED controller can drive three LED strings with only a 10% reduction in LED voltage peak-to-peak.
+
+Here is an images of this experimentation:
+
+![Delayed Inverter Schematic](/images/analog-single-koopower-led-controller-drives-three-led-strings-IMG_0215-20240906.JPG)
 
 THE END.
