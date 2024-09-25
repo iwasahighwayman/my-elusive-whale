@@ -1101,7 +1101,13 @@ Here is an images of this experimentation:
 
 # "Autumnal Equinox 2024" Updates
 
-Wanted to take a closer look at the LED controller board operation, primarily around the question of whether the controller's LED drivers have delayed Push-Pull/H-Bridge signals so no momentary short-circuit of the power rails.
+Have had the single LED controller board driving three (3) LED strings in parallel with generally good results for a month or so now.
+
+One observation is that the LED string furthest away (physically and electrically) from the LED controller board is definitely visibly dimmer than the other two LED strings, due to the relatively long distance of small AWG wire spanning the horizontal distance to the far vertical column on which the LED string resides.
+
+Also, wanted to understand what options might look like to decouple the LED controller board's compute/timing functionality and power supply, from the LED string illumination functionality and power supply.
+
+Finally, wanted to take a closer look at the LED controller board operation, primarily around the question of whether the controller's LED drivers have delayed Push-Pull/H-Bridge signals so no momentary short-circuit of the power rails.
 
 Based on the research, the good news is both the large and small LED controller PCBs' Push-Pull/H-Bridge signals do (yes) have delayed signals so no momentary short-circuit of the power rails.
 
@@ -1157,7 +1163,9 @@ Note also the same asymmetric LED drive signals.
 
 ![xxx](/images/analog-koopower-small-green-led-controller-pcb-oscilloscope-04-IMG_0555-20240915.JPG)
 
+So ... this research shows that the LED controller PCBs and firmware are well-designed with delayed internal Push-Pull/H-Bridge signals so no momentary short-circuit of the power rails, and although the LED drive signals have asymmetric voltage values (which do not appear to affect the LED brilliance) we can successfully add externalized Push-Pull/H-Bridge drivers using discrete transistors and other components.
 
+And this is where the research brings us to the classic "We can, but should we?" question.
 
 ![xxx](/images/analog-awg-american-wire-gauges-resistance-grid-table-01-20240918.png)
 
