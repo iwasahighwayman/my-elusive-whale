@@ -1099,4 +1099,51 @@ Here is an images of this experimentation:
 
 ![Delayed Inverter Schematic](/images/analog-single-koopower-led-controller-drives-three-led-strings-IMG_0215-20240906.JPG)
 
+# "Autumnal Equinox 2024" Updates
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-01-IMG_0548-20240915.JPG)
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-05-10-ohm-current-no-pnp-npn-hbridge-IMG_0556-20240916.JPG)
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-06-10-ohm-current-no-pnp-npn-hbridge-IMG_0559-20240916.JPG)
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-13-no-pnp-npn-hbridge-voltage-IMG_0566-20240916.JPG)
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-07-10-ohm-current-10k-1k-1k-pnp-npn-hbridge-IMG_0560-20240916.JPG)
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-08-10-ohm-current-10k-1k-1k-pnp-npn-hbridge-IMG_0561-20240916.JPG)
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-12-10k-1k-1k-pnp-npn-hbridge-voltage-IMG_0565-20240916.JPG)
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-09-10-ohm-current-100k-10k-10k-pnp-npn-hbridge-IMG_0562-20240916.JPG)
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-10-10-ohm-current-100k-10k-10k-pnp-npn-hbridge-IMG_0563-20240916.JPG)
+
+![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-11-100k-10k-10k-pnp-npn-hbridge-voltage-IMG_0564-20240916.JPG)
+
+
+![xxx](/images/analog-koopower-small-green-led-controller-pcb-oscilloscope-01-IMG_0552-20240915.JPG)
+
+![xxx](/images/analog-koopower-small-green-led-controller-pcb-oscilloscope-02-IMG_0553-20240915.JPG)
+
+![xxx](/images/analog-koopower-small-green-led-controller-pcb-oscilloscope-03-IMG_0554-20240915.JPG)
+
+![xxx](/images/analog-koopower-small-green-led-controller-pcb-oscilloscope-04-IMG_0555-20240915.JPG)
+
+
+![xxx](/images/analog-tjpushpulldriver5-schematic-02-20240925.png)
+
+![xxx](/images/analog-tjpushpulldriver5-pcb-top-color-02-20240925.png)
+
+![xxx](/images/analog-tjpushpulldriver5-pcb-bottom-mirrored-monochrome-01-20240925.png)
+
+
+![xxx](/images/analog-awg-american-wire-gauges-resistance-grid-table-01-20240918.png)
+
+
+https://www.amazon.com/dp/B0CSJWPWDK?th=1  
+
+![xxx](/images/analog-wire-22-awg-double-silver-amazon-B0CSJWPWDK-01-20240925.png)
+
+
 THE END.
