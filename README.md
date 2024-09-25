@@ -1101,13 +1101,33 @@ Here is an images of this experimentation:
 
 # "Autumnal Equinox 2024" Updates
 
+Wanted to take a closer look at the LED controller board operation, primarily around the question of whether the controller's LED drivers have delayed Push-Pull/H-Bridge signals so no momentary short-circuit of the power rails.
+
+Based on the research, the good news is both the large and small LED controller PCBs' Push-Pull/H-Bridge signals do (yes) have delayed signals so no momentary short-circuit of the power rails.
+
+This was confirmed by inlining a 10 Ohm resistor in the power supply then measuring the voltage across the resistor.  We can see that during the delay time window where neither Push-Pull/H-Bridge signals are "on", the resistor voltage (current) drops to nearly zero.
+
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-01-IMG_0548-20240915.JPG)
 
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-05-10-ohm-current-no-pnp-npn-hbridge-IMG_0556-20240916.JPG)
 
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-06-10-ohm-current-no-pnp-npn-hbridge-IMG_0559-20240916.JPG)
 
+One discovery noted in following image: when there is load on the Push-Pull/H-Bridge signals (a single LED string) the LED drive signals are actually not symmetrically sized.  With a 5 Volt supply voltage (four (4) Ni-MH rechargeable batteries), one of the LED drive signals is 4 Volts and the other LED drive signal is 2 Volts.  Interestingly, the brightness of the LEDs seem pretty similar for both differing LED drive signals.
+
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-13-no-pnp-npn-hbridge-voltage-IMG_0566-20240916.JPG)
+
+Due to the asymmetic LED drive signals, plus the fact that there is a (small) drive voltage drop when three (3) LED strings are connected in parallel to the LED controller, I was interested in understanding how a small externalized Push-Pull/H-Bridge created from discrete PNP (SS8550) and NPN (SS8050) transistors might work.
+
+![xxx](/images/analog-tjpushpulldriver5-schematic-02-20240925.png)
+
+![xxx](/images/analog-tjpushpulldriver5-pcb-top-color-02-20240925.png)
+
+![xxx](/images/analog-tjpushpulldriver5-pcb-bottom-mirrored-monochrome-01-20240925.png)
+
+The first externalized Push-Pull/H-Bridge iteration uses 1K base resistors with a 10K pullup on the PNP transistors, so the transistors are "driven pretty hard to saturation" condition, with resultant increase in drive signals but also increase in current consumption over the LED controller's values.  
+
+Note that the drive signals are symmetric despite the input signals from the LED controller being asymmetric.  
 
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-07-10-ohm-current-10k-1k-1k-pnp-npn-hbridge-IMG_0560-20240916.JPG)
 
@@ -1115,12 +1135,19 @@ Here is an images of this experimentation:
 
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-12-10k-1k-1k-pnp-npn-hbridge-voltage-IMG_0565-20240916.JPG)
 
+The second externalized Push-Pull/H-Bridge iteration uses 10K base resistors with a 100K pullup on the PNP transistors, so the transistors are "barely driven to saturation" condition, with only a slight increase in drive signals and current consumption over the LED controller's values.
+
+Note that the drive signals are symmetric despite the input signals from the LED controller being asymmetric.  
+
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-09-10-ohm-current-100k-10k-10k-pnp-npn-hbridge-IMG_0562-20240916.JPG)
 
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-10-10-ohm-current-100k-10k-10k-pnp-npn-hbridge-IMG_0563-20240916.JPG)
 
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-11-100k-10k-10k-pnp-npn-hbridge-voltage-IMG_0564-20240916.JPG)
 
+The newer/smaller LED controllers interestingly have double-harmonic LED drive signals, whereby there is a outer-harmonic waveform alternating the high/low voltage values, and when high voltage posesses an inner-harmonic higher frequency alternating waveform.
+
+Note also the same asymmetric LED drive signals.
 
 ![xxx](/images/analog-koopower-small-green-led-controller-pcb-oscilloscope-01-IMG_0552-20240915.JPG)
 
@@ -1130,12 +1157,6 @@ Here is an images of this experimentation:
 
 ![xxx](/images/analog-koopower-small-green-led-controller-pcb-oscilloscope-04-IMG_0555-20240915.JPG)
 
-
-![xxx](/images/analog-tjpushpulldriver5-schematic-02-20240925.png)
-
-![xxx](/images/analog-tjpushpulldriver5-pcb-top-color-02-20240925.png)
-
-![xxx](/images/analog-tjpushpulldriver5-pcb-bottom-mirrored-monochrome-01-20240925.png)
 
 
 ![xxx](/images/analog-awg-american-wire-gauges-resistance-grid-table-01-20240918.png)
