@@ -1167,12 +1167,20 @@ So ... this research shows that the LED controller PCBs and firmware are well-de
 
 And this is where the research brings us to the classic "We can, but should we?" question.
 
+Again, the largest concern with placing three (3) LED strings in parallel, driven by a single LED controller board (with no externalized Push-Pull/H-Bridge drivers using discrete transistors and other components) is that the far column LED string is visibly dimmer than the other two.  This is primarily due to the relatively long run (~35 feet) of relatively thin wire.  The wire was purchased during the Covid lockdown/disruption, when supply chains world wide were challenged.  The wire must be thin/discreet for aesthetic reasons, and the best that could be done during Covid was a white 4-conductor telephone wire with no ink/printing on the outer jacket.  Unfortunately, each conductor appears to be 0.01 inch in diameter, which according to the american wire guage chart, is 30 AWG, which has 103 Ohms of resistance per 1,000 feet.  So although I have two (2) pairs of two (2) of the four (4) conductors, to result in two composite conductors, that's still a little over 50 Ohms per 1,000 feet.
+
 ![xxx](/images/analog-awg-american-wire-gauges-resistance-grid-table-01-20240918.png)
 
+Now that Covid is generally past us, and supply chains are somewhat back to normal, I was able to find double-silver 22 AWG wire at Amazon:
 
 https://www.amazon.com/dp/B0CSJWPWDK?th=1  
 
 ![xxx](/images/analog-wire-22-awg-double-silver-amazon-B0CSJWPWDK-01-20240925.png)
 
+22 AWG wire has 16 Ohms per 1,000 feet, resulting in the resistance for the relatively long run of wire to the far column being 1/3rd of the current resistance.
+
+The wire is on order coming directly from China, and just cleared US customs in NY, NY.
+
+An update will be provided once I receive the wire and install it.
 
 THE END.
