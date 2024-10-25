@@ -1183,4 +1183,36 @@ The wire is on order coming directly from China, and just cleared US customs in 
 
 An update will be provided once I receive the wire and install it.
 
+# "Join the Resistance" Updates - Late October 2024
+
+As a gentle reminder: the challenge is that the LED controller is located on the ground next to the west-side overhang column, with the east-side LED string connected to the controller over approximately 35 feet of wire.
+
+The wire was run mid-Covid, during significant supply chain disruptions.  At the time, the only wire available which met our aesthetic desires was white four (4) conductor telephone wire with no lettering/labeling ... just white wire, which blends in well against the white overhang trim and columns.
+
+Unfortunately, each of the telephone wire conductors is very small, meaning higher impedance/resistance. I did twist both ends of a pair of conductors (red+green, black+yellow), creating effectively a two (2) conductor "composite" wire, which halves the resistance ... but the resistance is still significant and specific values will be provided shortly.
+
+I have successfully re-wired the east-side column LED string "runner" wire using the 22 AWG wire.
+
+The 22 AWG wire roll is 30 meters (98 feet), of which I used 35 feet for the east-side runner.
+
+Due to the (relatively) low resistance of the wires, the internal resistance of the ohmmeter and probes needs to be accounted for.  Connecting the two probes together, the parasitic (unwanted) resistance measured by the ohmmeter is 2 ohms.
+
+In the following resistance measurements, one end of the wire was insulation-stripped then twisted, and then the resistance was measured at the other end of the wire ... thus the total run of copper measured is twice the length of the wire.
+
+The resistance of the entire roll was measured to be 6.4 ohms, minus the 2 ohms of parasitic resistance, resulting in 4.4 ohms.
+
+The 35 foot length of 22 AWG east-side column runner wire was measured to be 3.2 ohms, minus the 2 ohms of parasitic resistance, resulting in 1.2 ohms.  This make sense as this runner is approximately 1/3rd of the entire roll, and so is the resistance.
+
+I had not previously measured the resistance of the telephone wire runner.  Previously, each LED string had it's own LED controller, so even with the higher resistance telephone wire, the LED controllers voltage output was high enough that the difference in brightness of the east-side column LEDs was imperceptible compared to the west-side column or span LEDs.  Now with a single LED controller driving all three (3) LED strings, the voltage output is pulled down lower and the east-side column LED string is visibly dimmer than the others, thus all this activity.
+
+It turns out, even with the "composite" telephone runner configuration, the resistance of the telephone wire (again, one end twisted together, the other end used to measure the twice-length resistance) is 25.4 ohms, minus the 2 ohms of parasitic resistance, yielding 23.4 ohms for the telephone runner.
+
+23.4 ohms versus the now 1.2 ohms using the 22 AWG wire.
+
+The east-side column LED string now has identical brightness to the others.
+
+Finally, I feel it is interesting that throughout this journey, the architecture of the lighting has gone from moderately complex, to very complex, to relatively simple ... with each stage yielding a more pleasing and effective lighting system.
+
+Just proves that often the simplest solution is often the best solution.
+
 THE END.
