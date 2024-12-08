@@ -1215,4 +1215,57 @@ Finally, I feel it is interesting that throughout this journey, the architecture
 
 Just proves that often the simplest solution is often the best solution.
 
+# "Another Renewable Power Bank Option" Updates - Early December 2024
+
+Early in this expedition, I had planned on using rechargeable batteries, before going the solar route.
+
+Unfortunately, Nickel-Cadmium (Ni-Cd), the rechargeable battery which I am most familiar with, has power densities which are considerably lower than their alkaline battery counterparts.
+
+However by happenstance, I came across Nickel-Metal Hydride (Ni-MH) rechargeable batteries on Amazon, and they had significantly higher milli-Amp-Hour (mAH) capacities than Ni-Cd of the same size (AA, A, C, D, etc.)
+
+In fact, Ni-MH have approximately the same energy density as Alkaline.
+
+Wikipedia provides a reference for various battery compositions - MegaJoules/Liter (MJ/L)
+
+https://en.wikipedia.org/wiki/Energy_density_Extended_Reference_Table
+
+- Lead-Acid: 0.36  
+- Zinc-Manganese (Alkaline): 1.15-1.43  
+- Carbon-Zinc: 0.331  
+- Nickel-Metal Hydride (Ni-MH): 1.55  
+- Nickel-Cadmium (Ni-Cd): 1.08  
+- Lithium-Ion (Li-Ion): 0.83-3.6  
+
+Also: https://web.archive.org/web/20090428060954/http://www.allaboutbatteries.com/Battery-Energy.html
+
+![xxx](/images/analog-battery-energy-densities-01-20241208.png)
+
+
+One difference about Ni-MH batteries: their nominal operating voltage is not 1.5 volts, but rather 1.2 volts.
+
+However this is not a concern as the LED controller operates with any voltage between 3 Volts and 6 Volts.  So rather than using three (3) 1.5 volt batteries in series (4.5 volts total), instead we will use four (4) 1.2 volt batteries in series (4.8 volts total.)
+
+I also discovered that the Rubbermaid line of "Brilliance" plastic storage containers are quite waterproof and the 1.3 cup and 3.2 cup capacities are good sizes for various electronics projects.  They are significantly less expensive than IP-65 through IP-69 rated enclosures.
+
+Here are images of my Ni-MH power bank:
+
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-01-IMG_0218-20241208.JPG)
+
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-02-IMG_0219-20241208.JPG)
+
+Up at the time of this treatise, I shared:
+
+_The lighting unit is operated by three "AA" batteries, at 4.5 Volts total._  
+_In order to wrap around the two outdoor columns, plus across the span crossbeam, I needed a total of three LED lighting units._  
+_I wondered: how long can three batteries last with LED lights steady-on for six hours each day._  
+_I was somewhat surprised that the batteries actually lasted for about one month._  
+
+Googling: A Duracell "AA" Alkaline battery contains approximately 2600 mAH of energy.
+
+Remembering that at epoch of this expedition, each of the three (3) LED controller and string had their own dedicated set of three (3) Alkaline batteries, providing a net total of 2600 mAH x 3 or 7800 mAH of energy.
+
+On the evening of 12/1, I began an experiment using four (4) "C" Ni-MH batteries, which have 5000 mAH of energy, to power all three LED controllers and strings.
+
+Quick math says that i should get approximately 15-20 days of 6-hour illumination from the quad set of "C" Ni-MH batteries ... I will report back shortly on date when LEDs do not turn on, indicating the "C" batteries are depleted and need a recharge.
+
 THE END.
