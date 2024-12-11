@@ -1274,11 +1274,11 @@ Here are new, updated images of my Ni-MH power bank:
 
 ![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-03-IMG_0222-20241211.JPG)
 
-![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-04-IMG_0222-20241211.JPG)
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-04-IMG_0223-20241211.JPG)
 
-![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-05-IMG_0222-20241211.JPG)
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-05-IMG_0224-20241211.JPG)
 
-![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-06-IMG_0222-20241211.JPG)
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-06-IMG_0225-20241211.JPG)
 
 The quad set of "C" Ni-MH batteries are still powering the LED controller and string each evening ... it has now been nine (9) evenings of 6-hour illumination.  I will provide an update once the LEDs turn off or fail to turn on.
 
