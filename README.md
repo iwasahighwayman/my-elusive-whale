@@ -1268,4 +1268,18 @@ On the evening of 12/1, I began an experiment using four (4) "C" Ni-MH batteries
 
 Quick math says that i should get approximately 15-20 days of 6-hour illumination from the quad set of "C" Ni-MH batteries ... I will report back shortly on date when LEDs do not turn on, indicating the "C" batteries are depleted and need a recharge.
 
+Update: It's been a few days and I decided to craft a new riser board  to host the LED controller, normally-closed pushbutton switch (to easily reset the LED controller), and terminal blocks to accept the Ni-MH power in and LED string current out.
+
+Here are new, updated images of my Ni-MH power bank:
+
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-03-IMG_0222-20241211.JPG)
+
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-04-IMG_0222-20241211.JPG)
+
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-05-IMG_0222-20241211.JPG)
+
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-06-IMG_0222-20241211.JPG)
+
+The quad set of "C" Ni-MH batteries are still powering the LED controller and string each evening ... it has now been nine (9) evenings of 6-hour illumination.  I will provide an update once the LEDs turn off or fail to turn on.
+
 THE END.
