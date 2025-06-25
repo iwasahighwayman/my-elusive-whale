@@ -1,4 +1,5 @@
 # my-elusive-whale
+
 A journey to build more environmentally-friendly LED lighting ... which turned into an obsession
 
 THE INFORMATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE INFORMATION OR THE USE OR OTHER DEALINGS IN THE INFORMATION.
@@ -6,6 +7,7 @@ THE INFORMATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IM
 ![Illuminated LED Lighting](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0114-led-lights-illuminated-20220226.JPG)
 
 # How on earth did I get here?
+
 The last thing I remember hearing before tumbling down the hole was "_I'm late, I'm late! For a very important date! No time to say 'hello, goodbye,' I'm late, I'm late, I'm late!_".
 
 We added a small covered open-air sitting area over our patio, and thought it would be nice to add some lighting for when sitting outside in the evening.  It was a conscious decision to not add outdoor electricity, to stay within budget and maintain the aesthetics.  The sitting area faces north, and gets very little sunlight, particularly during winter; initially solar-powered lighting did not seem like an option, but more on that later.
@@ -1331,6 +1333,8 @@ When using a 1 ohm resistor to measure the supply current, the current increases
 ![xxx](/images/analog-rpipico-lightsleep1-current-measure-setup-8mA-8mV-across-1ohm-resistor-IMG_0317-20250624.JPG)
 
 ![xxx](/images/analog-rpipico-lightsleep1-dso-close-up-8mA-8mV-across-1ohm-resistor-IMG_0318-20250624.JPG)
+
+The Pico controller would also allow me to re-introduce the darkness sensor into the architecture at a nominal increase of expense and complexity.
 
 The next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (plus any quiescent current associated with the needed externalized Push-Pull/H-Bridge driver.
 
