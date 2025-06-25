@@ -1240,19 +1240,11 @@ Also: https://web.archive.org/web/20090428060954/http://www.allaboutbatteries.co
 
 ![xxx](/images/analog-battery-energy-densities-01-20241208.png)
 
-
 One difference about Ni-MH batteries: their nominal operating voltage is not 1.5 volts, but rather 1.2 volts.
 
 However this is not a concern as the LED controller operates with any voltage between 3 Volts and 6 Volts.  So rather than using three (3) 1.5 volt batteries in series (4.5 volts total), instead we will use four (4) 1.2 volt batteries in series (4.8 volts total.)
 
 I also discovered that the Rubbermaid line of "Brilliance" plastic storage containers are quite waterproof and the 1.3 cup and 3.2 cup capacities are good sizes for various electronics projects.  They are significantly less expensive than IP-65 through IP-69 rated enclosures.
-
-Here are images of my Ni-MH power bank:
-
-![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-01-IMG_0218-20241208.JPG)
-
-![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-02-IMG_0219-20241208.JPG)
-
 Up at the time of this treatise, I shared:
 
 _The lighting unit is operated by three "AA" batteries, at 4.5 Volts total._  
@@ -1264,9 +1256,25 @@ Googling: A Duracell "AA" Alkaline battery contains approximately 2600 mAH of en
 
 Remembering that at epoch of this expedition, each of the three (3) LED controller and string had their own dedicated set of three (3) Alkaline batteries, providing a net total of 2600 mAH x 3 or 7800 mAH of energy.
 
-On the evening of 12/1, I began an experiment using four (4) "C" Ni-MH batteries, which have 5000 mAH of energy, to power all three LED controllers and strings.
+On the evening of 12/1, I began an experiment using four (4) "C" Ni-MH batteries, which have 5000 mAH of energy, to power the controller and all three (3) LED strings.
 
 Quick math says that i should get approximately 15-20 days of 6-hour illumination from the quad set of "C" Ni-MH batteries ... I will report back shortly on date when LEDs do not turn on, indicating the "C" batteries are depleted and need a recharge.
+
+Update: The quad set of "C" Ni-MH batteries are still powering the LED controller and string each evening ... it has now been nine (9) evenings of 6-hour illumination.  I will provide an update once the LEDs turn off or fail to turn on.
+
+Update: Unclear why the math is so far off, but the LEDs did not complete the nineth (9th) evening of 6-hour illumination.
+
+Having to change the batteries every week will get old quick, particularly during the bitter cold days of winter.
+
+I will instead use four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, to power the controller and all three (3) LED strings.
+
+As anticipated, the "D" batteries provide a little over two (2) weeks of 6-hour illumination.
+
+Here are images of my Ni-MH power bank:
+
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-01-IMG_0218-20241208.JPG)
+
+![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-02-IMG_0219-20241208.JPG)
 
 Update: It's been a few days and I decided to craft a new riser board  to host the LED controller, normally-closed pushbutton switch (to easily reset the LED controller), and terminal blocks to accept the Ni-MH power in and LED string current out.
 
@@ -1280,20 +1288,50 @@ Here are new, updated images of my Ni-MH power bank:
 
 ![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-06-IMG_0225-20241211.JPG)
 
-The quad set of "C" Ni-MH batteries are still powering the LED controller and string each evening ... it has now been nine (9) evenings of 6-hour illumination.  I will provide an update once the LEDs turn off or fail to turn on.
+# "Control is an Illusion" Updates - June 2025
 
-![xxx](/images/analog-rpipico-lightsleep1-current-measure-setup-8mA-8mV-across-1ohm-resistor-IMG_0317-20250624.JPG)
+I configure the LEDs to turn on at 5 PM year round, so they will go off at 11 PM.
 
-![xxx](/images/analog-rpipico-lightsleep1-dso-close-up-8mA-8mV-across-1ohm-resistor-IMG_0318-20250624.JPG)
+In the winter time, darkness arrives well before 5 PM, so we get to enjoy the LEDs for the entire evening before retiring for the day.
 
-![xxx](/images/analog-rpipico-lightsleep1-seeed-studio-xiao-rp2040-lightsleep-10-ohm-5-volt-supply-5-milliamp-supply-IMG_0296-20250416.jpeg)
+However in the summer time, darkness does not arrive until 8 or 9 PM, so over half of the time the LEDs are on they are barely visible due to daylight.
 
-![xxx](/images/analog-rpipico-lightsleep1-seeed-studio-xiao-rp2040-sleep-10-ohm-5-volt-supply-30-milliamp-supply-IMG_0297-20250416.jpeg)
+Unfortunately the LED controller does not have an adjustable timer, for say two (2) or three (3) hours; there are other LED strings and controllers which have more timer options, such as the sets used in the front of the house (remember "remote control ... really?"), but that would entail a complete refactor of the back yard lighting.
+
+I had some spare time, and decided to research how well Micropython on a Raspberry Pi Pico might be able to replace the OEM LED controller.
+
+Besides something interesting to work on, this would give me total control over how long the LEDs would illuminate each night.
+
+The python code turned out to be relatively straight-forward to construct - please see the "source/pushpulltimer1.py" script, currently configured for a 15 second cycle but easily updated for the needed 24 hour cycle.
+
+The Pico will need the externalized Push-Pull/H-Bridge driver using discrete transistors and other components, to actually drive the LED strings.
+
+The python code spends most of the time "sleeping".
+
+With only the Pico, without the Push-Pull/H-Bridge driver nor LED strings, the current consumption was approximately 30 milliamps:
 
 ![xxx](/images/analog-rpipico-pushpull1-current-measure-setup-usb-cable-NOT-connected-to-PC-30mA-30mV-across-1ohm-resistor-IMG_0315-20250624.JPG)
 
 ![xxx](/images/analog-rpipico-pushpull1-driver-output-signal-IMG_0314-20250624.JPG)
 
 ![xxx](/images/analog-rpipico-pushpull1-dso-close-up-usb-cable-NOT-connected-to-PC-30mA-30mV-across-1ohm-resistor-IMG_0316-20250624.JPG)
+
+The Pico also has a "light sleep" mode which turns off more of the RP2040 hardware but maintains RAM and register state, further reducing the current consumption to approximately 5 to 8 milliamps:
+
+Again, here is the Pico using "sleep" not "light sleep", consuming approximately 30 milliamps of current, using a 10 ohm resistor to measure the supply current:
+
+![xxx](/images/analog-rpipico-lightsleep1-seeed-studio-xiao-rp2040-sleep-10-ohm-5-volt-supply-30-milliamp-supply-IMG_0297-20250416.jpeg)
+
+Here is the Pico using "light sleep", consuming approximately 5 milliamps of current, using a 10 ohm resistor to measure the supply current:
+
+![xxx](/images/analog-rpipico-lightsleep1-seeed-studio-xiao-rp2040-lightsleep-10-ohm-5-volt-supply-5-milliamp-supply-IMG_0296-20250416.jpeg)
+
+When using a 1 ohm resistor to measure the supply current, the current increases slightly to somewhere between 5 and 8 milliamps, with an average of approximately 6.5 milliamps:
+
+![xxx](/images/analog-rpipico-lightsleep1-current-measure-setup-8mA-8mV-across-1ohm-resistor-IMG_0317-20250624.JPG)
+
+![xxx](/images/analog-rpipico-lightsleep1-dso-close-up-8mA-8mV-across-1ohm-resistor-IMG_0318-20250624.JPG)
+
+The next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (plus any quiescent current associated with the needed externalized Push-Pull/H-Bridge driver.
 
 THE END.
