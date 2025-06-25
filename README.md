@@ -740,7 +740,7 @@ The prior schematic and implementation also erroneously omitted the reverse volt
 
 Here is the most current over-voltage protection circuit:
 
-![Updated over-voltage protection circuit - with hysteresis feedback](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-schematic-tjbatterydiodeovervoltageprotect4-20240320_174500.png)
+![Updated over-voltage protection circuit - with hysteresis feedback](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-over-voltage-protection-schematic-batterydiodeovervoltageprotect4-20240320_174500.png)
 
 I recently had to replace a couple of the un-modified solar cell/battery enclosures in the front yard.  Though I seasonally display then take-in the multi-color lights around the year-end holidays, the white "peace" lights on the front shrubs stay lit year round.  Many families in the neighborhood do similarly, I believe helping all of us remember what's important to us ... for me, how precious life is and how thankful i am for just being.
 
@@ -992,19 +992,19 @@ As a result, using the relay-based over-voltage protection circuit, the Ni-MH ba
 
 Under completely clear, blue skies and bright sun mid-afternoon, the highest voltage observed at the back yard LED controllers was approximately 6.2 volts.
 
-![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 ti tl431 series regulator schematic](/images/analog-TL431-Precision-High-Current-Series-Regulator-01-TI-datasheet-20240414.png)
+![1.2V Solar Battery Lights - batterydiodeovervoltageprotect5 ti tl431 series regulator schematic](/images/analog-TL431-Precision-High-Current-Series-Regulator-01-TI-datasheet-20240414.png)
 
-![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 bristolwatch youtube series regulator schematic](/images/analog-TL431-Precision-High-Current-Series-Regulator-02-Explained-www.youtube.com--watch--v_R6tbsSQ7J8Q-20240414.png)
+![1.2V Solar Battery Lights - batterydiodeovervoltageprotect5 bristolwatch youtube series regulator schematic](/images/analog-TL431-Precision-High-Current-Series-Regulator-02-Explained-www.youtube.com--watch--v_R6tbsSQ7J8Q-20240414.png)
 
-![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 schematic](/images/tjbatterydiodeovervoltageprotect5-schematic-20240415_180800.png)
+![1.2V Solar Battery Lights - batterydiodeovervoltageprotect5 schematic](/images/analog-batterydiodeovervoltageprotect5-schematic-20240415_180800.png)
 
-![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 pcb top view](/images/tjbatterydiodeovervoltageprotect5-pcb-top-view-20240415_182100.png)
+![1.2V Solar Battery Lights - batterydiodeovervoltageprotect5 pcb top view](/images/analog-batterydiodeovervoltageprotect5-pcb-top-view-20240415_182100.png)
 
-![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 pcb bottom view mirrored](/images/tjbatterydiodeovervoltageprotect5-pcb-bottom-view-mirrored-20240415_181600.png)
+![1.2V Solar Battery Lights - batterydiodeovervoltageprotect5 pcb bottom view mirrored](/images/analog-batterydiodeovervoltageprotect5-pcb-bottom-view-mirrored-20240415_181600.png)
 
 Here is the resultant output darlington emitter voltage for a given input battery voltage - the potentiometer has been adjusted to clamp the output voltage to 4.5 volts maximum:
 
-![1.2V Solar Battery Lights - tjbatterydiodeovervoltageprotect5 breadboard](/images/tjbatterydiodeovervoltageprotect5-breadboard-IMG_0177-20240429.jpeg)
+![1.2V Solar Battery Lights - batterydiodeovervoltageprotect5 breadboard](/images/analog-batterydiodeovervoltageprotect5-breadboard-IMG_0177-20240429.jpeg)
 
 # "Damn the Torpedoes ... FULL SPEED AHEAD !!!" Updates
 
@@ -1031,17 +1031,17 @@ As depicted below:
 
 Here are some images of this experimentation:
 
-![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0179-20240429.jpeg)
+![1.2V Solar Battery Lights - no over-voltage protection](/images/analog-batterydiodeovervoltage-no-protect-IMG_0179-20240429.jpeg)
 
-![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0180-20240429.jpeg)
+![1.2V Solar Battery Lights - no over-voltage protection](/images/analog-batterydiodeovervoltage-no-protect-IMG_0180-20240429.jpeg)
 
-![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0181-20240429.jpeg)
+![1.2V Solar Battery Lights - no over-voltage protection](/images/analog-batterydiodeovervoltage-no-protect-IMG_0181-20240429.jpeg)
 
-![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0182-20240429.jpeg)
+![1.2V Solar Battery Lights - no over-voltage protection](/images/analog-batterydiodeovervoltage-no-protect-IMG_0182-20240429.jpeg)
 
-![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0184-20240429.jpeg)
+![1.2V Solar Battery Lights - no over-voltage protection](/images/analog-batterydiodeovervoltage-no-protect-IMG_0184-20240429.jpeg)
 
-![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0185-20240429.jpeg)
+![1.2V Solar Battery Lights - no over-voltage protection](/images/analog-batterydiodeovervoltage-no-protect-IMG_0185-20240429.jpeg)
 
 I neglected to test if, rather than temporarily removing then re-attaching power to the back yard LED controllers, if significantly lowering the voltage would result in the controller and LEDs to recover, or if power truly had to be momentarily removed (e.g.: due to some sort of latching flip-flop over-voltage protection mechanism.)
 
@@ -1057,7 +1057,7 @@ Here is an image of the notes captured during the various recent experiments:
 
 Here is the image of the experimental notes:
 
-![1.2V Solar Battery Lights - no over-voltage protection](/images/tjbatterydiodeovervoltage-no-protect-IMG_0186-20240429.jpeg)
+![1.2V Solar Battery Lights - no over-voltage protection](/images/analog-batterydiodeovervoltage-no-protect-IMG_0186-20240429.jpeg)
 
 # "Memorial Day Holiday 2024" Updates
 
@@ -1069,15 +1069,15 @@ To be honest, the following circuit which eliminates this momentary short-circui
 
 Here are some images of this experimentation:
 
-![Delayed Inverter Schematic](/images/tjinverterdelayed1-schematic-20240527_102700.png)
+![Delayed Inverter Schematic](/images/analog-inverterdelayed1-schematic-20240527_102700.png)
 
-![Delayed Inverter Breadboard and Oscilloscope 01](/images/tjinverterdelayed1-01-IMG_0509-20240527.jpeg)
+![Delayed Inverter Breadboard and Oscilloscope 01](/images/analog-inverterdelayed1-01-IMG_0509-20240527.jpeg)
 
-![Delayed Inverter Breadboard and Oscilloscope 02](/images/tjinverterdelayed1-02-IMG_0510-20240527.jpeg)
+![Delayed Inverter Breadboard and Oscilloscope 02](/images/analog-inverterdelayed1-02-IMG_0510-20240527.jpeg)
 
-![Delayed Inverter Breadboard and Oscilloscope 03](/images/tjinverterdelayed1-03-IMG_0511-20240527.jpeg)
+![Delayed Inverter Breadboard and Oscilloscope 03](/images/analog-inverterdelayed1-03-IMG_0511-20240527.jpeg)
 
-![Delayed Inverter Breadboard and Oscilloscope 04](/images/tjinverterdelayed1-04-IMG_0512-20240527.jpeg)
+![Delayed Inverter Breadboard and Oscilloscope 04](/images/analog-inverterdelayed1-04-IMG_0512-20240527.jpeg)
 
 # "Why didn't I try this sooner - September 2024" Updates
 
@@ -1125,11 +1125,11 @@ One discovery noted in following image: when there is load on the Push-Pull/H-Br
 
 Due to the asymmetic LED drive signals, plus the fact that there is a (small) drive voltage drop when three (3) LED strings are connected in parallel to the LED controller, I was interested in understanding how a small externalized Push-Pull/H-Bridge created from discrete PNP (SS8550) and NPN (SS8050) transistors might work.
 
-![xxx](/images/analog-tjpushpulldriver5-schematic-02-20240925.png)
+![xxx](/images/analog-pushpulldriver5-schematic-02-20240925.png)
 
-![xxx](/images/analog-tjpushpulldriver5-pcb-top-color-02-20240925.png)
+![xxx](/images/analog-pushpulldriver5-pcb-top-color-02-20240925.png)
 
-![xxx](/images/analog-tjpushpulldriver5-pcb-bottom-mirrored-monochrome-01-20240925.png)
+![xxx](/images/analog-pushpulldriver5-pcb-bottom-mirrored-monochrome-02-20240925.png)
 
 The first externalized Push-Pull/H-Bridge iteration uses 1K base resistors with a 10K pullup on the PNP transistors, so the transistors are "driven pretty hard to saturation" condition, with resultant increase in drive signals but also increase in current consumption over the LED controller's values.  
 
@@ -1281,5 +1281,19 @@ Here are new, updated images of my Ni-MH power bank:
 ![xxx](/images/analog-ni-mh-nimh-battery-configuration-no-solar-06-IMG_0225-20241211.JPG)
 
 The quad set of "C" Ni-MH batteries are still powering the LED controller and string each evening ... it has now been nine (9) evenings of 6-hour illumination.  I will provide an update once the LEDs turn off or fail to turn on.
+
+![xxx](/images/analog-rpipico-lightsleep1-current-measure-setup-8mA-8mV-across-1ohm-resistor-IMG_0317-20250624.JPG)
+
+![xxx](/images/analog-rpipico-lightsleep1-dso-close-up-8mA-8mV-across-1ohm-resistor-IMG_0318-20250624.JPG)
+
+![xxx](/images/analog-rpipico-lightsleep1-seeed-studio-xiao-rp2040-lightsleep-10-ohm-5-volt-supply-5-milliamp-supply-IMG_0296-20250416.jpeg)
+
+![xxx](/images/analog-rpipico-lightsleep1-seeed-studio-xiao-rp2040-sleep-10-ohm-5-volt-supply-30-milliamp-supply-IMG_0297-20250416.jpeg)
+
+![xxx](/images/analog-rpipico-pushpull1-current-measure-setup-usb-cable-NOT-connected-to-PC-30mA-30mV-across-1ohm-resistor-IMG_0315-20250624.JPG)
+
+![xxx](/images/analog-rpipico-pushpull1-driver-output-signal-IMG_0314-20250624.JPG)
+
+![xxx](/images/analog-rpipico-pushpull1-dso-close-up-usb-cable-NOT-connected-to-PC-30mA-30mV-across-1ohm-resistor-IMG_0316-20250624.JPG)
 
 THE END.
