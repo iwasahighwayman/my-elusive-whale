@@ -1336,7 +1336,7 @@ When using a 1 ohm resistor to measure the supply current, the current increases
 
 The Pico controller would also allow me to re-introduce the darkness sensor into the architecture at a nominal increase of expense and complexity.
 
-The next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (plus any quiescent current associated with the needed externalized Push-Pull/H-Bridge driver.
+As a reference, here is the current draw of the OEM LED controller using a 10 ohm resistor to measure the current - Note that this is one of the newer LED controller boards which has the double-harmonic driver waveform.
 
 ![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0319-20250625.jpeg)
 
@@ -1347,5 +1347,7 @@ The next step will be to update the python script for the 24 hour cycle, then te
 ![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0322-20250625.jpeg)
 
 ![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0323-20250625.jpeg)
+
+The next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (plus any quiescent current associated with the needed externalized Push-Pull/H-Bridge driver.
 
 THE END.
