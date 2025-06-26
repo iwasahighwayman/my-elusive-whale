@@ -1304,7 +1304,7 @@ I had some spare time, and decided to research how well Micropython on a Raspber
 
 Besides something interesting to work on, this would give me total control over how long the LEDs would illuminate each night.
 
-The python code turned out to be relatively straight-forward to construct - please see the "source/pushpulltimer1.py" script, currently configured for a 15 second cycle but easily updated for the needed 24 hour cycle.
+The python code turned out to be relatively straight-forward to construct - please see the `source/pushpulltimer1.py` script, currently configured for a 15 second cycle but easily updated for the needed 24 hour cycle.
 
 The Pico will need the externalized Push-Pull/H-Bridge driver using discrete transistors and other components, to actually drive the LED strings.
 
@@ -1354,13 +1354,19 @@ But wait!
 
 Yet another random thought which bore fruit: the Seeed Studio XIAO RP2040 can actually drive three (3) LED strings without the need for an externalized Push-Pull/H-Bridge driver.
 
+Using the `source/pushpulltimer1.py` script here is the result / outcome:
+
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-setup-IMG_0324-20250626.JPG)
 
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-setup-dso-close-up-IMG_0325-20250626.JPG)
 
+Using the `source/pushpulltimer1.py` script here is the current consumption with the three (3) LED strings illuminated:
+
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-IMG_0326-20250626.JPG)
 
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-dso-close-up-IMG_0328-20250626.JPG)
+
+Using the  `source/pushpulltimerlightsleep1.py` script here is the current consumption with the three (3) LED strings illuminated:
 
 ![xxx](/images/analog-rpipico-pushpulltimerlightsleep1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-IMG_0329-20250626.JPG)
 
