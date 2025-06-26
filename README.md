@@ -1348,6 +1348,33 @@ As a reference, here is the current draw of the OEM LED controller using a 10 oh
 
 ![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0323-20250625.jpeg)
 
-The next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (plus any quiescent current associated with the needed externalized Push-Pull/H-Bridge driver.
+The next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (plus any quiescent current associated with the needed externalized Push-Pull/H-Bridge driver.)
+
+But wait!
+
+Yet another random thought which bore fruit: the Seeed Studio XIAO RP2040 can actually drive three (3) LED strings without the need for an externalized Push-Pull/H-Bridge driver.
+
+![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-setup-IMG_0324-20250626.JPG)
+
+![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-setup-dso-close-up-IMG_0325-20250626.JPG)
+
+![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-IMG_0326-20250626.JPG)
+
+![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-dso-close-up-IMG_0328-20250626.JPG)
+
+![xxx](/images/analog-rpipico-pushpulltimerlightsleep1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-IMG_0329-20250626.JPG)
+
+![xxx](/images/analog-rpipico-pushpulltimerlightsleep1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-dso-close-up-IMG_0330-20250626.JPG)
+
+If we use a slightly modified `source/pushpulltimerlightsleep1.py` to be a 24 hour cycle versus a 10 second cycle, here are some quick-math estimates of how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate:
+
+- Summer: Three (3) hours on @ 45mA (135 mAH) + 21 hours off @ 10mA (210 mAH) = 345 mAH per day ==> 10,000 mAH / 345 mAH = 29 days  
+- Winter: Six (6) hours on @ 45mA (270 mAH) + 18 hours off @ 10mA (180 mAH) = 450 mAH per day ==> 10,000 mAH / 450 mAH = 22 days  
+
+I currently attain 14 days of illumination from a charge using the OEM LED controller using four (4) "D" Ni-MH batteries, which have 10000 mAH of energy.
+
+There will probably be some power losses due to Ni-MH self-depletion, parasitic resistance, etc ... so perhaps this may be a "Winter" swap-in replacement, and even see a few additional days of illumination in the "Summer".
+
+Again, similarly, the next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (without the need of an externalized Push-Pull/H-Bridge driver.)
 
 THE END.
