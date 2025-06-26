@@ -1338,4 +1338,14 @@ The Pico controller would also allow me to re-introduce the darkness sensor into
 
 The next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (plus any quiescent current associated with the needed externalized Push-Pull/H-Bridge driver.
 
+![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0319-20250625.jpeg)
+
+![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0320-20250625.jpeg)
+
+![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0321-20250625.jpeg)
+
+![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0322-20250625.jpeg)
+
+![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0323-20250625.jpeg)
+
 THE END.
