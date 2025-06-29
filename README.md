@@ -1385,7 +1385,33 @@ Again, similarly, the next step will be to update the python script for the 24 h
 
 # "It's like day and night" Updates - June 2025
 
+Being early summer, I began thinking more about how the static 6-hour timer in the OEM LED controller significantly artificially reduces the battery duration of the solution.
 
+I prefer the LEDs go out each evening at 11 PM, so when swapping-out the battery packs, I have the LED strings turn on at 5 PM - the LEDs are visible in the daylight, but barely.
+
+It does not truly get dark this time of year until 8 PM, and in the coming weeks, 9 PM.
+
+I began thinking: there is no apparent easy way to adapt the OEM LED controller to account for light/dark, but it would be good if an additional component could be added to the architecture so that, even if the OEM LED controller is producing an LED string driving signal, that driving signal does not actually reach the LED string until darkness arrives, thus conserving battery capacity until darkness when the LEDs are most-illuminated/impressive.
+
+The challenge is that: the LED string driver signal is low voltage but is alternating current (AC).
+
+Years ago I worked on systems incorporating TRIACs and they are a possibility, but TRIACs can be "fussy" and there's a fair amount math to ensure they actually turn off when they should.
+
+A normal relay is the obvious choice, but for-sure the coil current to operate the relay would be orders of magnitude more current than if the LED strings illuminiated for the full 6-hour cycle.
+
+Then I remembered: there are "latching relays" ... that could be the solution!
+
+Latching relays are just that: we apply a small current across the coil(s) for a small time window, and the relay contacts move to a particular connection.
+
+If we apply an opposing current across the coil(s) for a small time window, the relay contacts move to the opposite connection.
+
+Latching relays have no concept of "normally-open" versus "normally closed" ... vendor-provided electrical diagrams will arbitrarily determine which contacts are considered connected in their "reset" state, then define the opposite to declare the contact's "set state" position.
+
+Latching relays come in two forms:  
+- One coil and the set/reset functionality occurs by regulating the positive and negative voltage across the coil as desired  
+- Two coils and the set/reset functionality occurs by applying power across one or the other coil as desired
+
+My preference is for the latter in analog systems.
 
 ![xxx](/images/analog-phototransistor2-breadboard-01-IMG_0331-20250628.JPG)
 
