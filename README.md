@@ -1383,4 +1383,30 @@ There will probably be some power losses due to Ni-MH self-depletion, parasitic 
 
 Again, similarly, the next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (without the need of an externalized Push-Pull/H-Bridge driver.)
 
+# "It's like day and night" Updates - June 2025
+
+
+
+![xxx](/images/analog-phototransistor2-breadboard-01-IMG_0331-20250628.JPG)
+
+![xxx](/images/analog-phototransistor2-schematic-02-20250629.png)
+
+![xxx](/images/analog-phototransistor2-pcb-02-20250629.png)
+
+![xxx](/images/analog-phototransistor3-schematic-01-20250629.png)
+
+![xxx](/images/analog-phototransistor3-pcb-01-20250629.png)
+
+![xxx](/images/analog-phototransistor3-latching-relay-01-signal-at-Q3-gate-IMG_0332-20250629.JPG)
+
+![xxx](/images/analog-phototransistor3-latching-relay-02-signal-at-Q3-drain-and-relay-pin-16-IMG_0333-20250629.JPG)
+
+![xxx](/images/analog-phototransistor3-latching-relay-03-signal-at-Q5-gate-IMG_0334-20250629.JPG)
+
+![xxx](/images/analog-phototransistor3-latching-relay-04-signal-at-Q5-drain-and-Q4-gate-IMG_0335-20250629.JPG)
+
+![xxx](/images/analog-phototransistor3-latching-relay-05-signal-at-Q4-drain-and-relay-pin-15-IMG_0336-20250629.JPG)
+
+![xxx](/images/analog-phototransistor3-latching-relay-06-dark-simulated-phototransistor-resistor-unplugged-green-LED-on-IMG_0337-20250629.JPG)
+
 THE END.
