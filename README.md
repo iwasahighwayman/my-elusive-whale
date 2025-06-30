@@ -1443,11 +1443,17 @@ Here are the voltage signals at transistor Q3, at the gate then at the drain (co
 
 ![xxx](/images/analog-phototransistor3-latching-relay-02-signal-at-Q3-drain-and-relay-pin-16-IMG_0333-20250629.JPG)  
 
+Here are the voltage signals at transistor Q4, at the gate then at the drain (connected to Q5 gate)
+
 ![xxx](/images/analog-phototransistor3-latching-relay-03-signal-at-Q5-gate-IMG_0334-20250629.JPG)  
 
 ![xxx](/images/analog-phototransistor3-latching-relay-04-signal-at-Q5-drain-and-Q4-gate-IMG_0335-20250629.JPG)  
 
+Here is the voltage signal at transistor Q5, at the drain (connected to latching relay pin 15)
+
 ![xxx](/images/analog-phototransistor3-latching-relay-05-signal-at-Q4-drain-and-relay-pin-15-IMG_0336-20250629.JPG)  
+
+Here is an image of the circuit simulating darkness by unplugging the 10K resistor inline with the phototransistor - this turns on the green LED by placing the latching relay in the "set" state per the datasheet, allowing the LED string driver signal to flow and illuminate the LEDs in darkness.  
 
 ![xxx](/images/analog-phototransistor3-latching-relay-06-dark-simulated-phototransistor-resistor-unplugged-green-LED-on-IMG_0337-20250629.JPG)  
 
