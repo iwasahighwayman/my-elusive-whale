@@ -1453,9 +1453,9 @@ Here are the voltage signals at transistor Q3, at the gate then at the drain (co
 
 Here are the specifications and data sheet for the "Hong" brand of latching relay used above:  
 
-![xxx](/datasheets/analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-amazon-20250627.pdf)  
+[analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-amazon-20250627.pdf](/datasheets/analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-amazon-20250627.pdf)  
 
-![xxx](/datasheets/analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-arrow-electronics-datasheet-20250627.pdf)  
+[analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-arrow-electronics-datasheet-20250627.pdf](/datasheets/analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-arrow-electronics-datasheet-20250627.pdf)  
 
 N.B.: 3 volt coil versions are (yes) available from Amazon, not just Arrow reseller, but they take a couple of weeks to ship.  
 
@@ -1463,21 +1463,21 @@ Here are some other latching relay products from Panasonic and Omron, available 
 
 https://www.mouser.com/ProductDetail/Panasonic-Industrial-Devices/AGN21003?qs=UO%2Fx91QLkSB5TUGUUY2Lbg%3D%3D  
 
-![xxx](/datasheets/analog-relay-signal-latching-Panasonic_GN_Datasheet-mouser-electronics-description-20250627.pdf)  
+[analog-relay-signal-latching-Panasonic_GN_Datasheet-mouser-electronics-description-20250627.pdf](/datasheets/analog-relay-signal-latching-Panasonic_GN_Datasheet-mouser-electronics-description-20250627.pdf)  
 
-![xxx](/datasheets/analog-relay-signal-latching-Panasonic_GN_Datasheet-mouser-electronics-datasheet-20250627.pdf)  
+[analog-relay-signal-latching-Panasonic_GN_Datasheet-mouser-electronics-datasheet-20250627.pdf](/datasheets/analog-relay-signal-latching-Panasonic_GN_Datasheet-mouser-electronics-datasheet-20250627.pdf)  
 
 https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/G6KU-2P-Y-DC3/1816086  
 
-![xxx](/datasheets/analog-relay-signal-latching-omron-K106-E1-digikey-electronics-description-20250627.pdf)  
+[analog-relay-signal-latching-omron-K106-E1-digikey-electronics-description-20250627.pdf](/datasheets/analog-relay-signal-latching-omron-K106-E1-digikey-electronics-description-20250627.pdf)  
 
-![xxx](/datasheets/analog-relay-signal-latching-omron-K106-E1-digikey-electronics-datasheet-20250627.pdf)  
+[analog-relay-signal-latching-omron-K106-E1-digikey-electronics-datasheet-20250627.pdf](/datasheets/analog-relay-signal-latching-omron-K106-E1-digikey-electronics-datasheet-20250627.pdf)  
 
 https://www.digikey.com/en/products/detail/panasonic-electric-works/AGN21003/644780  
 
-![xxx](/datasheets/analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-description-20250627.pdf)  
+[analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-description-20250627.pdf](/datasheets/analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-description-20250627.pdf)  
 
-![xxx](/datasheets/analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-datasheet-20250627.pdf)  
+[analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-datasheet-20250627.pdf](/datasheets/analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-datasheet-20250627.pdf)  
 
 Since these other brands of latching relays using a single coil, the circuitry would need to be updated to be more of an H-Bridge / Push-Pull circuit, for which there are examples above.  
 
