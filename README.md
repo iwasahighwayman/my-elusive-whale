@@ -1360,7 +1360,7 @@ Using the `source/pushpulltimer1.py` script here is the result / outcome:
 
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-setup-dso-close-up-IMG_0325-20250626.JPG)
 
-Using the `source/pushpulltimer1.py` script here is the current consumption with the three (3) LED strings illuminated:
+Using the `source/pushpulltimer1.py` script here is the current consumption across a one (1) Ohm resistor with the three (3) LED strings illuminated:
 
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-IMG_0326-20250626.JPG)
 
