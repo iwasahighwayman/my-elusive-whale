@@ -1457,6 +1457,31 @@ Here is an image of the circuit simulating darkness by unplugging the 10K resist
 
 ![xxx](/images/analog-phototransistor3-latching-relay-06-dark-simulated-phototransistor-resistor-unplugged-green-LED-on-IMG_0337-20250629.JPG)  
 
+Here is an image of the current consumption across a 10 Ohm resistor.  
+
+The waveform starts in daylight, consuming 5 milliamps.  
+
+We then simulate darkness by temporarily disconnecting the 10K resistor which inlines the phototransistor.  
+
+The latching relay coil "sets" the contacts with a 12 milliamp pulse total current for 0.6 seconds (relay pin 16).  
+
+The total current during (simulated) darkness then falls to 2.5 milliamps.  
+
+We then reconnect the 10K resistor which inlines the phototransistor, returning to daylight.  
+
+The latching relay coil "resets" the contacts with a 12 milliamp pulse total current for 0.6 seconds (relay pin 15).  
+
+The current then returns to the daylight 5 milliamps.  
+
+N.B.:  These are the 555 integrated circuit's quiescent current - pins 2 and 6 must be connected when measuring the quiescent current per the datasheets:  
+- NE555 = 1.1 milliamp  
+- LMC555 = 1.7 milliamp  
+- TLC555 = 1.7 milliamp  
+
+It is interesting that the original bipolar NE555 consumes relatively significantly less quiescent current than the newer CMOS LMC555 and TLC555 chips.  
+
+![xxx](/images/analog-phototransistor3-latching-relay-07-current-consumption-10-ohm-light-dark-simulated-relay-set-light-relay-reset-IMG_0338-20250630.JPG)  
+
 Here are the specifications and data sheet for the "Hong" brand of latching relay used above:  
 
 [analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-amazon-20250627.pdf](/datasheets/analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-amazon-20250627.pdf)  
