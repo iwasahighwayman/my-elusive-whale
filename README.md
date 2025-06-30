@@ -1383,56 +1383,102 @@ There will probably be some power losses due to Ni-MH self-depletion, parasitic 
 
 Again, similarly, the next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (without the need of an externalized Push-Pull/H-Bridge driver.)
 
-# "It's like day and night" Updates - June 2025
+# "It's like day and night" Updates - June 2025  
 
-Being early summer, I began thinking more about how the static 6-hour timer in the OEM LED controller significantly artificially reduces the battery duration of the solution.
+Being early summer, I began thinking more about how the static 6-hour timer in the OEM LED controller significantly artificially reduces the battery duration of the solution.  
 
-I prefer the LEDs go out each evening at 11 PM, so when swapping-out the battery packs, I have the LED strings turn on at 5 PM - the LEDs are visible in the daylight, but barely.
+I prefer the LEDs go out each evening at 11 PM, so when swapping-out the battery packs, I have the LED strings turn on at 5 PM - the LEDs are visible in the daylight, but barely.  
 
-It does not truly get dark this time of year until 8 PM, and in the coming weeks, 9 PM.
+It does not truly get dark this time of year until 8 PM, and in the coming weeks, 9 PM.  
 
-I began thinking: there is no apparent easy way to adapt the OEM LED controller to account for light/dark, but it would be good if an additional component could be added to the architecture so that, even if the OEM LED controller is producing an LED string driving signal, that driving signal does not actually reach the LED string until darkness arrives, thus conserving battery capacity until darkness when the LEDs are most-illuminated/impressive.
+I began thinking: there is no apparent easy way to adapt the OEM LED controller to account for light/dark, but it would be good if an additional component could be added to the architecture so that, even if the OEM LED controller is producing an LED string driving signal, that driving signal does not actually reach the LED string until darkness arrives, thus conserving battery capacity until darkness when the LEDs are most-illuminated/impressive.  
 
-The challenge is that: the LED string driver signal is low voltage but is alternating current (AC).
+The challenge is that: the LED string driver signal is low voltage but is alternating current (AC).  
 
-Years ago I worked on systems incorporating TRIACs and they are a possibility, but TRIACs can be "fussy" and there's a fair amount math to ensure they actually turn off when they should.
+Years ago I worked on systems incorporating TRIACs and they are a possibility, but TRIACs can be "fussy" and there's a fair amount math to ensure they actually turn off when they should.  
 
-A normal relay is the obvious choice, but for-sure the coil current to operate the relay would be orders of magnitude more current than if the LED strings illuminiated for the full 6-hour cycle.
+A normal relay is the obvious choice, but for-sure the coil current to operate the relay would be orders of magnitude more current than if the LED strings illuminiated for the full 6-hour cycle.  
 
-Then I remembered: there are "latching relays" ... that could be the solution!
+Then I remembered: there are "latching relays" ... that could be the solution!  
 
-Latching relays are just that: we apply a small current across the coil(s) for a small time window, and the relay contacts move to a particular connection.
+Latching relays are just that: we apply a small current across the coil(s) for a small time window, and the relay contacts move to a particular connection.  
 
-If we apply an opposing current across the coil(s) for a small time window, the relay contacts move to the opposite connection.
+If we apply an opposing current across the coil(s) for a small time window, the relay contacts move to the opposite connection.  
 
-Latching relays have no concept of "normally-open" versus "normally closed" ... vendor-provided electrical diagrams will arbitrarily determine which contacts are considered connected in their "reset" state, then define the opposite to declare the contact's "set state" position.
+Latching relays have no concept of "normally-open" versus "normally closed" ... vendor-provided electrical diagrams will arbitrarily determine which contacts are considered connected in their "reset" state, then define the opposite to declare the contact's "set state" position.  
 
 Latching relays come in two forms:  
 - One coil and the set/reset functionality occurs by regulating the positive and negative voltage across the coil as desired  
-- Two coils and the set/reset functionality occurs by applying power across one or the other coil as desired
+- Two coils and the set/reset functionality occurs by applying power across one or the other coil as desired  
 
-My preference is for the latter in analog systems.
+My preference is for the latter in analog systems.  
 
-![xxx](/images/analog-phototransistor2-breadboard-01-IMG_0331-20250628.JPG)
+More detailed images and explanations will be provided below, but here is what a typical latching relay signal looks like:  
 
-![xxx](/images/analog-phototransistor2-schematic-02-20250629.png)
+Here is the first attempt at the schematic and resulting printed circuit board (PCB).  
 
-![xxx](/images/analog-phototransistor2-pcb-02-20250629.png)
+![xxx](/images/analog-phototransistor2-breadboard-01-IMG_0331-20250628.JPG)  
 
-![xxx](/images/analog-phototransistor3-schematic-01-20250629.png)
+![xxx](/images/analog-phototransistor2-schematic-02-20250629.png)  
 
-![xxx](/images/analog-phototransistor3-pcb-01-20250629.png)
+![xxx](/images/analog-phototransistor2-pcb-02-20250629.png)  
 
-![xxx](/images/analog-phototransistor3-latching-relay-01-signal-at-Q3-gate-IMG_0332-20250629.JPG)
+As always, the desire is to only require a single layer PCB, using only copper on the bottom side, for expense and complexity reasons.  
 
-![xxx](/images/analog-phototransistor3-latching-relay-02-signal-at-Q3-drain-and-relay-pin-16-IMG_0333-20250629.JPG)
+The main deficiency in the PCB above is that many signal traces travel under the latching relay, near either the coils or contacts.  
 
-![xxx](/images/analog-phototransistor3-latching-relay-03-signal-at-Q5-gate-IMG_0334-20250629.JPG)
+Generally, from an electical noise / interference perspective, this is an unoptimized design and implementation.  
 
-![xxx](/images/analog-phototransistor3-latching-relay-04-signal-at-Q5-drain-and-Q4-gate-IMG_0335-20250629.JPG)
+Here is a second attemp - this PCB layout is far better.  
 
-![xxx](/images/analog-phototransistor3-latching-relay-05-signal-at-Q4-drain-and-relay-pin-15-IMG_0336-20250629.JPG)
+Note that we needed to add a single, strategically-placed zero-ohm jumper to the schematic, as there was no way for two traces to not cross paths - this is far better than resorting to a dual-layer PCB.
 
-![xxx](/images/analog-phototransistor3-latching-relay-06-dark-simulated-phototransistor-resistor-unplugged-green-LED-on-IMG_0337-20250629.JPG)
+![xxx](/images/analog-phototransistor3-schematic-01-20250629.png)  
 
-THE END.
+![xxx](/images/analog-phototransistor3-pcb-01-20250629.png)  
+
+Here are the voltage signals at transistor Q3, at the gate then at the drain (connected to latching relay pin 16)
+
+![xxx](/images/analog-phototransistor3-latching-relay-01-signal-at-Q3-gate-IMG_0332-20250629.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-02-signal-at-Q3-drain-and-relay-pin-16-IMG_0333-20250629.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-03-signal-at-Q5-gate-IMG_0334-20250629.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-04-signal-at-Q5-drain-and-Q4-gate-IMG_0335-20250629.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-05-signal-at-Q4-drain-and-relay-pin-15-IMG_0336-20250629.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-06-dark-simulated-phototransistor-resistor-unplugged-green-LED-on-IMG_0337-20250629.JPG)  
+
+Here are the specifications and data sheet for the "Hong" brand of latching relay used above:  
+
+![xxx](/datasheets/analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-amazon-20250627.pdf)  
+
+![xxx](/datasheets/analog-relay-signal-latching-hongfa-hfd2-5V-only-not-3V-coil-arrow-electronics-datasheet-20250627.pdf)  
+
+N.B.: 3 volt coil versions are (yes) available from Amazon, not just Arrow reseller, but they take a couple of weeks to ship.  
+
+Here are some other latching relay products from Panasonic and Omron, available from DigiKey and Mouser resellers, all of which use a single coil:  
+
+https://www.mouser.com/ProductDetail/Panasonic-Industrial-Devices/AGN21003?qs=UO%2Fx91QLkSB5TUGUUY2Lbg%3D%3D  
+
+![xxx](/datasheets/analog-relay-signal-latching-Panasonic_GN_Datasheet-mouser-electronics-description-20250627.pdf)  
+
+![xxx](/datasheets/analog-relay-signal-latching-Panasonic_GN_Datasheet-mouser-electronics-datasheet-20250627.pdf)  
+
+https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/G6KU-2P-Y-DC3/1816086  
+
+![xxx](/datasheets/analog-relay-signal-latching-omron-K106-E1-digikey-electronics-description-20250627.pdf)  
+
+![xxx](/datasheets/analog-relay-signal-latching-omron-K106-E1-digikey-electronics-datasheet-20250627.pdf)  
+
+https://www.digikey.com/en/products/detail/panasonic-electric-works/AGN21003/644780  
+
+![xxx](/datasheets/analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-description-20250627.pdf)  
+
+![xxx](/datasheets/analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-datasheet-20250627.pdf)  
+
+Since these other brands of latching relays using a single coil, the circuitry would need to be updated to be more of an H-Bridge / Push-Pull circuit, for which there are examples above.  
+
+THE END.  
