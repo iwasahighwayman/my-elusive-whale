@@ -1448,7 +1448,7 @@ Note that we needed to add a single, strategically-placed zero-ohm jumper to the
 
 ![xxx](/images/analog-phototransistor3-pcb-01-20250629.png)  
 
-This improved PCB trace layout also resulted in power rail traces being side-by-side, making it trivially easy to add an electrolytic capacitor (for supply voltage fluctuations due to rapid rise/fall of current) and a foil disk capacitor (for higher frequency supply voltage noise).
+This improved PCB trace layout also resulted in power rail traces being side-by-side, making it trivially easy to add an electrolytic capacitor (to reduce/eliminate supply voltage fluctuations due to rapid rise/fall of current) and a foil disk capacitor (to reduce/eliminate higher frequency supply voltage noise).
 
 The positive ("+") side of the latching relay coils are connected to the positive supply rail, and the negative ("-") side of the latching relay coils are connected to transistors.  Energizing a particular latching relay coil is a momentary "low" pulse of the MOSFET transistor's drain terminal.
 
@@ -1525,6 +1525,6 @@ https://www.digikey.com/en/products/detail/panasonic-electric-works/AGN21003/644
 
 [analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-datasheet-20250627.pdf](/datasheets/analog-relay-signal-latching-panasonic-mech_eng_gn-digikey-electronics-datasheet-20250627.pdf)  
 
-Since these other brands of latching relays using a single coil, the circuitry would need to be updated to be more of an H-Bridge / Push-Pull circuit, for which there are examples above.  
+Since these other brands of latching relays using a single coil, the circuitry would need to be updated to be more of an H-Bridge / Push-Pull circuit, for which there are examples above, though it's possible the Seeed Studio XIAO RP2040 pins could directly drive enough current to a 3.3 volt latching relay coil without the need for additional components.  
 
 THE END.  
