@@ -1225,7 +1225,7 @@ Early in this expedition, I had planned on using rechargeable batteries, before 
 
 Unfortunately, Nickel-Cadmium (Ni-Cd), the rechargeable battery which I am most familiar with, has power densities which are considerably lower than their alkaline battery counterparts.
 
-However by happenstance, I came across Nickel-Metal Hydride (Ni-MH) rechargeable batteries on Amazon, and they had significantly higher milli-Amp-Hour (mAH) capacities than Ni-Cd of the same size (AA, A, C, D, etc.)
+However by happenstance, I came across Nickel-Metal Hydride (Ni-MH) rechargeable batteries on Amazon, and they had significantly higher milli-Amp-Hour (mAH) capacities than Ni-Cd of the same size (AAA, AA, C, D, etc.)
 
 In fact, Ni-MH have approximately the same energy density as Alkaline.
 
@@ -1248,7 +1248,8 @@ One difference about Ni-MH batteries: their nominal operating voltage is not 1.5
 
 However this is not a concern as the LED controller operates with any voltage between 3 Volts and 6 Volts.  So rather than using three 1.5 volt batteries in series (4.5 volts total), instead we will use four 1.2 volt batteries in series (4.8 volts total.)
 
-I also discovered that the Rubbermaid line of "Brilliance" plastic storage containers are quite waterproof and the 1.3 cup and 3.2 cup capacities are good sizes for various electronics projects.  They are significantly less expensive than IP-65 through IP-69 rated enclosures.
+I also discovered that the Rubbermaid line of "Brilliance" plastic storage containers are quite waterproof and the 1.3 cup and 3.2 cup capacities are good sizes for various electronics projects.  They are significantly less expensive than IP-65 through IP-69 rated enclosures.  
+
 Up at the time of this treatise, I shared:
 
 _The lighting unit is operated by three "AA" batteries, at 4.5 Volts total._  
@@ -1308,15 +1309,19 @@ Besides something interesting to work on, this would give me total control over 
 
 The python code turned out to be relatively straight-forward to construct - please see the `source/pushpulltimer1.py` script, currently configured for a 15 second cycle but easily updated for the needed 24 hour cycle.
 
+![xxx](/images/analog-rpipico-pushpull1-driver-output-signal-IMG_0314-20250624.JPG)
+
 The Pico will need the externalized Push-Pull/H-Bridge driver using discrete transistors and other components, to actually drive the LED strings.
+
+N.B.: In the LED string driver signal waveform above, the python logic ensures a tiny slice of time where both output signals are low, between one or the other output signal being high.  Again, this ensures no "glitch" where due to tolerances and timings, both upper and lower transistors composing the Push-Pull/H-Bridge driver are both "on", effectively briefly shorting the power supply rails.
+
+Next we will look at the current consumption of this architecture ...  
 
 The python code spends most of the time "sleeping".
 
-With only the Pico, without the Push-Pull/H-Bridge driver nor LED strings, the current consumption was approximately 30 milliamps:
+With only the Pico, without the Push-Pull/H-Bridge driver nor LED strings, the current consumption is approximately 30 milliamps:
 
 ![xxx](/images/analog-rpipico-pushpull1-current-measure-setup-usb-cable-NOT-connected-to-PC-30mA-30mV-across-1ohm-resistor-IMG_0315-20250624.JPG)
-
-![xxx](/images/analog-rpipico-pushpull1-driver-output-signal-IMG_0314-20250624.JPG)
 
 ![xxx](/images/analog-rpipico-pushpull1-dso-close-up-usb-cable-NOT-connected-to-PC-30mA-30mV-across-1ohm-resistor-IMG_0316-20250624.JPG)
 
