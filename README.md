@@ -174,7 +174,7 @@ Grabbing a less-scary screwdriver, I carefully opened one of the spare solar cel
 
 ![Hacked solar panel battery charger](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0112-solarcell-hacking-05-20220226.JPG)
 
-I really wanted to ensure that I understood the solar cell, and particularly the charging circuit for the Lithium Ion (Li-Ion) battery.  After spend more time researching for the integrated circuit than I should admit to (it was around 5 hours, but it was a snowy day and nothing else to do), I actually have relatively high confidence that I found the IC.  Please see the "datasheets" folder for the IC's PDF.  The datasheet's sample circuitry matched the solar cell's printed circuit board layout and passive components.  Given the cost of the solar cell lighting, I knew the IC must be dirt-cheap, and it is.
+I really wanted to ensure that I understood the solar cell, and particularly the charging circuit for the Lithium Ion (Li-Ion) battery.  After spend more time researching for the integrated circuit than I should admit to (it was around five hours, but it was a snowy day and nothing else to do), I actually have relatively high confidence that I found the IC.  Please see the "datasheets" folder for the IC's PDF.  The datasheet's sample circuitry matched the solar cell's printed circuit board layout and passive components.  Given the cost of the solar cell lighting, I knew the IC must be dirt-cheap, and it is.
 
 I contacted the manufacturer of the solar cell lighting, inquiring about the capacity of the internal Li-Ion battery.  After a couple days, I was informed that the battery has a capacity of 1200 milliamp-hours (mAH).
 
@@ -188,7 +188,7 @@ My first attempt was to place two hacked solar panels in parallel, then connect 
 
 I found a small, relatively efficient boost (step-up) voltage switching converter, calibrated it to 4.5 Volts output and began running my power delivery duration tests.  Each morning, I would place the solar panels out on the front steps, to be charged through the day.  Then that evening, I would connect the solar cells as described to a single spare back yard LED lighting unit, monitoring the converter voltage through the evening into the next day.
 
-The LED lighting unit consumes approximately 100 milliamps (mA), so theoretically each 1200 milliamp-hour solar cell battery should supply about 12 hours of power, so for two batteries that should be about 24 hours.
+The each LED lighting unit consumes approximately 100 milliamps (mA), so theoretically each 1200 milliamp-hour solar cell battery should supply about 12 hours of power, so for two batteries that should be about 24 hours.
 
 Such idealized math rarely works out in the real world, and this was the case here.
 
@@ -198,7 +198,7 @@ The problem is that the required diodes drop approximately 1/2 Volt, with 100 mA
 
 And in the back yard, I have three LED lighting units, each consuming 100 mA.
 
-With this battery configuration, the front yard solar cells and batteries would only power the back yard LED lighting for one evening.  Solar cells have been around since the 1960's, so there has been a lot of time to improve them to require less and less sunlight to produce an equivalent power output.  If the next day was overcast, the batteries would still mostly or fully charge.  But if the next day was very cloudy and very little sunshine, then no LED illumination that evening.
+With this battery configuration, the front yard solar cells and batteries would only power the back yard LED lighting for one evening.  Solar cells have been around since the 1960's, so there has been a lot of time to improve them to require less and less sunlight to produce an equivalent power output.  If the next day was overcast, the batteries would still be partially charged.  But if the next day was very cloudy and very little sunshine, then no LED illumination that evening.
 
 Time to try something different ...
 
@@ -292,7 +292,7 @@ So I ran an extension cord, and got my trusty soldering iron.
 
 The LED controller boxes for the lights that ran up the columns were located near the bottom of the columns (high enough in elevation to be above the snowline of a typical snow storm).  I soldered the power wires to the battery springs inside the LED controller enclosure.  It was a difficult job holding the wire and enclosure still with one hand, and then feed the solder into the soldering iron tip pressed against the wire and springs.  After some trial and error, manual dexterity prevailed, albeit with a few splatters of bright silver solder onto our dark gray patio stones.  I discovered for the smaller splatters, I could use my pocket knife to lift the splatters completely.  But for one larger splatter, there would remain some small remnant of the splatter probably forever.
 
-The crossbeam LED lights controller was mounted higher up on the east column.  I was not comfortable soldering from the large, heavy 9 foot step ladder, so I put it back into the garage and instead used a two-step step stool.  I then set forth, balancing on the step stool, to perform the same soldering technique.  I turned out the step stool proved to make things feel far more rickety, and I realized I was applying far too much solder to the iron, with this ever-growing ball of bright silver solder hanging precariously off the end of the iron, over my dark gray stones.
+The crossbeam LED lights controller was mounted higher up on the east column.  I was not comfortable soldering from the large, heavy 9 foot step ladder, so I put it back into the garage and instead used a two-step step stool.  I then set forth, balancing on the step stool, to perform the same soldering technique.  It turned out the step stool proved to make things feel far more rickety, and I realized I was applying far too much solder to the iron, with this ever-growing ball of bright silver solder hanging precariously off the end of the iron, over my dark gray stones.
 
 Now, you need to understand that solder melts between 350 and 400 degrees fahrenheit.
 
@@ -332,7 +332,7 @@ Darkness arrived and I turned on the three LED lights.  To my satisfaction, even
 
 # Iteration #3: Time for a complete refactor
 
-The three solar cell powered back yard LED light string ran relatively well thru most of winter and mid-spring.  Once in a while we would get a few very cloudy days in a row, resulting in no light show after a couple nights, but it was infrequent enough to just turn the lights back on after the first sunny day.
+The three solar cell powered back yard LED light strings ran relatively well through most of winter and mid-spring.  Once in a while we would get a few very cloudy days in a row, resulting in no light show after a couple nights, but it was infrequent enough to just turn the lights back on after the first sunny day.
 
 But then I noticed that although the LEDs would illuminate once I went out to the patio and turn them on, they would only glow for an hour or two then go dark.
 
@@ -340,7 +340,7 @@ I assumed that after about a year and a half of repeated daily solar cell chargi
 
 I still felt pretty good about my little odyssey: the two solar cell Li-Ion batteries are about the size of two "C" cell batteries.  Had I simply used three sets of three "AA" batteries over 18 months, that would have been 9 x 18 or over 160 "AA" batteries taken to the town yard for disposal.
 
-BTW, I neglected to mention early-on: rechargeable "AA" batteries do not have nearly the milliamp-hour capacity of a normal alkaline battery.  By my calculations, would have needed three sets of nine rechargeable, plus the actual charging unit.  My calculations showed that every 2nd or at most 3rd evening, I would need to swap out nine depleted rechargeable "AA" batteries for freshly charged ones.  That would grow old quickly.
+BTW, I neglected to mention early-on: rechargeable "AA" batteries do not have nearly the milliamp-hour capacity of a normal alkaline battery.  By my calculations, I would have needed three sets of nine rechargeable, plus the actual charging unit.  My calculations showed that every 2nd or at most 3rd evening, I would need to swap out nine depleted rechargeable "AA" batteries for freshly charged ones.  That would grow old quickly.
 
 Spring was moving towards summer, the days were getting longer, and the absence of evening illumination to chase away the drearies was less of a concern.
 
@@ -408,7 +408,7 @@ Given that there is only a single 4.5 Volt power supply, the LED signals are cre
 
 Also, at first glance, the square wave appears to be approximately 110 Hz, but on more careful inspection, there is actually a 1.65 KHz sub-harmonic "inner" square wave within the 110 Hz "outer" square wave.  Though I am focusing on "steady-on" of the LEDs, this is how the LED controller creates the other lighting patterns such as chasing and fading, by adjusting (pulse width modulating) the "outer" square wave to be other than a steady 110 Hz.
 
-The inner square wave sub-harmonic does not really add much value for the "steady-on" illumination pattern ... we really only need any square wave which oscillates faster than the human eye can detect alternation, which is about 30 Hz on average.
+The inner square wave sub-harmonic does not really add much value for the "steady-on" illumination pattern ... we really only need any square wave which oscillates faster than the human eye can detect alternation, which is about 50 Hz on average.
 
 First we need to start off with a square wave generator, in electrical engineering terms an "astable multivibrator".
 
