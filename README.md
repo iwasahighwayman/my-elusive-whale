@@ -20,7 +20,7 @@ Oh, and the product needed to be modestly priced, as I would need multiple stran
 
 In the end, most of the requirements could be met, but not all of them.  I found an LED lighting unit which does not have the darkness-on, but it does have a 6-hour on -and- 18-hour off timer.  It is designed for outdoor use and is reasonably sturdy and waterproof.
 
-There are multiple lighting modes, such as alternating blinking, fade in and out, flashing which was just annoying and steady-on.
+There are multiple lighting modes, such as alternating blinking, fade in and out, flashing (which was just annoying) and steady-on.
 
 Being a simple man, we went with steady-on.
 
@@ -34,7 +34,7 @@ I was somewhat surprised that the batteries actually lasted for about one month.
 
 At first I thought "_That's not too bad ..._", swapped in three fresh "AA" batteries, times three lighting units so nine batteries total, reset the timer, and we were back in business.
 
-But after a few months, I had this not-so-small pile of dead "AA" batteries.  Our town has a yard where they can be properly disposed, so we dropped them off.
+But after a few months, I had this not-so-small pile of dead "AA" batteries.  Our town has a yard where they can be responsibly disposed, so we dropped them off.
 
 A little while later, I sort-of felt guilty about the waste.
 
@@ -96,11 +96,13 @@ I was using my normal modus operandi.
 
 Sigh.
 
-However, I had purchased a spare lighting unit for the front yard.  In our house, we have a saying: "_Pair and a spare_".  So I went inside and opened another lighting unit package.  I got the largest, scariest screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole, with the screwdriver and hammer, I successfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
+However, I had purchased a spare lighting unit for the front yard.  In our house, we have a saying: "_Pair and a spare_".  So I went inside and opened another lighting unit package.  I got the largest, scariest screwdriver I own, a hammer, and for good measure but thankfully unnecessary, the propane torch.  I will not be defeated by cold weather!  After creating a pilot hole with the screwdriver and hammer, I successfully installed the front solar lights, coiling the LEDs artistically around the front bushes (it actually required two strings of lights to propose a nice display.)
 
 That night I went to the window, and was shocked to discover that there was NO illumination!
 
-"_A-Ha_" I said: I bet the battery in the solar cell was not charged, and I installed the lighting mid-late day.  Sure enough, the next evening we had lighting.
+"_A-Ha_" I said: I bet the battery in the solar cell was not charged, and I installed the lighting mid-late day.  
+
+Sure enough, the next evening we had lighting.  
 
 A couple days later: "_Mommy, did the Grinch move out of that house over there?_", to-which she replied "_Yes, I believe he did._"
 
@@ -112,7 +114,7 @@ The third evening I went to the front window to admire my hard work and ... noth
 
 No illumination reflecting gently against the evening snow.
 
-Everyone other house's lights were on (I can already hear that kid saying "_Mommy ..._").
+Every other house's lights were on (I can already hear that kid saying "_Mommy ..._").
 
 It was late, cold, and really no reason to go outside now in the darkness.  Better to mount an investigation in the morning.
 
@@ -140,7 +142,7 @@ That evening, I was rewarded with illumination.  Victory.  I will not be defeate
 
 And then it snowed again.
 
-Three days later: nothing.  Nada.  Darkness.
+Three days later: Nothing.  Nada.  Darkness.
 
 Not to be deterred, the answer was obvious:
 
@@ -150,7 +152,7 @@ Not to be deterred, the answer was obvious:
 
 The holidays were, well, strange ... due to COVID.  We did manage to carefully spend time with some family, but as with everyone in the world, we were all impacted, and not in a good way.
 
-With some spare time after the holidays, I returned to my back yard lighting conundrum.  How to obtain back yard patio illumination while being environmentally friendly and responsible?
+With some spare time after the holidays, I returned to my back yard lighting conundrum.  How to obtain back yard patio illumination while being sustainable, environmentally friendly and responsible?
 
 # Iteration #2A: Hacking the solar panel
 
@@ -216,7 +218,7 @@ So when dividing that time window by three, for the three actual back yard LED l
 
 In order to get the front yard solar cell batteries' power to the back yard LED lighting units, I'll need to run some two-conductor insulated wire.
 
-Determining the optimal diameter of the wire, called the "gage", specifically "American wire gage" (AWG), is part science and part art.
+Determining the optimal diameter of the wire, called the "gage", specifically "American Wire Gage" (AWG), is part science and part art.
 
 The smaller the gage number, the larger the wire diameter, and the lower power loss due to the wire.
 
@@ -536,9 +538,9 @@ Here is the schematic.
 
 Indeed, as shared above in the "All Hallows' Eve 2022 Updates", I have working Raspberry PI Pico software which will manage the LEDs, however I am still currently using the vendor-provided LED controllers.
 
-Frequently, we would have a very sunny day, suggesting the solar cells would fully charge the Li-Ion batteries to full capacity, which should allow the LEDs to illuminate through and beyond the full six (6) hour timed session.
+Frequently, we would have a very sunny day, suggesting the solar cells would fully charge the Li-Ion batteries to full capacity, which should allow the LEDs to illuminate through and beyond the full six hour timed session.
 
-Sadly, more frequently than desired, less than four (4) hours after the LEDs illuminated, they would go dark.  On multiple evenings, I would immediately mount an evening investigation, and sure enough, the buck voltage converter's "power available" LED was also dark, indicating it was receiving no power from the batteries.
+Sadly, more frequently than desired, less than four hours after the LEDs illuminated, they would go dark.  On multiple evenings, I would immediately mount an evening investigation, and sure enough, the buck voltage converter's "power available" LED was also dark, indicating it was receiving no power from the batteries.
 
 Being a student and strong supporter of the "Scientific Method" to understanding, I began an analysis of what might be transpiring under the cover of darkness.
 
@@ -552,7 +554,7 @@ Or did something just "burn up"?
 
 I am blessed to have many friends, and my friends are gifted in many ways.  
 
-Folks like me have thoughtful sayings, two (2) of which for me are:
+Folks like me have thoughtful sayings, two of which for me are:
 
 1.  If you think you are the smartest person in the room, then that just proves you are not.
 
@@ -592,9 +594,9 @@ After some higly-scientific testing, it turns out that the drop-out voltage of t
 
 ![LED Controller drop-out voltage](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-IMG_0235-drop-out-voltage-20221117.JPG)
 
-But the three (3) 4.1 volt solar batteries, if used in parallel, will require forward-bias diodes in each path to prevent battery voltage differences cross-charging each other ... this can have a spectacular outcome, not in a good way.
+But the three 4.1 volt solar batteries, if used in parallel, will require forward-bias diodes in each path to prevent battery voltage differences cross-charging each other ... this can have a spectacular outcome, not in a good way.
 
-But under the three (3) x 50 milliamp load of the three (3) LED strings, would certainly result in the anticipated 0.7 volt drop across the forward-bias diodes from the 4.1 volt (at best) solar battery, yielding 3.4 volts.
+But under the three x 50 milliamp load of the three LED strings, would certainly result in the anticipated 0.7 volt drop across the forward-bias diodes from the 4.1 volt (at best) solar battery, yielding 3.4 volts.
 
 Minus the 0.25 volts drop across the length of 22 AWG wire going from front yard solar cell batteries to back yard LED controllers.  So now (at best) we're looking at 3.1 volts at the beginning of the evening illumination, with an LED controller cutout around 2.5 volts.
 
@@ -606,7 +608,7 @@ What to do Pooh?  Yes, I know ... "_think think think ..._"
 
 The mind is an interesting thing.  One may rack her/his brain on a problem for hours, with the outcome of "I dunno ...".  Then, in the middle of the night you snap awake with the solution.  Now the trick is to either remember the answer in the morning.  Or if like me, keep a small notepad and pen on the nightstand so I can quickly scribble down the answer ... now in the morning, I only need to remember that the midnight epiphany occurred.
 
-My morning-discovered scribble said "Schottky".  Of course, unlike the normal silicon signal or rectifier diode, which is a dual-semiconductor positive (P) to negative (n) doped junction, a Schottky diode is semiconductor to metal.  Unlike a normal silicon diode with a forward-bias voltage drop of approximately 0.7 volts, a Schottky diode only produces approximately a 0.2 volt forward-bias voltage drop.
+My morning-discovered scribble said "Schottky".  Of course, unlike the normal silicon signal or rectifier diode, which is a dual-semiconductor positive (P) to negative (N) doped junction, a Schottky diode is semiconductor to metal.  Unlike a normal silicon diode with a forward-bias voltage drop of approximately 0.7 volts, a Schottky diode only produces approximately a 0.2 volt forward-bias voltage drop.
 
 Updating the math above, the 4.1 volt solar batteries should then provide 3.9 volts after the Schottky diodes, minus the 2.5 volts due to the 22 AWS wire from front to back yard, yielding approximately 3.6 volts a the LED controllers.  This would provide over 1 volt of window between first-illuminated voltage to the LED controllers, and the measured 2.5 volt drop-out voltage, which is a much more acceptable solution.
 
@@ -614,7 +616,7 @@ Schematic for Schottky diode protected parallel solar cells/batteries:
 
 ![Schottky diode parallel power](/images/analog-FOUND-IT-blingstar-solar-christmas-lights-LED-string-retrofit-schottky-diode-power-20221120.png)
 
-The one (1) ohm resistors provide a test point for amount of current each solar cell/battery is providing.
+The one ohm resistors provide a test point for amount of current each solar cell/battery is providing.
 
 Schottky diode protected parallel solar cells/batteries circuit:
 
@@ -662,7 +664,7 @@ A 5 volt LM340T5 (7805) linear series voltage regulator is considered "low power
 
 And a 5 volt coil double-pole double-throw (DPDT) normally-open + normally-closed (NO-NC) contacts relay is definitely not considered "ultra low power".
 
-However these two components together are still easily powered by the three (3) solar cells connected in parallel; each solar cell is actually capable of producing quite a bit of current.
+However these two components together are still easily powered by the three solar cells connected in parallel; each solar cell is actually capable of producing quite a bit of current.
 
 In my new "Over-voltage protection circuit", there will be two output voltages produced leading to the onboard Schottky diodes:
 - The direct solar cell and battery output which may rise to nearly 7 volts but operates in darkness off the batteries at 4.1 volts  
@@ -674,7 +676,7 @@ Because the 7805 requires approximately 1.5 volts of "overhead input voltage" be
 
 The TL431 voltage reference is a natural fit in the design.  It's highly accurate, extremely mature and versitile ... and importantly very inexpensive.  Operated in the open-loop mode, what the TL431 does is reduce it's output (cathode) voltage and sink more current when the external Vref reference voltage pin exceeds it's internal 2.5 volt reference voltage.  Essentially the TL431 tries to be an open switch when the external Vref reference voltage is below 2.5 volts and a closed switch when the external Vref reference voltage is above 2.5 volts.  But being a semiconductor circuit, it has voltage drops and parasitic resistances, so in actuality it's not a perfect switch.
 
-I used two (2) 10K resistors to equally-divide the solar cell and battery voltage at the TL341's external Vref reference voltage pin, resulting in 5 volts of solar cell and battery voltage being presented as 2.5 volts at the external Vref reference voltage pin.
+I used two 10K resistors to equally-divide the solar cell and battery voltage at the TL341's external Vref reference voltage pin, resulting in 5 volts of solar cell and battery voltage being presented as 2.5 volts at the external Vref reference voltage pin.
 
 Finally, the TL431 does require approximately 1 milliamp of output (cathode) current to operate, so using a 2.2K resistor on the cathode will produce a couple milliamps of quiescent current.
 
@@ -1103,7 +1105,7 @@ Here is an images of this experimentation:
 
 # "Autumnal Equinox 2024" Updates
 
-Have had the single LED controller board driving three (3) LED strings in parallel with generally good results for a month or so now.
+Have had the single LED controller board driving three LED strings in parallel with generally good results for a month or so now.
 
 One observation is that the LED string furthest away (physically and electrically) from the LED controller board is definitely visibly dimmer than the other two LED strings, due to the relatively long distance of small AWG wire spanning the horizontal distance to the far vertical column on which the LED string resides.
 
@@ -1121,11 +1123,11 @@ This was confirmed by inlining a 10 Ohm resistor in the power supply then measur
 
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-06-10-ohm-current-no-pnp-npn-hbridge-IMG_0559-20240916.JPG)
 
-One discovery noted in following image: when there is load on the Push-Pull/H-Bridge signals (a single LED string) the LED drive signals are actually not symmetrically sized.  With a 5 Volt supply voltage (four (4) Ni-MH rechargeable batteries), one of the LED drive signals is 4 Volts and the other LED drive signal is 2 Volts.  Interestingly, the brightness of the LEDs seem pretty similar for both differing LED drive signals.
+One discovery noted in following image: when there is load on the Push-Pull/H-Bridge signals (a single LED string) the LED drive signals are actually not symmetrically sized.  With a 5 Volt supply voltage (four Ni-MH rechargeable batteries), one of the LED drive signals is 4 Volts and the other LED drive signal is 2 Volts.  Interestingly, the brightness of the LEDs seem pretty similar for both differing LED drive signals.
 
 ![xxx](/images/analog-koopower-large-green-led-controller-pcb-oscilloscope-13-no-pnp-npn-hbridge-voltage-IMG_0566-20240916.JPG)
 
-Due to the asymmetic LED drive signals, plus the fact that there is a (small) drive voltage drop when three (3) LED strings are connected in parallel to the LED controller, I was interested in understanding how a small externalized Push-Pull/H-Bridge created from discrete PNP (SS8550) and NPN (SS8050) transistors might work.
+Due to the asymmetic LED drive signals, plus the fact that there is a (small) drive voltage drop when three LED strings are connected in parallel to the LED controller, I was interested in understanding how a small externalized Push-Pull/H-Bridge created from discrete PNP (SS8550) and NPN (SS8050) transistors might work.
 
 ![xxx](/images/analog-pushpulldriver5-schematic-02-20240925.png)
 
@@ -1169,7 +1171,7 @@ So ... this research shows that the LED controller PCBs and firmware are well-de
 
 And this is where the research brings us to the classic "We can, but should we?" question.
 
-Again, the largest concern with placing three (3) LED strings in parallel, driven by a single LED controller board (with no externalized Push-Pull/H-Bridge drivers using discrete transistors and other components) is that the far column LED string is visibly dimmer than the other two.  This is primarily due to the relatively long run (~35 feet) of relatively thin wire.  The wire was purchased during the Covid lockdown/disruption, when supply chains world wide were challenged.  The wire must be thin/discreet for aesthetic reasons, and the best that could be done during Covid was a white 4-conductor telephone wire with no ink/printing on the outer jacket.  Unfortunately, each conductor appears to be 0.01 inch in diameter, which according to the american wire guage chart, is 30 AWG, which has 103 Ohms of resistance per 1,000 feet.  So although I have two (2) pairs of two (2) of the four (4) conductors, to result in two composite conductors, that's still a little over 50 Ohms per 1,000 feet.
+Again, the largest concern with placing three LED strings in parallel, driven by a single LED controller board (with no externalized Push-Pull/H-Bridge drivers using discrete transistors and other components) is that the far column LED string is visibly dimmer than the other two.  This is primarily due to the relatively long run (~35 feet) of relatively thin wire.  The wire was purchased during the Covid lockdown/disruption, when supply chains world wide were challenged.  The wire must be thin/discreet for aesthetic reasons, and the best that could be done during Covid was a white 4-conductor telephone wire with no ink/printing on the outer jacket.  Unfortunately, each conductor appears to be 0.01 inch in diameter, which according to the american wire guage chart, is 30 AWG, which has 103 Ohms of resistance per 1,000 feet.  So although I have two pairs of two of the four conductors, to result in two composite conductors, that's still a little over 50 Ohms per 1,000 feet.
 
 ![xxx](/images/analog-awg-american-wire-gauges-resistance-grid-table-01-20240918.png)
 
@@ -1189,9 +1191,9 @@ An update will be provided once I receive the wire and install it.
 
 As a gentle reminder: the challenge is that the LED controller is located on the ground next to the west-side overhang column, with the east-side LED string connected to the controller over approximately 35 feet of wire.
 
-The wire was run mid-Covid, during significant supply chain disruptions.  At the time, the only wire available which met our aesthetic desires was white four (4) conductor telephone wire with no lettering/labeling ... just white wire, which blends in well against the white overhang trim and columns.
+The wire was run mid-Covid, during significant supply chain disruptions.  At the time, the only wire available which met our aesthetic desires was white four conductor telephone wire with no lettering/labeling ... just white wire, which blends in well against the white overhang trim and columns.
 
-Unfortunately, each of the telephone wire conductors is very small, meaning higher impedance/resistance. I did twist both ends of a pair of conductors (red+green, black+yellow), creating effectively a two (2) conductor "composite" wire, which halves the resistance ... but the resistance is still significant and specific values will be provided shortly.
+Unfortunately, each of the telephone wire conductors is very small, meaning higher impedance/resistance. I did twist both ends of a pair of conductors (red+green, black+yellow), creating effectively a two conductor "composite" wire, which halves the resistance ... but the resistance is still significant and specific values will be provided shortly.
 
 I have successfully re-wired the east-side column LED string "runner" wire using the 22 AWG wire.
 
@@ -1205,7 +1207,7 @@ The resistance of the entire roll was measured to be 6.4 ohms, minus the 2 ohms 
 
 The 35 foot length of 22 AWG east-side column runner wire was measured to be 3.2 ohms, minus the 2 ohms of parasitic resistance, resulting in 1.2 ohms.  This make sense as this runner is approximately 1/3rd of the entire roll, and so is the resistance.
 
-I had not previously measured the resistance of the telephone wire runner.  Previously, each LED string had it's own LED controller, so even with the higher resistance telephone wire, the LED controllers voltage output was high enough that the difference in brightness of the east-side column LEDs was imperceptible compared to the west-side column or span LEDs.  Now with a single LED controller driving all three (3) LED strings, the voltage output is pulled down lower and the east-side column LED string is visibly dimmer than the others, thus all this activity.
+I had not previously measured the resistance of the telephone wire runner.  Previously, each LED string had it's own LED controller, so even with the higher resistance telephone wire, the LED controllers voltage output was high enough that the difference in brightness of the east-side column LEDs was imperceptible compared to the west-side column or span LEDs.  Now with a single LED controller driving all three LED strings, the voltage output is pulled down lower and the east-side column LED string is visibly dimmer than the others, thus all this activity.
 
 It turns out, even with the "composite" telephone runner configuration, the resistance of the telephone wire (again, one end twisted together, the other end used to measure the twice-length resistance) is 25.4 ohms, minus the 2 ohms of parasitic resistance, yielding 23.4 ohms for the telephone runner.
 
@@ -1244,7 +1246,7 @@ Also: https://web.archive.org/web/20090428060954/http://www.allaboutbatteries.co
 
 One difference about Ni-MH batteries: their nominal operating voltage is not 1.5 volts, but rather 1.2 volts.
 
-However this is not a concern as the LED controller operates with any voltage between 3 Volts and 6 Volts.  So rather than using three (3) 1.5 volt batteries in series (4.5 volts total), instead we will use four (4) 1.2 volt batteries in series (4.8 volts total.)
+However this is not a concern as the LED controller operates with any voltage between 3 Volts and 6 Volts.  So rather than using three 1.5 volt batteries in series (4.5 volts total), instead we will use four 1.2 volt batteries in series (4.8 volts total.)
 
 I also discovered that the Rubbermaid line of "Brilliance" plastic storage containers are quite waterproof and the 1.3 cup and 3.2 cup capacities are good sizes for various electronics projects.  They are significantly less expensive than IP-65 through IP-69 rated enclosures.
 Up at the time of this treatise, I shared:
@@ -1256,21 +1258,21 @@ _I was somewhat surprised that the batteries actually lasted for about one month
 
 Googling: A Duracell "AA" Alkaline battery contains approximately 2600 mAH of energy.
 
-Remembering that at epoch of this expedition, each of the three (3) LED controller and string had their own dedicated set of three (3) Alkaline batteries, providing a net total of 2600 mAH x 3 or 7800 mAH of energy.
+Remembering that at epoch of this expedition, each of the three LED controller and string had their own dedicated set of three Alkaline batteries, providing a net total of 2600 mAH x 3 or 7800 mAH of energy.
 
-On the evening of 12/1, I began an experiment using four (4) "C" Ni-MH batteries, which have 5000 mAH of energy, to power the controller and all three (3) LED strings.
+On the evening of 12/1, I began an experiment using four "C" Ni-MH batteries, which have 5000 mAH of energy, to power the controller and all three LED strings.
 
 Quick math says that i should get approximately 15-20 days of 6-hour illumination from the quad set of "C" Ni-MH batteries ... I will report back shortly on date when LEDs do not turn on, indicating the "C" batteries are depleted and need a recharge.
 
-Update: The quad set of "C" Ni-MH batteries are still powering the LED controller and string each evening ... it has now been nine (9) evenings of 6-hour illumination.  I will provide an update once the LEDs turn off or fail to turn on.
+Update: The quad set of "C" Ni-MH batteries are still powering the LED controller and string each evening ... it has now been nine evenings of 6-hour illumination.  I will provide an update once the LEDs turn off or fail to turn on.
 
-Update: Unclear why the math is so far off, but the LEDs did not complete the nineth (9th) evening of 6-hour illumination.
+Update: Unclear why the math is so far off, but the LEDs did not complete the nineth evening of 6-hour illumination.
 
 Having to change the batteries every week will get old quick, particularly during the bitter cold days of winter.
 
-I will instead use four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, to power the controller and all three (3) LED strings.
+I will instead use four "D" Ni-MH batteries, which have 10000 mAH of energy, to power the controller and all three LED strings.
 
-As anticipated, the "D" batteries provide a little over two (2) weeks of 6-hour illumination.
+As anticipated, the "D" batteries provide a little over two weeks of 6-hour illumination.
 
 Here are images of my Ni-MH power bank:
 
@@ -1298,7 +1300,7 @@ In the winter time, darkness arrives well before 5 PM, so we get to enjoy the LE
 
 However in the summer time, darkness does not arrive until 8 or 9 PM, so over half of the time the LEDs are on they are barely visible due to daylight.
 
-Unfortunately the LED controller does not have an adjustable timer, for say two (2) or three (3) hours; there are other LED strings and controllers which have more timer options, such as the sets used in the front of the house (remember "remote control ... really?"), but that would entail a complete refactor of the back yard lighting.
+Unfortunately the LED controller does not have an adjustable timer, for say two or three hours; there are other LED strings and controllers which have more timer options, such as the sets used in the front of the house (remember "remote control ... really?"), but that would entail a complete refactor of the back yard lighting.
 
 I had some spare time, and decided to research how well Micropython on a Raspberry Pi Pico might be able to replace the OEM LED controller.
 
@@ -1348,11 +1350,11 @@ As a reference, here is the current draw of the OEM LED controller using a 10 oh
 
 ![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0323-20250625.jpeg)
 
-The next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (plus any quiescent current associated with the needed externalized Push-Pull/H-Bridge driver.)
+The next step will be to update the python script for the 24 hour cycle, then test how long four "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three hour LED string "on" duty-cycle (plus any quiescent current associated with the needed externalized Push-Pull/H-Bridge driver.)
 
 But wait!
 
-Yet another random thought which bore fruit: the Seeed Studio XIAO RP2040 can actually drive three (3) LED strings without the need for an externalized Push-Pull/H-Bridge driver.
+Yet another random thought which bore fruit: the Seeed Studio XIAO RP2040 can actually drive three LED strings without the need for an externalized Push-Pull/H-Bridge driver.
 
 Using the `source/pushpulltimer1.py` script here is the result / outcome:
 
@@ -1360,28 +1362,28 @@ Using the `source/pushpulltimer1.py` script here is the result / outcome:
 
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-setup-dso-close-up-IMG_0325-20250626.JPG)
 
-Using the `source/pushpulltimer1.py` script here is the current consumption across a one (1) Ohm resistor with the three (3) LED strings illuminated:
+Using the `source/pushpulltimer1.py` script here is the current consumption across a one Ohm resistor with the three LED strings illuminated:
 
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-IMG_0326-20250626.JPG)
 
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-dso-close-up-IMG_0328-20250626.JPG)
 
-Using the  `source/pushpulltimerlightsleep1.py` script here is the current consumption with the three (3) LED strings illuminated:
+Using the  `source/pushpulltimerlightsleep1.py` script here is the current consumption with the three LED strings illuminated:
 
 ![xxx](/images/analog-rpipico-pushpulltimerlightsleep1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-IMG_0329-20250626.JPG)
 
 ![xxx](/images/analog-rpipico-pushpulltimerlightsleep1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-dso-close-up-IMG_0330-20250626.JPG)
 
-If we use a slightly modified `source/pushpulltimerlightsleep1.py` to be a 24 hour cycle versus a 10 second cycle, here are some quick-math estimates of how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate:
+If we use a slightly modified `source/pushpulltimerlightsleep1.py` to be a 24 hour cycle versus a 10 second cycle, here are some quick-math estimates of how long four "D" Ni-MH batteries, which have 10000 mAH of energy, can operate:
 
-- Summer: Three (3) hours on @ 45mA (135 mAH) + 21 hours off @ 10mA (210 mAH) = 345 mAH per day ==> 10,000 mAH / 345 mAH = 29 days  
-- Winter: Six (6) hours on @ 45mA (270 mAH) + 18 hours off @ 10mA (180 mAH) = 450 mAH per day ==> 10,000 mAH / 450 mAH = 22 days  
+- Summer: Three hours on @ 45mA (135 mAH) + 21 hours off @ 10mA (210 mAH) = 345 mAH per day ==> 10,000 mAH / 345 mAH = 29 days  
+- Winter: Six hours on @ 45mA (270 mAH) + 18 hours off @ 10mA (180 mAH) = 450 mAH per day ==> 10,000 mAH / 450 mAH = 22 days  
 
-I currently attain 14 days of illumination from a charge using the OEM LED controller using four (4) "D" Ni-MH batteries, which have 10000 mAH of energy.
+I currently attain 14 days of illumination from a charge using the OEM LED controller using four "D" Ni-MH batteries, which have 10000 mAH of energy.
 
 There will probably be some power losses due to Ni-MH self-depletion, parasitic resistance, etc ... so perhaps this may be a "Winter" swap-in replacement, and even see a few additional days of illumination in the "Summer".
 
-Again, similarly, the next step will be to update the python script for the 24 hour cycle, then test how long four (4) "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three (3) hour LED string "on" duty-cycle (without the need of an externalized Push-Pull/H-Bridge driver.)
+Again, similarly, the next step will be to update the python script for the 24 hour cycle, then test how long four "D" Ni-MH batteries, which have 10000 mAH of energy, can operate a three hour LED string "on" duty-cycle (without the need of an externalized Push-Pull/H-Bridge driver.)
 
 # "It's like day and night" Updates - June 2025  
 
@@ -1405,7 +1407,7 @@ Latching relays are just that: we apply a small current across the coil(s) for a
 
 If we apply an opposing current across the coil(s) for a small time window, the relay contacts move to the opposite connection.  
 
-Latching relays have no concept of "normally-open" versus "normally closed" ... vendor-provided electrical diagrams will arbitrarily determine which contacts are considered connected in their "reset" state, then define the opposite to declare the contact's "set state" position.  
+Latching relays have no concept of "normally-open" versus "normally closed" ... vendor-provided electrical diagrams will arbitrarily determine which contacts are considered connected in their "reset state", then define the opposite to declare the contact's "set state" position.  
 
 Latching relays come in two forms:  
 - One coil and the set/reset functionality occurs by regulating the positive and negative voltage across the coil as desired  
