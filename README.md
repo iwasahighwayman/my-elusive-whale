@@ -1315,11 +1315,13 @@ The Pico will need the externalized Push-Pull/H-Bridge driver using discrete tra
 
 N.B.: In the LED string driver signal waveform above, the python logic ensures a tiny slice of time where both output signals are low, between one or the other output signal being high.  Again, this ensures no "glitch" where due to tolerances and timings, both upper and lower transistors composing the Push-Pull/H-Bridge driver are both "on", effectively briefly shorting the power supply rails.
 
+N.B.: Also in the LED string driver signal waveform above, the 45 Hertz (Hz) frequency of the LED drive signal actually produced a slightly-perceptible "flicker" of the LEDs to the human eye ... the python logic's timing will be adjusted subsequently to result in an 80 Hz LED drive signal frequency, resulting in no perceptible "flicker" result.
+
 Next we will look at the current consumption of this architecture ...  
 
 The python code spends most of the time "sleeping".
 
-With only the Pico, without the Push-Pull/H-Bridge driver nor LED strings, the current consumption is approximately 30 milliamps:
+With only the Pico, without the Push-Pull/H-Bridge driver nor LED strings, the current consumption is approximately 30 milliamps (30 millivolts across a one ohm measuring resistor):
 
 ![xxx](/images/analog-rpipico-pushpull1-current-measure-setup-usb-cable-NOT-connected-to-PC-30mA-30mV-across-1ohm-resistor-IMG_0315-20250624.JPG)
 
@@ -1327,7 +1329,7 @@ With only the Pico, without the Push-Pull/H-Bridge driver nor LED strings, the c
 
 The Pico also has a "light sleep" mode which turns off more of the RP2040 hardware but maintains RAM and register state, further reducing the current consumption to approximately 5 to 8 milliamps:
 
-Again, here is the Pico using "sleep" not "light sleep", consuming approximately 30 milliamps of current, using a 10 ohm resistor to measure the supply current:
+Again, here is the Pico using "sleep" not "light sleep", consuming approximately 30 milliamps of current, this time using a 10 ohm resistor to measure the supply current:
 
 ![xxx](/images/analog-rpipico-lightsleep1-seeed-studio-xiao-rp2040-sleep-10-ohm-5-volt-supply-30-milliamp-supply-IMG_0297-20250416.jpeg)
 
@@ -1341,9 +1343,9 @@ When using a 1 ohm resistor to measure the supply current, the current increases
 
 ![xxx](/images/analog-rpipico-lightsleep1-dso-close-up-8mA-8mV-across-1ohm-resistor-IMG_0318-20250624.JPG)
 
-The Pico controller would also allow me to re-introduce the darkness sensor into the architecture at a nominal increase of expense and complexity.
+The Pico controller would also allow me to re-introduce the darkness sensor into the architecture at a nominal increase of expense and complexity.  And if executed, the hardware 555 "de-bounce" circuitry is no longer required since the python logic can perform the "de-bounce" functionality in software instead.
 
-As a reference, here is the current draw of the OEM LED controller using a 10 ohm resistor to measure the current - Note that this is one of the newer LED controller boards which has the double-harmonic driver waveform.
+As a reference, here is the current draw of the OEM LED controller using a 10 ohm resistor to measure the current, first with LED strings "off" state (to measure "off" quiescent current of the OEM LED controller board only) and then with LED strings "on" state:
 
 ![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0319-20250625.jpeg)
 
@@ -1352,6 +1354,8 @@ As a reference, here is the current draw of the OEM LED controller using a 10 oh
 ![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0321-20250625.jpeg)
 
 ![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0322-20250625.jpeg)
+
+Note that this is one of the newer, smaller OEM LED controller boards which has the double-harmonic driver waveform:
 
 ![xxx](/images/analog-led-controller-currrent-measure-10-ohm-resistor-IMG_0323-20250625.jpeg)
 
@@ -1373,7 +1377,7 @@ Using the `source/pushpulltimer1.py` script here is the current consumption acro
 
 ![xxx](/images/analog-rpipico-pushpull1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-dso-close-up-IMG_0328-20250626.JPG)
 
-Using the  `source/pushpulltimerlightsleep1.py` script here is the current consumption with the three LED strings illuminated:
+Using the  `source/pushpulltimerlightsleep1.py` script here is the current consumption with the three LED strings alternating between "on" state and "off" state for 5 seconds each repeatedly:
 
 ![xxx](/images/analog-rpipico-pushpulltimerlightsleep1-directly-driving-3-LED-strings-current-measure-setup-45mA-45mV-across-1ohm-resistor-IMG_0329-20250626.JPG)
 
@@ -1422,9 +1426,9 @@ My preference is for the latter in analog systems.
 
 More detailed images and explanations will be provided below, but here is what a typical latching relay signal looks like:  
 
-Here is the first attempt at the schematic and resulting printed circuit board (PCB).  
-
 ![xxx](/images/analog-phototransistor2-breadboard-01-IMG_0331-20250628.JPG)  
+
+Here is the first attempt at the schematic and resulting printed circuit board (PCB):  
 
 ![xxx](/images/analog-phototransistor2-schematic-02-20250629.png)  
 
@@ -1443,6 +1447,10 @@ Note that we needed to add a single, strategically-placed zero-ohm jumper to the
 ![xxx](/images/analog-phototransistor3-schematic-01-20250629.png)  
 
 ![xxx](/images/analog-phototransistor3-pcb-01-20250629.png)  
+
+This improved PCB trace layout also resulted in power rail traces being side-by-side, making it trivially easy to add an electrolytic capacitor (for supply voltage fluctuations due to rapid rise/fall of current) and a foil disk capacitor (for higher frequency supply voltage noise).
+
+The positive ("+") side of the latching relay coils are connected to the positive supply rail, and the negative ("-") side of the latching relay coils are connected to transistors.  Energizing a particular latching relay coil is a momentary "low" pulse of the MOSFET transistor's drain terminal.
 
 Here are the voltage signals at transistor Q3, at the gate then at the drain (connected to latching relay pin 16)
 
