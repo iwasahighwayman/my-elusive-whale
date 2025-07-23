@@ -1450,6 +1450,26 @@ Note that we needed to add a single, strategically-placed zero-ohm jumper to the
 
 This improved PCB trace layout also resulted in power rail traces being side-by-side, making it trivially easy to add an electrolytic capacitor (to reduce/eliminate supply voltage fluctuations due to rapid rise/fall of current) and a foil disk capacitor (to reduce/eliminate higher frequency supply voltage noise).
 
+N.B.: Confirmed that we can use a less-expensive Hiletgo Everlight PT334 or LiteOn LTR-3208 phototransistor, in place of the more expensive Vishay bpw77n phototransistor:  
+
+![xxx](/images/analog-phototransistor-flat-denotes-collector-everlight-hiletgo-PT334-6C-amazon-20250712.PNG)  
+
+![xxx](/images/analog-phototransistor-flat-denotes-collector-everlight-hiletgo-PT334-6C-amazon-short-lead-collector-plus-positive-20250712.PNG)  
+
+![xxx](/images/analog-phototransistor-flat-denotes-collector-everlight-hiletgo-PT334-6C-LiteOn-LTR-3208-LTR3208-similar-20250712.PNG)  
+
+[analog-phototransistor-flat-denotes-collector-everlight-hiletgo-PT334-6C-20250712.pdf](/datasheets/analog-phototransistor-flat-denotes-collector-everlight-hiletgo-PT334-6C-20250712.pdf)  
+
+[analog-phototransistor-flat-denotes-collector-everlight-hiletgo-PT334-6C-EVER_S_A0003541250_1-2548712-20220806.pdf](/datasheets/analog-phototransistor-flat-denotes-collector-everlight-hiletgo-PT334-6C-EVER_S_A0003541250_1-2548712-20220806.pdf)  
+
+![xxx](/images/analog-phototransistor-flat-denotes-collector-everlight-hiletgo-LiteOn-LTR-3208-LTR3208-20250712.PNG)  
+
+[analog-phototransistor-flat-denotes-collector-everlight-hiletgo-LiteOn-LTR-3208-LTR3208-20250712.pdf](/datasheets/analog-phototransistor-flat-denotes-collector-everlight-hiletgo-LiteOn-LTR-3208-LTR3208-20250712.pdf)  
+
+![xxx](/images/analog-Silicon-NPN-Phototransistor-bpw77n-vishay-semiconductor-20210329-20250723.PNG)  
+
+[analog-Silicon-NPN-Phototransistor-bpw77n-vishay-semiconductor-20210329.pdf](/datasheets/analog-Silicon-NPN-Phototransistor-bpw77n-vishay-semiconductor-20210329.pdf)  
+
 The positive ("+") side of the latching relay coils are connected to the positive supply rail, and the negative ("-") side of the latching relay coils are connected to transistors.  Energizing a particular latching relay coil is a momentary "low" pulse of the MOSFET transistor's drain terminal.
 
 Here are the voltage signals at transistor Q3, at the gate then at the drain (connected to latching relay pin 16)
@@ -1529,7 +1549,11 @@ Since these other brands of latching relays using a single coil, the circuitry w
 
 # "Counting in Binary" Updates - July 2025  
 
+If we wish to retrofit / enhance an LED controller which lacks "on-at-darkness" and apply / adjust the illumination timer, we can use the phototransistor circuit above:  
+
 ![xxx](/images/analog-phototransistor3-schematic-01-20250629.png)  
+
+And integrate a digital counter:  
 
 ![xxx](/images/analog-digitalcounter1-schematic-01-20250723.PNG)  
 
