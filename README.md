@@ -1527,4 +1527,26 @@ https://www.digikey.com/en/products/detail/panasonic-electric-works/AGN21003/644
 
 Since these other brands of latching relays using a single coil, the circuitry would need to be updated to be more of an H-Bridge / Push-Pull circuit, for which there are examples above, though it's possible the Seeed Studio XIAO RP2040 pins could directly drive enough current to a 3.3 volt latching relay coil without the need for additional components.  
 
+# "Counting in Binary" Updates - July 2025  
+
+![xxx](/images/analog-phototransistor3-schematic-01-20250629.png)  
+
+![xxx](/images/analog-digitalcounter1-schematic-01-20250723.PNG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-01-darkness-led_string_off-Q4_35_second_counter_reset_pulse_zero_ohm-IMG_E0339-20250722.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-02-darkness-led_string_off-Q4_counter_reset_pulse_disconnected-IMG_E0340-20250722.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-03-darkness-led_string_off-Q4_35_second_counter_reset_pulse_10k_ohm-IMG_E0341-20250722.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-04-darkness-led_string_off-Q4_35_second_counter_reset_pulse_10k_ohm-vdd_ripple-IMG_E0342-20250722.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-05-darkness-led_string_off-Q4_35_second_counter_reset_signal_10k_ohm-IMG_E0343-20250722.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-06-daylight_100k_ohm-led_string_off-cd4060_reset_high-IMG_E0344-20250722.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-07-darkness-led_string_on-Q4_counter_reset_signal_started_10k_ohm-IMG_E0345-20250722.JPG)  
+
+![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-08-darkness-led_string_off-Q4_35_second_counter_reset_signal_10k_ohm-IMG_E0346-20250722.JPG)  
+
 THE END.  
