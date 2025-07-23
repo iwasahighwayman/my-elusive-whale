@@ -1533,6 +1533,10 @@ Since these other brands of latching relays using a single coil, the circuitry w
 
 ![xxx](/images/analog-digitalcounter1-schematic-01-20250723.PNG)  
 
+The digital counter uses 1 milliamp of quiescent current.  
+
+The digital counter "resets" the latching relay coil contacts with a 12 milliamp pulse total current for 0.6 seconds (relay pin 15).  
+
 ![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-01-darkness-led_string_off-Q4_35_second_counter_reset_pulse_zero_ohm-IMG_E0339-20250722.JPG)  
 
 ![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-02-darkness-led_string_off-Q4_counter_reset_pulse_disconnected-IMG_E0340-20250722.JPG)  
@@ -1548,5 +1552,9 @@ Since these other brands of latching relays using a single coil, the circuitry w
 ![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-07-darkness-led_string_on-Q4_counter_reset_signal_started_10k_ohm-IMG_E0345-20250722.JPG)  
 
 ![xxx](/images/analog-phototransistor3-latching-relay-digitalcounter1-08-darkness-led_string_off-Q4_35_second_counter_reset_signal_10k_ohm-IMG_E0346-20250722.JPG)  
+
+[analog-cd4060b-14-stage-ripple-carry-binary-counter-divider-and-oscillator-01-datasheet-20250710.pdf](/datasheets/analog-cd4060b-14-stage-ripple-carry-binary-counter-divider-and-oscillator-01-datasheet-20250710.pdf)  
+
+[analog-cd4060b-14-stage-ripple-carry-binary-counter-divider-and-oscillator-03-mc74hc4060-datasheet-20250710.pdf](/datasheets/analog-cd4060b-14-stage-ripple-carry-binary-counter-divider-and-oscillator-03-mc74hc4060-datasheet-20250710.pdf)  
 
 THE END.  
