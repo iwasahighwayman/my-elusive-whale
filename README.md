@@ -1635,7 +1635,7 @@ MOMENTARY BRIGHTNESS (NO LIGHT DEBOUNCE):
 
 ```
 
-Here is an ASCII-Architecture schematic of the darkness detector circuit
+Here is an ASCII-Architecture schematic of the darkness detector circuit - daylight low, darkness high  
 
 ```
 
@@ -1693,6 +1693,8 @@ No LED string: 10 mA
 Yes LED string (x3): 21 mA
 
 ![xxx](/images/analog-rpipico-pushpullsleeplowpowerdarkness4-02-yes-led-string-10ohm-resistor-8mA-light-21mA-dark-IMG_0353-20250728.JPG)  
+
+Here are the LED string "push-pull" or "H-Bridge" signals 
 
 ![xxx](/images/analog-rpipico-pushpullsleeplowpowerdarkness4-03-yes-led-string-62hz-2.6V-peak-5.2V-peak-to-peak-dark-IMG_0354-20250728.JPG)  
 
