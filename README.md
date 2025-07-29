@@ -1583,6 +1583,18 @@ The digital counter "resets" the latching relay coil contacts with a 12 milliamp
 
 # "Could it really be that simple" Updates - July 2025  
 
+I decided to go ahead and implement the Raspberry Pi RP2040 based LED controller.  
+
+Rather than use a Raspberry Pi Pico, I chose to use the Seeed Studio XIAO RP2040 single board computer.  
+
+This architecture will use no concept of time of day.  
+
+Instead, it will solely rely upon detecting the transition from daylight to darkness, then after an appropriate "debounce" time window, drive the LED strings for a specified timer period.  
+
+Turns out that there are very few components necessary to implement this design.  
+
+N.B.: The RP2040 has a guaranteed operational temperature range of -20'C to +85'C (-4'F to 185'F) ... local temperatures in the winter may go lower than -4'F but only rarely and typically only for brief time periods, and the deployed RP2040 may operate at lower temperatures (-4'F is the guarateed operation low-end temperature).  
+
 ![xxx](/images/analog-rpipico-hardware-01-pushpullsleeplowpowerdarkness4-IMG_0347-20250727.JPG)  
 
 ![xxx](/images/analog-rpipico-hardware-02-pushpullsleeplowpowerdarkness4-IMG_0348-20250727.JPG)  
@@ -1591,10 +1603,102 @@ The digital counter "resets" the latching relay coil contacts with a 12 milliamp
 
 ![xxx](/images/analog-rpipico-hardware-04-pushpullsleeplowpowerdarkness4-IMG_0351-20250727.JPG)  
 
+This time I used https://tinygo.org/ to mimic `source/pushpulltimerlightsleep1.py` functionality.  
+
+I will post the tinygo source code shortly - this firmware is still being tested.  
+
+```
+
+THIS CODE ACCURATELY DETECTS LIGHT-DARK TRANSITION DEBOUNCES
+
+LIGHTING CONDITION       | RED LED   | GREEN LED
+-------------------------+-----------+-----------
+LIGHT                    | OFF       | ON
+-------------------------+-----------+-----------
+LIGHT -> DARK TRANSITION | OFF -> ON | ON -> OFF
+-------------------------+-----------+-----------
+DARK 5 SECONDS DEBOUNCE  | ON        | OFF -> ON
+-------------------------+-----------+-----------
+DARK                     | ON        | ON
+-------------------------+-----------+-----------
+DARK -> LIGHT TRANSITION | ON -> OFF | ON -> OFF
+-------------------------+-----------+-----------
+LIGHT 5 SECONDS DEBOUNCE | OFF       | OFF -> ON
+-------------------------+-----------+-----------
+
+MOMENTARY BRIGHTNESS (NO LIGHT DEBOUNCE):
+- DURING ILLUMINATION TIME WINDOW:
+  - LEDS MOMENTARY OFF THEN ON ONCE NO MORE MOMENTARY BRIGHTNESS AND DARK DEBOUNCE
+  - EXTENSION OF ILLUMINATION TIME WINDOW END-TIME = TOTAL OF MOMENTARY BRIGHTNESS PLUS DARK DEBOUNCE TIME
+- AFTER ILLUMINATION TIME WINDOW:
+  - LEDS STAY OFF
+
+```
+
+Here is an ASCII-Architecture schematic of the darkness detector circuit
+
+```
+
+               3.3 V
+                o
+                |
+        +-------+---------+
+        |                 |
+        \                 |
+        /                 |
+   3.3M \                 |
+        /                 \
+        |                 / 10K
+        +                 \
+        |                 /
+        \                 |
+        /                 |
+     1M \<--+             |
+        /   |             |
+        \   |             |
+        |   |             |
+            |             |
+            |             |
+        +---+             +------o GPIO28
+        |                 |
+        |                 |
+        | flat short-lead |
+        / collector       |
+      |/                  |
+    --+   hiletgo         |
+      |\  everlight       |
+        V PT334           |
+        | phototransistor |
+        |                 |
+        |                 /  collector (3)
+        |               |/
+        +---------------+ BS8050
+              base (2)  |\
+                          V  emitter (1)
+                          |
+                          |
+                          |
+                          o
+                         GND
+
+
+```
+
+Here are some amperage readings across a 10 Ohm resistor  
+
+No LED string: 10 mA
+
 ![xxx](/images/analog-rpipico-pushpullsleeplowpowerdarkness4-01-no-led-string-10ohm-resistor-8mA-light-10mA-dark-IMG_0352-20250728.JPG)  
+
+Yes LED string (x3): 21 mA
 
 ![xxx](/images/analog-rpipico-pushpullsleeplowpowerdarkness4-02-yes-led-string-10ohm-resistor-8mA-light-21mA-dark-IMG_0353-20250728.JPG)  
 
 ![xxx](/images/analog-rpipico-pushpullsleeplowpowerdarkness4-03-yes-led-string-62hz-2.6V-peak-5.2V-peak-to-peak-dark-IMG_0354-20250728.JPG)  
+
+If the firmware is updated to be a 24 hour cycle versus a 10 second cycle, here are some quick-math estimates of how long four "D" Ni-MH batteries, which have 10000 mAH of energy, can operate:
+
+- Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 10mA (210 mAH) = 273 mAH per day ==> 10,000 mAH / 273 mAH = 36 days  
+- Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 10mA (180 mAH) = 306 mAH per day ==> 10,000 mAH / 306 mAH = 32 days  
 
 THE END.  
