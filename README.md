@@ -1581,4 +1581,20 @@ The digital counter "resets" the latching relay coil contacts with a 12 milliamp
 
 [analog-cd4060b-14-stage-ripple-carry-binary-counter-divider-and-oscillator-03-mc74hc4060-datasheet-20250710.pdf](/datasheets/analog-cd4060b-14-stage-ripple-carry-binary-counter-divider-and-oscillator-03-mc74hc4060-datasheet-20250710.pdf)  
 
+# "Could it really be that simple" Updates - July 2025  
+
+![xxx](/images/analog-rpipico-hardware-01-pushpullsleeplowpowerdarkness4-IMG_0347-20250727.JPG)  
+
+![xxx](/images/analog-rpipico-hardware-02-pushpullsleeplowpowerdarkness4-IMG_0348-20250727.JPG)  
+
+![xxx](/images/analog-rpipico-hardware-03-pushpullsleeplowpowerdarkness4-IMG_0350-20250727.JPG)  
+
+![xxx](/images/analog-rpipico-hardware-04-pushpullsleeplowpowerdarkness4-IMG_0351-20250727.JPG)  
+
+![xxx](/images/analog-rpipico-pushpullsleeplowpowerdarkness4-01-no-led-string-10ohm-resistor-8mA-light-10mA-dark-IMG_0352-20250728.JPG)  
+
+![xxx](/images/analog-rpipico-pushpullsleeplowpowerdarkness4-02-yes-led-string-10ohm-resistor-8mA-light-21mA-dark-IMG_0353-20250728.JPG)  
+
+![xxx](/images/analog-rpipico-pushpullsleeplowpowerdarkness4-03-yes-led-string-62hz-2.6V-peak-5.2V-peak-to-peak-dark-IMG_0354-20250728.JPG)  
+
 THE END.  
