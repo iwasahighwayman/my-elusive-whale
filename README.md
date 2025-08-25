@@ -1703,4 +1703,37 @@ If the firmware is updated to be a 24 hour cycle versus a 10 second cycle, here 
 - Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 10mA (210 mAH) = 273 mAH per day ==> 10,000 mAH / 273 mAH = 36 days  
 - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 10mA (180 mAH) = 306 mAH per day ==> 10,000 mAH / 306 mAH = 32 days  
 
+
+# "Optimizer" Updates - August 2025  
+
+Spent all weekend learning and better-understanding the clocking system of the RP2040 CPU, specifically trying to optimize the current consumption in TinyGO firmware.  
+
+I also reset or turned off as many internal RP2040 circuits as possible, to maximize battery life.  
+
+The lowest current consumption is using the Ring Oscillator (ROSC) which I was able to run at 4.5 milliamps.  
+
+Unfortunately the ROSC has a relatively wide range of operating frequency and is subject to Process (Manufacturing and Age), Voltage and Temperature (Environement and Internal-Self-Heating), otherwise know as PVT challenges.  
+
+The ROSC also suffers from timing accuracy: the 1000 milliseconds ON then 1000 milliseconds OFF blinking LED was more like 2 or 3 seconds on then off.  
+
+The highest current clock is the System Phase Locked Loop (PLL_SYS) circuit consuming tens-of-milliamps but results in a highly stable operating frequency and very accurate timing.  
+
+The middle ground and selected clock is the Crystal Oscillator (XOSC) which only consumes slightly more current than the ROSC at 5 milliamps and produces a highly stable operating frequency and very accurate timing, and is not subject to PVT challenges.
+
+Here is an image of the initial startup of the Pico at 38 milliamps then reducing to 5 milliamps as the firmware makes optimizations:  
+
+![xxx](/images/analog-rpipico-hardware-05---lowpower-08---initial-38mA-IMG_E0367-20250825.JPG)  
+
+Here is th same initial startup at a higher oscilloscope resulution, clipping the Pico initial startup current but providing better visibility to the 5 milliamp steady state current:  
+
+![xxx](/images/analog-rpipico-hardware-06---lowpower-08---xosc-5mA-IMG_0364-20250825.JPG)  
+
+Recalculating the math from above: 
+
+If the firmware is updated to be a 24 hour cycle versus a 10 second cycle, here are some quick-math estimates of how long four "D" Ni-MH batteries, which have 10000 mAH of energy, can operate:
+
+- Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 5mA (105 mAH) = 168 mAH per day ==> 10,000 mAH / 168 mAH = 59 days  
+- Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 5mA (90 mAH) = 216 mAH per day ==> 10,000 mAH / 216 mAH = 46 days  
+
+
 THE END.  
