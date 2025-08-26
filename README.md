@@ -1728,6 +1728,34 @@ Here is th same initial startup at a higher oscilloscope resulution, clipping th
 
 ![xxx](/images/analog-rpipico-hardware-06---lowpower-08---xosc-5mA-IMG_0364-20250825.JPG)  
 
+I was curious if the ~60 Hz LED string driver waveform could be accurately driven off the crystal oscillator (XOSC) clock versus the normal System Phase Locked Loop (PLL_SYS) clock.  
+
+For completeness of research documentation here:  
+
+Per RP2040 datasheet "2.15.2.1. Ring Oscillator" section:
+
+The startup frequency is typically 6MHz but varies with PVT (Process (Manufacturing and Age), Voltage and Temperature (Environmental and Self-Heating)).  
+
+The frequency is likely to be in the range 4-8MHz and is guaranteed to be in the range 1.8-12MHz.  
+
+The ROSC is not affected by SLEEP mode.  
+
+The Raspberry Pi Pico is documented to use a 12 MHz crystal which can then drive the PLLs to 125 MHz.  
+
+The Seeed Studio XIAO RP2040 claims a top PLL speed of 133 MHz which appears to be the published max speed by Raspberry Pi Inc. and 133 MHz can be derived from the same 12 MHz crystal.
+
+Here is a time-zoomed-in image of the ~60 Hz LED string driver waveform:  
+
+![xxx](/images/analog-rpipico-hardware-07---pushpullsleeplowpowerdarkness6---xosc-5mA---led-string-waveform-close-up-IMG_0369-20250825.JPG)  
+
+Here is a time-zoomed-out image of same LED string driver waveform over the full 10 second cycle:  
+
+![xxx](/images/analog-rpipico-hardware-08---pushpullsleeplowpowerdarkness6---xosc-5mA---led-string-waveform-full-10-second-cycle-IMG_0370-20250825.JPG)  
+
+Here is the same time window of ~5 milliamp current usage over the full 10 second cycle:  
+
+![xxx](/images/analog-rpipico-hardware-09---pushpullsleeplowpowerdarkness6---xosc-5mA---current-consumption-full-10-second-cycle-IMG_E0371-20250825.JPG)  
+
 Recalculating the math from above: 
 
 If the firmware is updated to be a 24 hour cycle versus a 10 second cycle, here are some quick-math estimates of how long four "D" Ni-MH batteries, which have 10000 mAH of energy, can operate:
