@@ -1764,4 +1764,5 @@ If the firmware is updated to be a 24 hour cycle versus a 10 second cycle, here 
 - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 5mA (90 mAH) = 216 mAH per day ==> 10,000 mAH / 216 mAH = 46 days  
 
 
-THE END.  
+## THE END.  
+
