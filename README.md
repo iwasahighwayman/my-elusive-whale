@@ -1515,6 +1515,19 @@ N.B.:  These are the 555 integrated circuit's quiescent current - pins 2 and 6 m
 
 It is interesting that the original bipolar NE555 consumes relatively significantly less quiescent current than the newer CMOS LMC555 and TLC555 chips.  
 
+```
+555 Datasheet specifications
+
+Supply voltage = 5V
+Temperature = 25'C
+No output load
+
+ne555 .... 6 mA maximum supply quiescent current ..... 4.5 V - 16 V supply range ... output source/sink 200 mA
+lm555 .... 6 mA maximum supply quiescent current ..... 4.5 V - 16 V supply range ... output source/sink 200 mA
+lmc555 ... 260 uA maximum supply quiescent current ... 1.5 V - 12 V supply range ... output source/sink 100 mA
+tlc555 ... 350 uA maximum supply quiescent current ... 5 V - 15 V supply range ..... output source 15 mA /sink 150 mA
+```
+
 ![xxx](/images/analog-phototransistor3-latching-relay-07-current-consumption-10-ohm-light-dark-simulated-relay-set-light-relay-reset-IMG_0338-20250630.JPG)  
 
 Here are the specifications and data sheet for the "Hong" brand of latching relay used above:  
