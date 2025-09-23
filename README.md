@@ -1777,5 +1777,130 @@ If the firmware is updated to be a 24 hour cycle versus a 10 second cycle, here 
 - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 5mA (90 mAH) = 216 mAH per day ==> 10,000 mAH / 216 mAH = 46 days  
 
 
+# "PICture This" Updates - September 2025  
+
+For years, I have looked for a project to justify the investment of time needed to learn to program the Microchip "PIC" 8-bit microcontrollers.  I recently began this journey, to understand if the Seeed Studio XAIO RP2040 could be replaced with a PIC device.  
+
+Advantages:  
+- Expense: XAIO = $10 (Amazon), PIC16F15213 = $0.87 or PIC16F15313 = $1.12 (Mouser)  
+  - A Raspberry Pi Pico RP2040 = $6 but is a much larger form factor than the XAIO  
+- Size: Though the XAIO is tiny at less than 1 inch square, both PIC devices are 8-pin DIP packages  
+- Quiescent Current:  
+  - As demonstrated above, with a lot of RP2040 tuning, it is possible to run the XAIO at 5 milliamps (60 Hertz waveform but no LED string illumination)  
+  - With no PIC tuning it will produce the same LED string waveform at 1 milliamp  
+  - The PIC16F15313 additionally contains a "Complementary Waveform Generator (CWG)" peripheral which can produce the same LED string waveform, including the momentary "dead band" between alternating high-low H-Bridge / Push-Pull transitions to ensure no power rail shorts, with no actual CPU execution beyond the intial CWG configuration then turning the CWG on and off during timed darkness and daylight
+- The XIAO has an Industrial operating temperature range of -40'C to +85'C, and the PICs additionally have an Extended operation temperature range of -40'C to +125'C  
+
+The PIC16F* 5-Volt devices have a maximum VDD supply voltage of 6.5 volts, with I/O pins able to source/sink up to 25 milliamps.  
+
+N.B.: There are PIC16LF* devices which are Low-Voltage 3.3-Volt devices ... be aware when ordering PICs.  
+
+[analog-microchip-PIC16F15213-14-23-24-43-44-Microcontroller-Data-Sheet-40002195-20220601-20250913.pdf](/datasheets/analog-microchip-PIC16F15213-14-23-24-43-44-Microcontroller-Data-Sheet-40002195-20220601-20250913.pdf)  
+
+[analog-microchip-PIC16F15313_23_Data_Sheet_40001897C-01-20200901-20250913.pdf](/datasheets/analog-microchip-PIC16F15313_23_Data_Sheet_40001897C-01-20200901-20250913.pdf)  
+
+![xxx](/datasheets/analog-microchip-PIC16F15313_23_Data_Sheet_40001897C-02-industrial_vs_extended_temperature_range-20200901-20250913.PNG)  
+
+The Microchip PIC development tools are Java-based or OS-native, and operate on current versions of Windows, macOS (with Rosetta if ARM/Apple-Silicon) and Linux:  
+- MPLab X IDE - Netbeans-based  
+  - Version 5.50 seems to have far less reliance on continually updated "Plug-Ins" ... there are many wiki articles with folks complaining that "_Everything worked fine yesterday but after today's Plug-In updates nothing works any more_"  
+  - Newer 6.x versions require an Internet connection or some features and functions fail to operate correctly  
+  - Contains a "Simulator" which can be used to run the code, monitor output pins and "stimulate" input pins  
+    - Many of the more advanced on-chip peripherals cannot be simulated  
+    - Timers/timing is not accurate - e.g.: if included a 500 millisecond delay, the actual simulator delay may be 10 milliseconds or 2000 milliseconds  
+    - Works great for testing basic input/output pin logic  
+    - The simulator often must be paused in order to select pin's to monitor (output pins) or stimulate (input pins)  
+- XC8 C Compiler - OS-native  
+  - Version 2.32 was the current version when MPLab X v5.50 was released  
+    - It built the PIC16F15313 code albeit with a bunch of warnings  
+    - It could not build PIC16F15213 code  
+  - Version 2.36 was released one year after 2.32  
+    - It built the PIC16F15313 code with no warnings  
+    - It built the PIC16F15213 code with no warnings  
+- Microchip Code Configurator (MCC) - Java-based  
+  - Provides "point and click" configuration which then generate source code to be included with "main.c" code we write  
+  - The "Classic" version seems to function better than the "Melody" version for these MCUs  
+  - Version 4.2.1 is available as a set of zipped files and the user guide explains the steps to install 
+
+To debug and/or program the PIC chips, a hardware debugger/programmer must be purchased  
+- PICkit3 debugger/programmer is available at Amazon for $40  
+  - These are very old devices but continue to function with MPLab X up-to-and-including version 6.20  
+  - MPLab X version 6.25 dropped suppot for PICkit3 debuggers/programmers  
+  - Supports PIC16F15313 devices  
+  - Does not support PIC16F15213 devices  
+  - An external 5 Volt supply must be applied for the PICKit to be able to function
+    - I used four rechargeable Ni-MH 1.2 Volt batteries in series  
+
+![xxx](/images/analog-microchip-pickit3-official-08-EXTERNAL_5_VOLT_VDD_REQUIRED-20250918.png)  
+
+- PICkit Basic debugger/programmer is available at Mouser for $40  
+  - Was released to market last year  
+  - Requires MPLab X version 6.25 and newer versions  
+  - Reportedly supports all PIC devices (and other Microchip MCU families)  
+
+If only wish to program PIC chips and not debug, there is aftermarket software which works with the PICkit3 debugger/programmer and is advertised/marketed to support all PIC devices:  
+- https://pickitplus.co.uk/Typesetter/
+- Available at site above for $30 annually  
+  - One year of email-based support  
+  - Payable with PayPal  
+- The author says to contact her/him/them if a PIC device does not work and an update will be provided  
+
+Although I performed my research with the PIC16F15313 device, I decided to NOT use the CWG to generate the LED string waveform.  
+
+Instead I reused the XAIO logic infinite loop of:
+- 7 milliseconds high-pin low-pin  
+- 1 millisecond low-pin low-pin  
+- 7 milliseconds low-pin high-pin  
+- 1 millisecond low-pin low-pin  
+
+This produces a 60 Hertz LED string drive waveform including the "dead band" between high/low/high/low transitions.  
+
+I successfully used the MPLab X IDE on Windows Server 2019 Desktop Edition to code, compile, debug and program the PIC16F15313.  
+- The debugger (including external 5 Volt supply) must be connected to the PC before starting the IDE in order for it to be recognized and usable to debug using it
+  - Breakpoint worked fine:  
+    - PIC16F15313 = 1 hardware breakpoint  
+    - PIC16F15213 = 3 hardware breakpoints  
+    - The "MCLR" physical pin 4 (RA3 pin) must be retain it's default "RESET" functionality in MCC if wish to debug  
+    - The breakpoint(s) must be set before start debugging  
+  - Step-Over was a little klunky  
+  - Step-Into seemed to mess-up the timer accuracy  
+
+If no desire to debug then can disable the MCC "System" tab's "Low Voltage Programming" setting then remove the "RESET" functionality from physical pin 4 to then use that pin as GPIO RA3 or mapped to an on-chip peripheral input/output.  
+
+N.B.: Oddly MCC defaults a GPIO output pin to be an analog output, not a digital output ... be sure to UNcheck the "Analog" option in MCC before generating the source code.  
+
+I also used the MPLab X IPE programming tool to successfully program the PIC16F15313  
+- Do not connect the PICkit3 to the PC  
+- Connect the external 5 Volt supply to the PICkit3  
+- Start the MPLab X IPE programming tool  
+- Select the PIC16F15313 device  
+- Plug-in the PICkit3 to the PC  
+- Click the "Connect" button once the MPLab X IPE programming tool auto-detects the presence of the PICkit3  
+- The Program/Erase/Read/Verify/Blank_Check buttons should become enabled  
+- Select the HEX file to burn to the PIC16F15313  
+- Click the "Program" button  
+- Monitor for success or error messages displayed  
+
+![xxx](/images/analog-microchip-PIC16F15313-h_bridge-push_pull-60_hz-LED_string_driver-IMG_E0578-20250923.JPG)  
+
+Aligned to the datasheet electrical characteristics tables, the PIC consumed approximately 1 milliamp of operating current (10 millivolts across a 10 ohm resistor):  
+
+![xxx](/images/analog-microchip-PIC16F15313-h_bridge-push_pull-1_milliamp_quiescent_current-IMG_E0580-20250923.JPG)  
+
+If we look closely at the current consumption above, it appears the current goes down to nearly 0 (zero) milliamps nearly every 2-4 seconds.  
+
+Concerned that potentially (potentially) something was causing the PIC16F15313 to reset, I included logic in my source code to blink the red LED on the right-hand side of the breadboard for 500 milliseconds at every startup before entering the infinite loop, using pin RA2 physical pin 5.  
+
+To my satisfaction the red LED only blinked once at initial power-on ... unclear what is causing the current consumption to go to 0 every few seconds but it does not appear to be due to the PIC16F15313 reseting.  
+
+Recalculating the math from above:  
+
+Here are some quick-math estimates of how long four "D" Ni-MH batteries, which have 10000 mAH of energy, can operate:  
+
+- Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 1mA (21 mAH) = 84 mAH per day ==> 10,000 mAH / 84 mAH = 119 days  
+- Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 1mA (18 mAH) = 144 mAH per day ==> 10,000 mAH / 144 mAH = 69 days  
+
+
+
 ## THE END.  
 
