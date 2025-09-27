@@ -1900,6 +1900,27 @@ Here are some quick-math estimates of how long four "D" Ni-MH batteries, which h
 - Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 1mA (21 mAH) = 84 mAH per day ==> 10,000 mAH / 84 mAH = 119 days  
 - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 1mA (18 mAH) = 144 mAH per day ==> 10,000 mAH / 144 mAH = 69 days  
 
+Looking at the 
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-pinout-01-20250927.PNG)  
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-minumum_wiring_connections-01-20250927.PNG)  
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-01-IMG_0584-20250927.JPG)  
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-02-IMG_E0582-20250927.JPG)  
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-03-IMG_0585-20250927.JPG)  
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-04-IMG_0586-20250927.JPG)  
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-06-IMG_E0588-20250927.JPG)  
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-07-IMG_0599-20250927.JPG)  
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-05-IMG_0593-20250927.JPG)  
+
+![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-08-IMG_0602-20250927.JPG)  
 
 
 ## THE END.  
