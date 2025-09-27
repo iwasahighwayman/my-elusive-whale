@@ -1790,6 +1790,10 @@ Advantages:
   - With no PIC tuning it will produce the same LED string waveform at 1 milliamp  
   - The PIC16F15313 additionally contains a "Complementary Waveform Generator (CWG)" peripheral which can produce the same LED string waveform, including the momentary "dead band" between alternating high-low H-Bridge / Push-Pull transitions to ensure no power rail shorts, with no actual CPU execution beyond the intial CWG configuration then turning the CWG on and off during timed darkness and daylight
 - The XIAO has an Industrial operating temperature range of -40'C to +85'C, and the PICs additionally have an Extended operation temperature range of -40'C to +125'C  
+  - In Fahrenheit this is:  
+    - Industrial: -40'F to 185'F  
+    - Extended: -40'F to 257'F  
+  - This is an improvement over the Seeed Studio XIAO RP2040 which is low-end operating temperature rated to -20'C / -4'F  
 
 The PIC16F* 5-Volt devices have a maximum VDD supply voltage of 6.5 volts, with I/O pins able to source/sink up to 25 milliamps.  
 
@@ -1900,11 +1904,29 @@ Here are some quick-math estimates of how long four "D" Ni-MH batteries, which h
 - Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 1mA (21 mAH) = 84 mAH per day ==> 10,000 mAH / 84 mAH = 119 days  
 - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 1mA (18 mAH) = 144 mAH per day ==> 10,000 mAH / 144 mAH = 69 days  
 
-Looking at the 
+Looking at the _'"Could it really be that simple" Updates - July 2025'_ LED string controller board, I considered making an updated version for the PIC16F213, but then I realized that instead I could create a PIC-based adapter board to be pin-compatible with the Seeed Studio XIAO RP2040 board.  This is a much better Architecture Decision since this approach provides a holistic solution to replace any XIAO-based solution requiring only a few GPIO pins with a PIC MCU.  
+
+N.B.: One difference between the XIAO and PIC solutions:
+- The XIAO board is powered by a 5 volt supply at pin 14 which is stepped-down to 3.3 volts at pin 12 to operate the RP2040 and all GPIO pins
+- As-designed, the PIC board is powered by 5 volts at pin 14 which is jumpered to pin 12 resulting in the PIC and all GPIO pins functioning at 5 volts.
+  - Research and testing will be required to  determine if the 3M ohm (nominal) darkness circuit resistor needs to be increased to account for the 5 volts versus 3.3 volts ... TBD  
+    - The darkness circuit resistor is easily replaceable given that it is not soldered to the main board but rather hosted with female pin connectors  
+  - The PIC device which can operate down to 2.5 volts or 1.8 volts depending on the clock frequency  
+  - The MCP1700-3302E is a 3.3v Low-Quiescent-Current Low-Drop-Out (LDO) 3-pin TO-92 voltage regulator which could easily be added to the PIC adapter board  
+  - [analog-MCP1700-3302E-3.3v-Low-Quiescent-Current-LDO-20001826E-20250331.pdf](/datasheets/analog-MCP1700-3302E-3.3v-Low-Quiescent-Current-LDO-20001826E-20250331.pdf)  
+  - ![xxx](/images/analog-MCP1700-3302E-3.3v-Low-Quiescent-Current-LDO-03-20250927.png)  
+  - ![xxx](/images/analog-MCP1700-3302E-3.3v-Low-Quiescent-Current-LDO-01-20250331.png)  
+  - ![xxx](/images/analog-MCP1700-3302E-3.3v-Low-Quiescent-Current-LDO-02-20250331.png)  
+
+Here are a couple quick snips of the PIC16F213 datasheet depicting the pin-outs plus minimum required circuitry:  
 
 ![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-pinout-01-20250927.PNG)  
 
 ![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-minumum_wiring_connections-01-20250927.PNG)  
+
+N.B.: From a total cost perspective, the XIAO is a less-expensive solution IF (IF) the time-expense of crafting the PIC adapter board is included, particularly so due to the resistors and capacitors necessary in addition to the PIC, printed circuit board and wiring.  
+
+Nevertheless, as the following images demonstrate, it is possible to build a XIAO RP2040 pin-compatible PIC adapter board, to be a drop-in replacement for the XIAO when only a few GPIO pins are required for the solution.  
 
 ![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-01-IMG_0584-20250927.JPG)  
 
