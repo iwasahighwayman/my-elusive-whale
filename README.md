@@ -1944,6 +1944,16 @@ Nevertheless, as the following images demonstrate, it is possible to build a XIA
 
 ![xxx](/images/analog-microchip-PIC16F15213-Microcontroller-seeed_studio-xiao_rp2040_adapter_board-08-IMG_0602-20250927.JPG)  
 
+Further, I decided to proceed to schematic-capture then printed-circuit-board-layout this design and have a handful of the PCBs manufactured.  
+
+N.B.: I was unable to find a readily-available 1x7 nor 1x4 pin PBC layout header on 2.54 mm centers, so used a combination of 1x5 and 1x2 pin PCB layout headers to (hopefully) achieve same desired end-state ... time will tell.  
+
+N.B.: The MCP1700 was a last-minute addition since I appear to have the PCB real estate for population.  Architecturally, this provides flexibility to either populate the PCB with the low drop out (LDO) 5 volt to 3.3 volt regulator, which may (may) provide reduced current consumption thus longer battery life, or simply install a zero ohm wire / jumper between pins two and three to supply the underlying main board circuitry with the 5 volt (nominal) battery voltage ... good architecture provides good engineering options at low complexity and expense.  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-01-schematic-20250929.PNG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-02-pcb-20250929.PNG)  
+
 
 ## THE END.  
 
