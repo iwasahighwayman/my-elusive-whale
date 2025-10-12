@@ -1955,5 +1955,28 @@ N.B.: The MCP1700 was a last-minute addition since I appear to have the PCB real
 ![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-02-pcb-20250929.PNG)  
 
 
+# "THE NEW PHONEBOOK IS HERE !!! ... THE NEW PHONEBOOK IS HERE !!!" Updates - October 2025  
+
+My PCBs arrived and I built the first one, which appears to work flawlessly ... some pictures:  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-03-IMG_0375-20251012.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-04-IMG_0377-20251012.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-05-IMG_0378-20251012.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-06-IMG_0379-20251012.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-07-IMG_0380-20251012.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-08-IMG_0381-20251012.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-09-IMG_0382-20251012.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-10-IMG_0383-20251012.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-11-IMG_0384-20251012.JPG)  
+
+
 ## THE END.  
 
