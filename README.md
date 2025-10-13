@@ -1977,6 +1977,54 @@ My PCBs arrived and I built the first one, which appears to work flawlessly ... 
 
 ![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-11-IMG_0384-20251012.JPG)  
 
+I built a second PCB after figuring out that it is easier to build "from the center of the PCB outward", versus starting with the 7-pin headers then building inward towards the center of the PCB.  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-12-IMG_0387-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-13-IMG_0388-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-14-IMG_0389-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-15-IMG_0390-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-16-IMG_0391-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-17-IMG_0392-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-18-IMG_0393-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-19-IMG_0394-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-20-IMG_0395-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-21-IMG_0397-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-22-IMG_0398-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-23-IMG_0399-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-24-IMG_0400-20251013.JPG)  
+
+I installed an MCP1700-3302E voltage regulator to convert the 5 Volts supply to 3.3 Volts to power the Pic MCU and darkness circuitry:  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-25-IMG_0403-20251013.JPG)  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-26-IMG_E0404-20251013.JPG)  
+
+The 3.3 Volt quiescent current consumption is 0.4 milliamps (4 millivolts across a 10 ohm resistor):  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-27-IMG_E0405-20251013.JPG)  
+
+I next replaced the MCP1700-3302E voltage regulator with a jumper across pins two and three resulting in the 5 volts supply powering the Pic MCU and darkness circuitry:  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-28-IMG_0406-20251013.JPG)  
+
+The 5 volt quiescent current consumption is 0.57 milliamps (5.7 millivolts across a 10 ohm resistor):  
+
+![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-29-IMG_E0407-20251013.JPG)  
+
+
+
 
 ## THE END.  
 
