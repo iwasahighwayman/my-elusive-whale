@@ -2024,6 +2024,20 @@ The 5 volt quiescent current consumption is 0.57 milliamps (5.7 millivolts acros
 ![xxx](/images/analog-raspberry-pi-pico-to-microchip-pic-adapter-29-IMG_E0407-20251013.JPG)  
 
 
+# "Baby, It's (Getting) Cold Outside" Updates - November 2025  
+
+![xxx](/images/analog-led_string-back_to_solar-01-IMG_E0491-20251125.JPG)  
+
+![xxx](/images/analog-led_string-back_to_solar-02-IMG_E0492-20251125.JPG)  
+
+![xxx](/images/analog-led_string-back_to_solar-03-IMG_0493-20251125.JPG)  
+
+![xxx](/images/analog-led_string-back_to_solar-04-IMG_0494-20251125.JPG)  
+
+![xxx](/images/analog-led_string-back_to_solar-05-IMG_E0495-20251125.JPG)  
+
+![xxx](/images/analog-led_string-back_to_solar-06-IMG_E0496-20251125.JPG)  
+
 
 
 ## THE END.  
