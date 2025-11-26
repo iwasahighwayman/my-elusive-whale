@@ -2131,6 +2131,35 @@ The Rubbermaid Brilliance Containers are marketed as water-tight, but time has d
 ![xxx](/images/analog-led_string-back_to_solar-13-IMG_E0502-20251126.JPG)  
 
 
+I did not invest a lot of time, but so far I have not been able to find the exact integrated circuit(s) (IC(s)) used by the vendor to manufacture my solar power cell, but I did find a number of ICs which appear to be "flavors" of similar power cells, also sometimes referred to as "power banks" ... none of these have solar panel recharging capabilities.  
+
+![xxx](/images/analog-power-bank-system-on-chip-04-injoinic-tech-IP5306-2.1-amp-charger-2.1-amp-discharger-amazon-01-01-20251126.PNG)  
+
+![xxx](/images/analog-power-bank-system-on-chip-05-injoinic-tech-IP5306-2.1-amp-charger-2.1-amp-discharger-amazon-01-02-20251126.PNG)  
+
+![xxx](/images/analog-power-bank-system-on-chip-06-injoinic-tech-IP5310-2.3-amp-charger-3.1-amp-discharger-amazon-02-01-20251126.PNG)  
+
+![xxx](/images/analog-power-bank-system-on-chip-07-injoinic-tech-IP5328P-2.3-amp-charger-3.1-amp-discharger-amazon-03-01-20251126.PNG)  
+
+If we deeper-dive on the first Amazon product, based on the InJoinIC Technology IP5306 Power Bank SOC IC, we can see the pricing and other details at LSCS.com:  
+
+![xxx](/images/analog-power-bank-system-on-chip-02-injoinic-tech-IP5306-2.1-amp-charger-2.1-amp-discharger-lscs.com-C181692-description-pricing-20251126.PNG)  
+
+Here is a link to the IP5306 datasheet:  
+
+[analog-power-bank-system-on-chip-01-injoinic-tech-IP5306-2.1-amp-charger-2.1-amp-discharger-lscs.com-C181692-datasheet-20251126.pdf](/datasheets/analog-power-bank-system-on-chip-01-injoinic-tech-IP5306-2.1-amp-charger-2.1-amp-discharger-lscs.com-C181692-datasheet-20251126.pdf)  
+
+Here is a snip from the IP5306 datasheet:  
+
+![xxx](/images/analog-power-bank-system-on-chip-03-injoinic-tech-IP5306-2.1-amp-charger-2.1-amp-discharger-lscs.com-C181692-datasheet-45-mA-32-sec-load-detector-specs-20251126.PNG)  
+
+Again, this is most-certainly NOT the SOC IC used in my solar power cell ... however, it is possible that the SOC IC used by solar power cell is an InJoinIC Technology IC and so it is likely that the same load detector specifications are in my solar power cell ... and it is also possible that even if a different SOC IC vendor produced the device used in my solar power cell, time has proven that competing vendors often / usually match all specifications so their devices can be drop-in functionally-identical replacements for their competitor's devices.
+
+Either way, the snip above, albeit for a different power bank SOC IC, does likely-verify my empirical findings:  
+- A 120 ohm resistor across the 5 volts ==> 0.417 milliamps ==> did NOT prevent the power cell from going from 5 volts to standby 2 volts  
+- A 100 ohm resistor across the 5 volts ==> 0.500 milliamps ==> did YES prevent the power cell from going from 5 volts to standby 2 volts  
+- The "32 seconds" versus "35 seconds" may truly be a technical difference in the varying power bank SOC ICs, or may be "marketing latitude" in the approximate time window of sub-45-milliamp current consumption resulting in standby state  
+
 Here is a complete Bill Of Materials (BOM) used in the current lighting architecture:  
 
 ```
