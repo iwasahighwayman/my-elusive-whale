@@ -2155,9 +2155,9 @@ Here is a snip from the IP5306 datasheet:
 
 Again, this is most-certainly NOT the SOC IC used in my solar power cell ... however, it is possible that the SOC IC used by solar power cell is an InJoinIC Technology IC and so it is likely that the same load detector specifications are in my solar power cell ... and it is also possible that even if a different SOC IC vendor produced the device used in my solar power cell, time has proven that competing vendors often / usually match all specifications so their devices can be drop-in functionally-identical replacements for their competitor's devices.
 
-Either way, the snip above, albeit for a different power bank SOC IC, does likely-verify my empirical findings:  
-- A 120 ohm resistor across the 5 volts ==> 0.417 milliamps ==> did NOT prevent the power cell from going from 5 volts to standby 2 volts  
-- A 100 ohm resistor across the 5 volts ==> 0.500 milliamps ==> did YES prevent the power cell from going from 5 volts to standby 2 volts  
+Either way, the snip above, albeit for a different power bank SOC IC, indicating 45 milliamps for 32 seconds producing standby state, does likely-verify my empirical findings:  
+- A 120 ohm resistor across the 5 volts ==> 41.7 milliamps ==> did NOT prevent the power cell from going from 5 volts to standby 2 volts  
+- A 100 ohm resistor across the 5 volts ==> 50 milliamps ==> did YES prevent the power cell from going from 5 volts to standby 2 volts  
 - The "32 seconds" versus "35 seconds" may truly be a technical difference in the varying power bank SOC ICs, or may be "marketing latitude" in the approximate time window of sub-45-milliamp current consumption resulting in standby state  
 
 Here is a complete Bill Of Materials (BOM) used in the current lighting architecture:  
