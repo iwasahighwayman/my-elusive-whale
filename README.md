@@ -2108,7 +2108,7 @@ At the LED controller station:
 - The four rechargeable Ni-MH "D" cell batteries were removed and recharged for future projects  
 - Ditto the "D" cell holders cluster  
 - The Rubbermaid Brilliance 3.2 cup / 760 milliliter Food Storage Container was used for the power cell assembly above  
-- I re-purposed the Microchip-PIC / Seeed-Studio-RP2040 lighing printed circuit board (PCB), adding the red power supply terminal block so that both power-in and LED-signal-out connections would occur on the side of the 1.3 cup / 300 milliliter Rubbermaid Brilliance container/enclosure
+- I re-purposed the Microchip-PIC / Seeed-Studio-RP2040 lighing printed circuit board (PCB), adding the red power supply terminal block so that both power-in and LED-signal-out connections would occur on the same side of the 1.3 cup / 300 milliliter Rubbermaid Brilliance container/enclosure, next to each other
   - The red terminal block "+" and "-" are wired to the original green terminal block "+" and "-", resuling in continuing to be able to measure current consumption across the ten (10) ohm resistor regardless of whether power is applied to the original green or new red terminal block  
 - A Rubbermaid Brilliance 1.3 cup / 300 milliliter Food Storage Container was used for the LED controller station assembly  
 
