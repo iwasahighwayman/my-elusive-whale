@@ -1716,6 +1716,7 @@ If the firmware is updated to be a 24 hour cycle versus a 10 second cycle, here 
 - Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 10mA (210 mAH) = 273 mAH per day ==> 10,000 mAH / 273 mAH = 36 days  
 - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 10mA (180 mAH) = 306 mAH per day ==> 10,000 mAH / 306 mAH = 32 days  
 
+Update: Real-world experience resulted in approximately 25 days of Summer illumination.  
 
 # "Optimizer" Updates - August 2025  
 
@@ -1776,6 +1777,7 @@ If the firmware is updated to be a 24 hour cycle versus a 10 second cycle, here 
 - Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 5mA (105 mAH) = 168 mAH per day ==> 10,000 mAH / 168 mAH = 59 days  
 - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 5mA (90 mAH) = 216 mAH per day ==> 10,000 mAH / 216 mAH = 46 days  
 
+Update: Real-world experience resulted in approximately 32 days of Summer illumination.  
 
 # "PICture This" Updates - September 2025  
 
@@ -1903,6 +1905,8 @@ Here are some quick-math estimates of how long four "D" Ni-MH batteries, which h
 
 - Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 1mA (21 mAH) = 84 mAH per day ==> 10,000 mAH / 84 mAH = 119 days  
 - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 1mA (18 mAH) = 144 mAH per day ==> 10,000 mAH / 144 mAH = 69 days  
+
+Update: Real-world experience resulted in approximately 32 days of Summer illumination.  
 
 Looking at the _'"Could it really be that simple" Updates - July 2025'_ LED string controller board, I considered making an updated version for the PIC16F213, but then I realized that instead I could create a PIC-based adapter board to be pin-compatible with the Seeed Studio XIAO RP2040 board.  This is a much better Architecture Decision since this approach provides a holistic solution to replace any XIAO-based solution requiring only a few GPIO pins with a PIC MCU.  
 
@@ -2040,22 +2044,94 @@ Turns out that there have been changes, to the betterment.
 
 Power capacity has increased significantly, while price-points have reduced significantly.  
 
+![xxx](/images/analog-led_string-back_to_solar-07-amazon-solar-power-pack-20251126.PNG)  
 
+Given the 36,800 milliamp-hour (mAH) capacity and the solar re-chargeability, the resulting architecture should be essentially maintenance-free.  
 
-![xxx](/images/analog-led_string-back_to_solar-01-IMG_E0491-20251125.JPG)  
+I fully-charged the power cell using the micro-USB port until all four of the micro-LEDs were solid-blue.  
 
-![xxx](/images/analog-led_string-back_to_solar-02-IMG_E0492-20251125.JPG)  
+I had to construct my own "USB 2.0 5-volt pig-tail" cables because fabricated cables have a very tall / long USB "head" which prevented the power cell + pigtail to fit inside the Rubbermaid Brilliance 3.2 cup / 760 milliliter Food Storage Container.  
+
+I also gently removed the power cell's USB port cover plate - it simply unsnaps from the main assembly.  The two cover plate "pins" remain intact and appear undamaged by the removal ... so I should be able to reattach the cover plate in the future if desired.  
 
 ![xxx](/images/analog-led_string-back_to_solar-03-IMG_0493-20251125.JPG)  
 
 ![xxx](/images/analog-led_string-back_to_solar-04-IMG_0494-20251125.JPG)  
 
+There is however one unforeseen "catch" with the solar power cell: the 5 volt supply only remains "on" when the power cell detects current being consumed, and turns "off" to approximately 2 volts after 35 seconds of no current consumption detected.  
+
 ![xxx](/images/analog-led_string-back_to_solar-05-IMG_E0495-20251125.JPG)  
 
 ![xxx](/images/analog-led_string-back_to_solar-06-IMG_E0496-20251125.JPG)  
 
+Additionally, there is no documentation regarding how much current must be drawn in order for the power cell to remain "on".  After some trial and error, it appears that a 100 ohm resistor across the 5 volt supply keeps the power cell "on" - 120 ohms resulted in the power cell turning "off" after 35 seconds.  To provide a little bit of headroom, and to account for the power dissipation by the resistors, two 22-ohm and one 33-ohm resistors were wired in series (77 ohms total), all 1/4 watt.  These were attached to a second male USB 2.0 solder terminal assembly.  The power cell has two (2) female USB 2.0 ports, and it turns out that provided either female port is consuming the minimum current, both female ports remain "on" at 5 volts.  Therefore inserting this 77 ohm USB assembly keeps the primary USB supply to the lighting circuit "on" at 5 volts.  
 
-Here is a complete Bill Of Materials used in the current lighting architecture:  
+This wasteful 5 volts divided by 77 ohms ==> 0.065 amps ==> 65 milliamps dwarfs the LED controller board current consumption:  
+
+Microchip PIC16F15x13:  
+- LED Illuminated (3 LED strings): 21 milliamps  
+- LED Off: 1 milliamps  
+- Daily Usage:  
+  - Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 1mA (21 mAH) = 84 mAH per day  
+  - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 1mA (18 mAH) = 144 mAH per day  
+
+Seeed Studio RP2040:  
+- LED Illuminated (3 LED strings): 21 milliamps  
+- LED Off: 5 milliamp  
+- Daily Usage:  
+  - Summer: Three hours on @ 21mA (63 mAH) + 21 hours off @ 5mA (105 mAH) = 168 mAH per day  
+  - Winter: Six hours on @ 21mA (126 mAH) + 18 hours off @ 5mA (90 mAH) = 216 mAH per day  
+
+The power cell "on" daily 65 milliamps x 24 hours ==> 1560 mAH waste is less than 5% of the power cell's capacity ... so although completely wasteful, not significant based upon the numbers.  
+
+The power cell manufacturer claims that the solar panel can recharge at 300 milliamps - this is probably under perfect bright-sun conditions.  
+
+If we assume that on cloudy days the solar panel can recharge at 100 milliamps then during a 10-hour partial daylight day, 1000 mAH or 2/3 of the wasteful power cell "on" current will be recovered.  
+
+If we assume that on partially-sunny days the solar panel can recharge at 200 milliamps then during a 10-hour day the solar panel will deliver 2000 mAH of recharge, more than the total of the required power cell "on" mAH + any LED string illumination mAH.  
+
+A future research topic: how to reduce the minimum necessary power cell "on" current ... this will require cracking the power cell open and attempting to reverse-engineer (AKA "hack") the device, starting with trying to determine the integrated circuit(s) used to manage the power components.  
+
+Completing the power cell assembly ...  
+
+I used strips of Gorilla brand Heavy Duty Double Sided Mounting Tape, which is designed for both outdoor and indoor use, to attach an aluminum adjustable flag pole base to the back of the Rubbermaid Brilliance container.  Originally I tried to purchase a plastic / nylon flag pole base, but they are both more difficult to find and more expensive than aluminum.  The only down-side of the aluminum bracket is that the back / bottom is not solid and smooth ... it has recesses to reduce weight and more-likely the amount of aluminum used thus expense to manufacture.  The outer-edge appears to be wide enough for the Gorilla tape strips to hold the relatively-light container and power cell ... time will tell.  Worst case: I could drill the four flag pole base holes into the container and affix using a machine screw and nut ... I would just need to re-apply the Gorilla tape to provide waterproofing for the holes just created into the container.  
+
+To securely mount the complete assembly outside, I drove a 7/8" dowel into the ground - it should have been a 1" dowel but I had a 7/8" dowel handy and will replace it with a 1" dowel after a future hardware store purchase.  The fastening screw on the flag pole tube is long enough to tighten against the 7/8" dowel.  
+
+![xxx](/images/analog-led_string-back_to_solar-08-IMG_0497-20251126.JPG)  
+
+![xxx](/images/analog-led_string-back_to_solar-09-IMG_0498-20251126.JPG)  
+
+![xxx](/images/analog-led_string-back_to_solar-11-IMG_0500-20251126.JPG)  
+
+At the LED controller station:  
+- The four rechargeable Ni-MH "D" cell batteries were removed and recharged for future projects  
+- Ditto the "D" cell holders cluster  
+- The Rubbermaid Brilliance 3.2 cup / 760 milliliter Food Storage Container was used for the power cell assembly above  
+- I re-purposed the Microchip-PIC / Seeed-Studio-RP2040 lighing printed circuit board (PCB), adding the red power supply terminal block so that both power-in and LED-signal-out connections would occur on the side of the 1.3 cup / 300 milliliter Rubbermaid Brilliance container/enclosure
+  - The red terminal block "+" and "-" are wired to the original green terminal block "+" and "-", resuling in continuing to be able to measure current consumption across the ten (10) ohm resistor regardless of whether power is applied to the original green or new red terminal block  
+- A Rubbermaid Brilliance 1.3 cup / 300 milliliter Food Storage Container was used for the LED controller station assembly  
+
+![xxx](/images/analog-led_string-back_to_solar-01-IMG_E0491-20251125.JPG)  
+
+![xxx](/images/analog-led_string-back_to_solar-02-IMG_E0492-20251125.JPG)  
+
+The Winter 6-hour LED illumination firmware was flashed to the Microchip PIC.
+
+I was able to complete all the assembly just as daylight was turning to darkness late yesterday.  
+
+The LEDs illuminated after the 10 minute darkness-detection "debounce" period at 4:45 PM and I watched the LEDs turn off at 10:45 PM, 6 hours later as designed.  
+
+This morning is a very gray, cloudy day.  However shortly after daybreak, I went out to inspect the solar power cell, and the left-most of the five micro-LEDs was glowing solid green, indicating that even in these gray conditions the solar panel was to some unknown degree recharging the power cell.  Additionally, of the remaining four micro-LEDs, the first three were solid-blue and the fourth was blinking-blue, indicating that at-most the power cell was depleted by 25% or less.  Checking again at Noon, the fourth micro-LED is still blinking-blue.  
+
+The Rubbermaid Brilliance Containers are marketed as water-tight, but time has demonstrated that under heavy wind-driven rain, melting snow, etc, a very small amount of moisture and even water will find a way into the containers.  An easy and inexpensive mitigation is to place a plastic bag over / around the assembly.  The plastic bag over the power cell assembly will most-likely degrade the solar panel's efficacy / efficiency, but this is a necessary trade-off to ensure the endurance of the power cell assembly.  
+
+![xxx](/images/analog-led_string-back_to_solar-12-IMG_0501-20251126.JPG)  
+
+![xxx](/images/analog-led_string-back_to_solar-13-IMG_E0502-20251126.JPG)  
+
+
+Here is a complete Bill Of Materials (BOM) used in the current lighting architecture:  
 
 ```
 https://www.amazon.com/dp/B0BR3BFYPP - Flag Pole Holder, Outside House Flag Pole Bracket, Heavy Duty Metal Flag Mount, Aluminum Alloy Mounting Brackets, Outdoor Adjustable Flag Holder- Strong Rust Free, Multi-Position 1 inch White
