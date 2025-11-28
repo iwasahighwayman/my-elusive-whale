@@ -2180,5 +2180,33 @@ https://www.amazon.com/dp/B0CSJWPWDK - No longer available - MAGILL 22 AWG 2pin 
 https://www.amazon.com/dp/B076ZRRFD4 - 3M Command Indoor Mini Light Clips, Damage Free Hanging Christmas Light Clips, Mini Wall Clips for Hanging Indoor Christmas Decorations, Lights and Cables, 45 Clear Clips and 54 Command Strips
 ```
 
+
+# "If we must fail, fail fast" Updates - November 2025  
+
+
+![xxx](/images/analog-led_string-back_to_ni-mh_batteries-01-IMG_E0503-20251128.JPG)  
+
+![xxx](/images/analog-led_string-back_to_ni-mh_batteries-02-IMG_E0504-20251128.JPG)  
+
+![xxx](/images/analog-led_string-back_to_ni-mh_batteries-03-IMG_E0505-20251128.JPG)  
+
+![xxx](/images/analog-led_string-back_to_ni-mh_batteries-04-IMG_E0506-20251128.JPG)  
+
+
+Here is a complete Bill Of Materials (BOM) used in the current lighting architecture:  
+
+```
+https://www.amazon.com/dp/B079M8FPTW - Rubbermaid Brilliance Food Storage Containers BPA Free Airtight Lids Ideal for Lunch Meal Prep & Leftovers Set of 5 (3.2 Cup)
+https://www.amazon.com/dp/B0B53ZYBTL/ref=twister_B0FP5FNQQF?th=1 - Purchased 100 feet no longer available - 50 Feet 20 Gauge 2 Conductors Red Black Wire with Fire Resistant CL2 White Jacket, 20AWG OFC Hookup Electrical Wire LED Strips Extension Cord Cable for LED Ribbon Lamp Tape Lighting
+https://www.amazon.com/dp/B07CWQPPTW - MILAPEAK (Real 18AWG 43x2pcs Strands) 10 Pairs DC Power Pigtail Cable 12V 5A Male & Female + 10 Pairs DC Power Jack Plug Adapter Barrel Connector for CCTV Home Security Surveillance (2.1mm x 5.5mm)
+https://www.amazon.com/dp/B01LCV8DXQ - BTF-LIGHTING 2 Pin Electrical Connector 22AWG IP65 Male Female Connector 7.87in/20cm Extension Cable for Car,Truck,Boat,Indoor/Outdoor LED Strip Lights/String 15mm Nut Small Size 5 Pairs
+https://www.amazon.com/dp/B0CSJWPWDK - No longer available - MAGILL 22 AWG 2pin Transparent Double Silver Wire Parallel Wire Luminous Word Line LED Light Wire for Advertising Lights/Speakers Wires and Cables (Size : 30m, Color : 22 AWG Double Silver)
+                                       Many hits if search for: 22 AWG 2pin Transparent Double Silver Wire
+                                       Ensure "double silver" NOT "gold silver" NOR "silver gold"
+                                       https://www.amazon.com/AYAUPGVQVC-Transparent-Parallel-Luminous-Advertising/dp/B0DT1BYF72
+https://www.amazon.com/dp/B076ZRRFD4 - 3M Command Indoor Mini Light Clips, Damage Free Hanging Christmas Light Clips, Mini Wall Clips for Hanging Indoor Christmas Decorations, Lights and Cables, 45 Clear Clips and 54 Command Strips
+```
+
+
 ## THE END.  
 
