@@ -2197,6 +2197,13 @@ Here is a complete Bill Of Materials (BOM) used in the current lighting architec
 
 ```
 https://www.amazon.com/dp/B079M8FPTW - Rubbermaid Brilliance Food Storage Containers BPA Free Airtight Lids Ideal for Lunch Meal Prep & Leftovers Set of 5 (3.2 Cup)
+https://www.amazon.com/dp/B079MMSZ4Z - Rubbermaid Brilliance BPA Free Airtight Food Storage Containers with Lids, Set of 4 (4.7 Cup) Ideal for Lunch, Meal Prep, and Leftovers
+https://www.amazon.com/dp/B01M4LLBC5 - EBL D Cells 10000mAh Rechargeable Batteries (4 Counts) with C D 9V AA AAA Battery Charger
+https://www.amazon.com/dp/B00IDV1AMA - EBL D Cell Batteries 10,000mAh Ultra Pro Ni-MH Rechargeable D Batteries, 4-Pack
+https://www.amazon.com/dp/B08594HCR5 - SDTC Tech 2-Pack 4 Slot D Cell Battery Holder 6V D Size Battery Case Box with Wire Leads
+                                     - 1N5817 Schottky Diodes
+                                     - 1 Ohm 1% Resistors
+                                     - Terminal Blocks 2-Terminal 5.08mm 3-Terminal 7.62mm Multi-Color
 https://www.amazon.com/dp/B0B53ZYBTL/ref=twister_B0FP5FNQQF?th=1 - Purchased 100 feet no longer available - 50 Feet 20 Gauge 2 Conductors Red Black Wire with Fire Resistant CL2 White Jacket, 20AWG OFC Hookup Electrical Wire LED Strips Extension Cord Cable for LED Ribbon Lamp Tape Lighting
 https://www.amazon.com/dp/B07CWQPPTW - MILAPEAK (Real 18AWG 43x2pcs Strands) 10 Pairs DC Power Pigtail Cable 12V 5A Male & Female + 10 Pairs DC Power Jack Plug Adapter Barrel Connector for CCTV Home Security Surveillance (2.1mm x 5.5mm)
 https://www.amazon.com/dp/B01LCV8DXQ - BTF-LIGHTING 2 Pin Electrical Connector 22AWG IP65 Male Female Connector 7.87in/20cm Extension Cable for Car,Truck,Boat,Indoor/Outdoor LED Strip Lights/String 15mm Nut Small Size 5 Pairs
