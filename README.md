@@ -2170,6 +2170,7 @@ https://www.amazon.com/dp/B0FVVMY935 - Not purchased but better reviews and spec
 https://www.amazon.com/dp/B01MFDGH6U - Gorilla Heavy Duty Double Sided Mounting Tape, 1" x 60", Black, (Pack of 4)
 https://www.amazon.com/dp/B07X5YFC8J - Rubbermaid Brilliance BPA-Free Food Storage Containers Multi Pack, 1.3 Cup Plastic Containers with Lids, 5 Pack, Leak Proof, Microwave & Dishwasher Safe
 https://www.amazon.com/dp/B079M8FPTW - Rubbermaid Brilliance Food Storage Containers BPA Free Airtight Lids Ideal for Lunch Meal Prep & Leftovers Set of 5 (3.2 Cup)
+                                     - Microchip PIC-based LED Controller PCB
 https://www.amazon.com/dp/B0B53ZYBTL/ref=twister_B0FP5FNQQF?th=1 - Purchased 100 feet no longer available - 50 Feet 20 Gauge 2 Conductors Red Black Wire with Fire Resistant CL2 White Jacket, 20AWG OFC Hookup Electrical Wire LED Strips Extension Cord Cable for LED Ribbon Lamp Tape Lighting
 https://www.amazon.com/dp/B07CWQPPTW - MILAPEAK (Real 18AWG 43x2pcs Strands) 10 Pairs DC Power Pigtail Cable 12V 5A Male & Female + 10 Pairs DC Power Jack Plug Adapter Barrel Connector for CCTV Home Security Surveillance (2.1mm x 5.5mm)
 https://www.amazon.com/dp/B01LCV8DXQ - BTF-LIGHTING 2 Pin Electrical Connector 22AWG IP65 Male Female Connector 7.87in/20cm Extension Cable for Car,Truck,Boat,Indoor/Outdoor LED Strip Lights/String 15mm Nut Small Size 5 Pairs
@@ -2183,6 +2184,19 @@ https://www.amazon.com/dp/B076ZRRFD4 - 3M Command Indoor Mini Light Clips, Damag
 
 # "If we must fail, fail fast" Updates - November 2025  
 
+The next day was very bright and sunny.  
+
+I went out multiple times to check if the solar panel was recharging the internal batteries.  
+
+After six (6) hours the first two (2) micro-LEDs were still solid-blue and the 3rd and 4th micro-LEDs were blinking-blue.  
+
+It appears that although mathematically the solar panel should be producing 2 or 3 times as much as the power cell "on" 65 milliamps, there will not be enough sunny hours per day to fully recharge the internal batteries.  
+
+It is unclear how many days before the device batteries are completely depleted, but it will just be matter of time ...  
+
+Being forced to return to the Ni-MH rechargeable battery architecture, the only apparent option was to increase the number of batteries from four (4) to eight (8), configured as two (2) 4-battery banks connected in-parallel via Schottky diodes.  This should result in approximately one (1) month of illumination with the 6-hour firmware.  
+
+The following images demonstrate the "bus-bar" built, and the multimeter readings when only the right-bank on, only the left-bank on, and both banks on
 
 ![xxx](/images/analog-led_string-back_to_ni-mh_batteries-01-IMG_E0503-20251128.JPG)  
 
@@ -2201,6 +2215,7 @@ https://www.amazon.com/dp/B079MMSZ4Z - Rubbermaid Brilliance BPA Free Airtight F
 https://www.amazon.com/dp/B01M4LLBC5 - EBL D Cells 10000mAh Rechargeable Batteries (4 Counts) with C D 9V AA AAA Battery Charger
 https://www.amazon.com/dp/B00IDV1AMA - EBL D Cell Batteries 10,000mAh Ultra Pro Ni-MH Rechargeable D Batteries, 4-Pack
 https://www.amazon.com/dp/B08594HCR5 - SDTC Tech 2-Pack 4 Slot D Cell Battery Holder 6V D Size Battery Case Box with Wire Leads
+                                     - Microchip PIC-based LED Controller PCB
                                      - 1N5817 Schottky Diodes
                                      - 1 Ohm 1% Resistors
                                      - Terminal Blocks 2-Terminal 5.08mm 3-Terminal 7.62mm Multi-Color
@@ -2213,6 +2228,49 @@ https://www.amazon.com/dp/B0CSJWPWDK - No longer available - MAGILL 22 AWG 2pin 
                                        https://www.amazon.com/AYAUPGVQVC-Transparent-Parallel-Luminous-Advertising/dp/B0DT1BYF72
 https://www.amazon.com/dp/B076ZRRFD4 - 3M Command Indoor Mini Light Clips, Damage Free Hanging Christmas Light Clips, Mini Wall Clips for Hanging Indoor Christmas Decorations, Lights and Cables, 45 Clear Clips and 54 Command Strips
 ```
+
+
+# "Back the Truck Up" Updates - November 2025  
+
+The next day, while contemplating the final architecture and configuration for the 8-battery solution, I decided to make one more attempt at finding a solar panel with a built-in battery and voltage regulator, this time one that did not require a constant-drawn power cell "on" current.  
+
+Unclear how previous searches resulted in no joy, but this morning I found a device which appears to fit the bill:  
+
+https://www.amazon.com/dp/B0FPFQL6HD  
+
+![xxx](/images/analog-led_string-back_to_solar-attempt_2-01-20251129.PNG)  
+
+Reasonably small, includes a 4000mAH battery and internal 5 volt regulator capable of producing 1 amp of output current (the LED controller and 3 LED strings 21 milliamps while illuminating the LEDs and 1 milliamp while no LED illumination), and is IP65 waterproof-rated.    
+
+It also has a reasonable $25 price-point, currently with a number of discounts due to end-of-year holiday shopping season begun.  
+
+The unit will arrive in a few days, and then I will begin field trials.  
+
+Am hoping that the mounting base is swivel-adjustable and hollow, so that I can use the same approach of driving a dowel into the ground then slide the base stand over the dowel, similar to was done with the flag pole holder.  
+
+Here is a complete Bill Of Materials (BOM) used in the current lighting architecture:  
+
+```
+https://www.amazon.com/dp/B079M8FPTW - Rubbermaid Brilliance Food Storage Containers BPA Free Airtight Lids Ideal for Lunch Meal Prep & Leftovers Set of 5 (3.2 Cup)
+https://www.amazon.com/dp/B0FPFQL6HD - Blink Solar Panel with 4000Ah Battery 13ft Cable Rubber Plug and IP65 Waterproof,Solar USB C Charger Batteries for Blink Outdoor 4(4th Gen/3rd Gen/XT/XT2) Camera
+                                       Smart Safety & Stable Charging - The Blink solar panel offers a high solar conversion efficiency of up to 28%, ensuring maximum power generation. Its built-in intelligent IC chip delivers a safe and stable 5V/1A output with overcharge, overheat, overvoltage, and short-circuit protection. This prevents damage to your Blink devices and extends their lifespan for long-lasting performance.
+                                       4000mAh Backup Battery for Cloudy Days & Nighttime - On sunny days, the Blink solar charger stores solar energy in its built-in 4000mAh battery, providing continuous power to your Blink doorbell and security cameras. Even on cloudy days or at night when there’s no sunlight, the 4Ah battery keeps your Blink devices charged and running without interruption.
+                                       IP65 Weatherproof Design for Outdoor Use - The solar panel features an IP65 waterproof rating, with both USB-C and Micro USB ports equipped with protective waterproof caps. When not in use, you can close the charging ports to prevent short circuits. The Blink solar charger is built to withstand heavy rain, snow, and strong winds, making it perfect for outdoor use.The specially designed rubber seal keeps the charging cable securely connected to your Blink doorbell, effectively preventing rainwater from entering the charging port.
+                                       Before use, please check the solar panel's power indicator light status(Blue: Battery level above 50%, Yellow: Battery level between 20%–50%, Red: Battery level below 20%, No light: Battery is completely drained)  If the battery level is 0, simply place the solar panel under direct sunlight to recharge the built-in battery.
+
+                                     - Microchip PIC-based LED Controller PCB
+                                     - 1 Ohm 1% Resistors
+                                     - Terminal Blocks 2-Terminal 5.08mm 3-Terminal 7.62mm Multi-Color
+https://www.amazon.com/dp/B0B53ZYBTL/ref=twister_B0FP5FNQQF?th=1 - Purchased 100 feet no longer available - 50 Feet 20 Gauge 2 Conductors Red Black Wire with Fire Resistant CL2 White Jacket, 20AWG OFC Hookup Electrical Wire LED Strips Extension Cord Cable for LED Ribbon Lamp Tape Lighting
+https://www.amazon.com/dp/B07CWQPPTW - MILAPEAK (Real 18AWG 43x2pcs Strands) 10 Pairs DC Power Pigtail Cable 12V 5A Male & Female + 10 Pairs DC Power Jack Plug Adapter Barrel Connector for CCTV Home Security Surveillance (2.1mm x 5.5mm)
+https://www.amazon.com/dp/B01LCV8DXQ - BTF-LIGHTING 2 Pin Electrical Connector 22AWG IP65 Male Female Connector 7.87in/20cm Extension Cable for Car,Truck,Boat,Indoor/Outdoor LED Strip Lights/String 15mm Nut Small Size 5 Pairs
+https://www.amazon.com/dp/B0CSJWPWDK - No longer available - MAGILL 22 AWG 2pin Transparent Double Silver Wire Parallel Wire Luminous Word Line LED Light Wire for Advertising Lights/Speakers Wires and Cables (Size : 30m, Color : 22 AWG Double Silver)
+                                       Many hits if search for: 22 AWG 2pin Transparent Double Silver Wire
+                                       Ensure "double silver" NOT "gold silver" NOR "silver gold"
+                                       https://www.amazon.com/AYAUPGVQVC-Transparent-Parallel-Luminous-Advertising/dp/B0DT1BYF72
+https://www.amazon.com/dp/B076ZRRFD4 - 3M Command Indoor Mini Light Clips, Damage Free Hanging Christmas Light Clips, Mini Wall Clips for Hanging Indoor Christmas Decorations, Lights and Cables, 45 Clear Clips and 54 Command Strips
+```
+
 
 
 ## THE END.  
