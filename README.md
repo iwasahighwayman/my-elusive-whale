@@ -1,4 +1,4 @@
-# my-elusive-whale
+﻿# my-elusive-whale
 
 A journey to build more environmentally-friendly LED lighting ... which turned into an obsession
 
@@ -2244,9 +2244,11 @@ Reasonably small, includes a 4000mAH battery and internal 5 volt regulator capab
 
 It also has a reasonable $25 price-point, currently with a number of discounts due to end-of-year holiday shopping season begun.  
 
-The unit will arrive in a few days, and then I will begin field trials.  
+The unit arrived in a few days, and then I began field trials.  
 
-Am hoping that the mounting base is swivel-adjustable and hollow, so that I can use the same approach of driving a dowel into the ground then slide the base stand over the dowel, similar to was done with the flag pole holder.  
+The mounting base is swivel-adjustable and hollow, so that I can use the same approach of driving a dowel into the ground then slide the base stand over the dowel, similar to was done with the flag pole holder and prior solar power cells:  
+
+![xxx](/images/analog-led_string-back_to_solar-attempt_2-02-IMG_0507-20251206.JPG)  
 
 Here is a complete Bill Of Materials (BOM) used in the current lighting architecture:  
 
