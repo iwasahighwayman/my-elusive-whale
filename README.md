@@ -1791,7 +1791,7 @@ Advantages:
   - As demonstrated above, with a lot of RP2040 tuning, it is possible to run the XAIO at 5 milliamps (60 Hertz waveform but no LED string illumination)  
   - With no PIC tuning it will produce the same LED string waveform at 1 milliamp  
   - The PIC16F15313 additionally contains a "Complementary Waveform Generator (CWG)" peripheral which can produce the same LED string waveform, including the momentary "dead band" between alternating high-low H-Bridge / Push-Pull transitions to ensure no power rail shorts, with no actual CPU execution beyond the intial CWG configuration then turning the CWG on and off during timed darkness and daylight
-- The XIAO has an Industrial operating temperature range of -40'C to +85'C, and the PICs additionally have an Extended operation temperature range of -40'C to +125'C  
+- The PIC has an Industrial operating temperature range of -40'C to +85'C, and the PICs additionally have an Extended operation temperature range of -40'C to +125'C  
   - In Fahrenheit this is:  
     - Industrial: -40'F to 185'F  
     - Extended: -40'F to 257'F  
